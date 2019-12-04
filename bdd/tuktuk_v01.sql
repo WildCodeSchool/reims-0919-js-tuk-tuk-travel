@@ -2,7 +2,7 @@ CREATE DATABASE `tuktuktravel`;
 USE `tuktuktravel`;
 CREATE TABLE `users`(
     `userID` INT NOT NULL AUTO_INCREMENT,
-    `lastname` VARCHAR(100) NO NULL,
+    `lastname` VARCHAR(100) NOT NULL,
     `firstname` VARCHAR(100) NOT NULL, 
     `password` VARCHAR(255) NOT NULL,
     `birthday` DATE NOT NULL, 
