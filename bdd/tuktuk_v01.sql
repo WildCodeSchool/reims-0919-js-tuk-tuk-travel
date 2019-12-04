@@ -1,3 +1,4 @@
+drop database if exists tuktuktravel; 
 CREATE DATABASE `tuktuktravel`;
 USE `tuktuktravel`;
 CREATE TABLE `users`(
@@ -16,6 +17,7 @@ CREATE TABLE `users`(
 
 CREATE TABLE `travels`(
     `travelID` INT NOT NULL AUTO_INCREMENT,
+    `IDuser_creator` INT NOT NULL,
     `destination` VARCHAR(255),
     `start_date` DATE NOT NULL,
     `end_date` DATE NOT NULL,
@@ -25,25 +27,25 @@ CREATE TABLE `travels`(
     PRIMARY KEY (`travelID`)    
 );
 
-CREATE TABLE `interests` (
-    `interestID` INT NOT NULL AUTO_INCREMENT,
-    `description` TEXT,
-    PRIMARY KEY (`interestID`)
-);
+-- CREATE TABLE `interests` (
+--     `interestID` INT NOT NULL AUTO_INCREMENT,
+--     `description` TEXT,
+--     PRIMARY KEY (`interestID`)
+-- );
 
-CREATE TABLE `interests_users` (
-    `interest_userID` INT NOT NULL AUTO_INCREMENT,
-    FOREIGN KEY (`IDuser`) REFERENCES `users`(`userID`)
-    FOREIGN KEY (`IDinterest`) REFERENCES `interests`(`interestID`)
-    PRIMARY KEY ('interest_userID')
-);
+-- CREATE TABLE `interests_users` (
+--     `interest_userID` INT NOT NULL AUTO_INCREMENT,
+--     FOREIGN KEY (`IDuser`) REFERENCES `users`(`userID`)
+--     FOREIGN KEY (`IDinterest`) REFERENCES `interests`(`interestID`)
+--     PRIMARY KEY ('interest_userID')
+-- );
 
-CREATE TABLE `travels_users` (
-    `travel_userID` INT NOT NULL AUTO_INCREMENT,
-    `rate` INT,
-    `comment` TEXT,
-    FOREIGN KEY (`IDuser`) REFERENCES `users`(`userID`),
-    FOREIGN KEY (`IDtravel`) REFERENCES `travels`(`travelID`),
-    PRIMARY KEY (`travel_userID`)
+-- CREATE TABLE `travels_users` (
+--     `travel_userID` INT NOT NULL AUTO_INCREMENT,
+--     `rate` INT,
+--     `comment` TEXT,
+--     FOREIGN KEY (`IDuser`) REFERENCES `users`(`userID`),
+--     FOREIGN KEY (`IDtravel`) REFERENCES `travels`(`travelID`),
+--     PRIMARY KEY (`travel_userID`)
     
-);
+-- );
