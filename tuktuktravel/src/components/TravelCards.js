@@ -14,7 +14,6 @@ class TravelCards extends Component {
         fetch('http://localhost:8000/api/travels')
         .then(res => res.json())
         .then(data =>
-            
             this.setState({
             travels: data
         }))
