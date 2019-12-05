@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -13,10 +14,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+/*css TravelCard*/
+
+.travel-cards {
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.liste-travel li {
+  text-align: left;
+  list-style: none;
+}
+
+.liste-travel > ul {
+  line-height: 30px;
 }
