@@ -1,6 +1,6 @@
 *** Destinations***
 
-New YOrk
+New York
 Londres
 Paris
 Tokyo
