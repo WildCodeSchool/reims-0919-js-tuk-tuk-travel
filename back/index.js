@@ -5,14 +5,14 @@ const port = 8000;
 
 
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+app.use((req, res, next)=> {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
-app.get('/', (request, response) => {
-  response.send('Bienvenue sur Express');
+app.get('/', (req, res) => {
+  res.send('Bienvenue sur Express');
 });
 
 app.get('/api/users', (req, res) => {
@@ -40,7 +40,7 @@ app.get('/api/travels', (req, res) => {
 app.listen(port, (err) => {
   if (err) {
     throw new Error('Something bad happened...');
-  }
-
+	}
+	
   console.log(`Server is listening on ${port}`);
 });
