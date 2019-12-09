@@ -1,9 +1,15 @@
 const connection = require('./config/conf');
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
+const app = express()
 const port = 8000;
 
-
+// Support JSON-encoded bodies
+app.use(bodyParser.json());
+// Support URL-encoded bodies
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use((req, res, next)=> {
   res.header('Access-Control-Allow-Origin', '*');
@@ -35,6 +41,43 @@ app.get('/api/travels', (req, res) => {
   });
 });
 
+
+
+// listen to the url "/api/travels" with the verb POST
+app.post('/api/travels', (req, res) => {
+
+  // Get the data sent
+  const formData = req.body;
+  console.log(req.body)
+
+  // connection to the database, and insertion of the movie
+  connection.query('INSERT INTO travels SET ?', formData, (err, results) => {
+
+    if (err) {
+      // If an error has occurred, then the user is informed of the error
+      console.log(err);
+      res.status(500).send("Error saving a travel");
+    } else {
+      // If everything went well, we send a status "ok".
+      res.sendStatus(200);
+    }
+  });
+});
+
+app.put('/api/travels/:travelID', (req, res) => {
+
+  const idTravel = req.params.travelID;
+  const formData = req.body;
+
+  connection.query('UPDATE travels SET ? WHERE travelID = ?', [formData, idTravel], err => {
+    if (err) {
+       console.log(err);
+      res.status(500).send("Error editing a travel");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
 
 
 app.listen(port, (err) => {
