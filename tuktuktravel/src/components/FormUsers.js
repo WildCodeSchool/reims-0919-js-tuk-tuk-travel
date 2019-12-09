@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 
 class FormUsers extends Component {
   constructor(props) {
@@ -23,26 +23,35 @@ class FormUsers extends Component {
 
   submit = e => {
     e.preventDefault();
-    console.log(this.state)
+    const {...user} = this.state
+    axios.post('http://localhost:8000/api/users',{user})
+    .then(res =>{
+      console.log(res, "user added")
+    }).catch(event => {
+      console.error(event);
+      alert('User not added')
+    })
   }
+
+
 
   render(){
     return(
       <div>
         <form onSubmit={this.submit} >
-          <label htmlfor="firstname">Prénom</label>
+          <label htmlFor="firstname">Prénom</label>
           <input type="text" id="firstname" onChange={this.change} />
-          <label htmlfor="lastname">Nom</label>
+          <label htmlFor="lastname">Nom</label>
           <input type="text" id="lastname" onChange={this.change} />
-          <label htmlfor="birthday">Age</label>
+          <label htmlFor="birthday">Age</label>
           <input type="text" id="birthday" onChange={this.change} />
-          <label htmlfor="address">Adresse</label>
+          <label htmlFor="address">Adresse</label>
           <input type="text" id="address" onChange={this.change} />
-          <label htmlfor="email">e-mail</label>
+          <label htmlFor="email">e-mail</label>
           <input type="text" id="email" onChange={this.change} />
-          <label htmlfor="phone_number">Numéro de téléphone</label>
+          <label htmlFor="phone_number">Numéro de téléphone</label>
           <input type="text" id="phone_number" onChange={this.change} />
-          <label htmlfor="description">Description</label>
+          <label htmlFor="description">Description</label>
           <input type="text" id="description" onChange={this.change} />
           <button>Envoyer</button>
         </form>
