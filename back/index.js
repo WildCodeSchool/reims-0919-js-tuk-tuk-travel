@@ -1,9 +1,13 @@
 const connection = require('./config/conf');
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
+const app = express()
 const port = 8000;
 
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use((req, res, next)=> {
   res.header('Access-Control-Allow-Origin', '*');
@@ -25,7 +29,18 @@ app.get('/api/users', (req, res) => {
   });
 });
 
-
+app.post('/api/users', (req, res) => {
+  const formData = req.body;
+  console.log(req.body)
+    connection.query('INSERT INTO users SET ?', formData, (err, results) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error saving a user');
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
 
 app.get('/api/travels', (req, res) => {
   connection.query('SELECT * from travels', (err, results) => {
@@ -37,14 +52,35 @@ app.get('/api/travels', (req, res) => {
   });
 });
 
+app.post('/api/travels', (req, res) => {
+  const formData = req.body;
+  console.log(req.body)
+  connection.query('INSERT INTO travels SET ?', formData, (err, results) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('Error saving a travel');
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
 
-
-
+app.put('/api/travels/:travelID', (req, res) => {
+  const idTravel = req.params.travelID;
+  const formData = req.body;
+  connection.query('UPDATE travels SET ? WHERE travelID = ?', [formData, idTravel], err => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Error editing a travel");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
 
 app.listen(port, (err) => {
   if (err) {
     throw new Error('Something bad happened...');
 	}
-	
-  console.log(`Server is listening on ${port}`);
+	console.log(`Server is listening on ${port}`);
 });
