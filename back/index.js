@@ -25,6 +25,8 @@ app.get('/api/users', (req, res) => {
   });
 });
 
+
+
 app.get('/api/travels', (req, res) => {
   connection.query('SELECT * from travels', (err, results) => {
     if (err) {
@@ -34,6 +36,8 @@ app.get('/api/travels', (req, res) => {
     }
   });
 });
+
+
 
 
 

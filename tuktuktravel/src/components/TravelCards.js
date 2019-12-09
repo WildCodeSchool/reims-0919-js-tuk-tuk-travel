@@ -33,7 +33,9 @@ class TravelCards extends Component {
                         <li>Retour: <Moment format="DD/MM/YYYY">{res.end_date}</Moment></li>
                         <li>Nombre de voyageurs: {res.number_of_travelers_max}</li>
                         <li>Descrption: {res.description}</li>
-                        </ul></div>})}
+                        </ul></div>}
+                    )
+                }
                
             </div>
         )
