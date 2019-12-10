@@ -42,6 +42,19 @@ app.post('/api/users', (req, res) => {
   });
 });
 
+app.put('/api/users/:userID', (req, res) => {
+  const idUser = req.params.userID;
+  const formData = req.body;
+  connection.query('UPDATE users SET ? WHERE userID = ?', [formData, idUser], err => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Error editing a user");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
 app.get('/api/travels', (req, res) => {
   connection.query('SELECT * from travels', (err, results) => {
     if (err) {
