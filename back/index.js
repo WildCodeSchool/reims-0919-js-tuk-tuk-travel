@@ -31,6 +31,7 @@ app.get('/api/users', (req, res) => {
   });
 });
 
+//READ TRAVEL
 app.get('/api/travels', (req, res) => {
   connection.query('SELECT * from travels', (err, results) => {
     if (err) {
@@ -41,32 +42,25 @@ app.get('/api/travels', (req, res) => {
   });
 });
 
+// POST TRAVEL
 
-
-// listen to the url "/api/travels" with the verb POST
 app.post('/api/travels', (req, res) => {
-
-  // Get the data sent
-  const formData = req.body;
-  console.log(req.body)
-
-  // connection to the database, and insertion of the movie
-  connection.query('INSERT INTO travels SET ?', formData, (err, results) => {
+  const formData = req.body
+  console.log(formData)
+  connection.query('INSERT INTO travels (destination, description) VALUES (?,?)', [formData.destination,formData.description], (err, results) => {
 
     if (err) {
-      // If an error has occurred, then the user is informed of the error
       console.log(err);
       res.status(500).send("Error saving a travel");
     } else {
-      // If everything went well, we send a status "ok".
       res.sendStatus(200);
     }
   });
 });
 
+// UPDATE TRAVEL
 app.put('/api/travels/:travelID', (req, res) => {
-
-  const idTravel = req.params.travelID;
+  const idTravel = req.body.travelID;
   const formData = req.body;
 
   connection.query('UPDATE travels SET ? WHERE travelID = ?', [formData, idTravel], err => {
@@ -78,6 +72,19 @@ app.put('/api/travels/:travelID', (req, res) => {
     }
   });
 });
+
+app.delete('/api/travels/:travelID', (req, res) => {
+  const idTravel = req.params.travelID;
+  connection.query('DELETE FROM travels WHERE travelID = ?', [idTravel], err => {
+    if (err) {
+       console.log(err);
+      res.status(500).send("Error deleting a travel");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
 
 
 app.listen(port, (err) => {
