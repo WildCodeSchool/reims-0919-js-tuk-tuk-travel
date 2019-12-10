@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.get('/api/users', (req, res) => {
   connection.query('SELECT * from users', (err, results) => {
     if (err) {
-      res.status(500).send('Erreur lors de la récupération des users');
+      res.status(500).send("Erreur lors de la récupération des utilisateurs");
     } else {
       res.json(results);
     }
@@ -35,7 +35,7 @@ app.post('/api/users', (req, res) => {
     connection.query('INSERT INTO users SET ?', formData, (err, results) => {
     if (err) {
       console.log(err);
-      res.status(500).send('Error saving a user');
+      res.status(500).send("Erreur lors de la sauvegarde d'un utilisateur");
     } else {
       res.sendStatus(200);
     }
@@ -48,17 +48,29 @@ app.put('/api/users/:userID', (req, res) => {
   connection.query('UPDATE users SET ? WHERE userID = ?', [formData, idUser], err => {
     if (err) {
       console.log(err);
-      res.status(500).send("Error editing a user");
-    } else {
+      res.status(500).send("Erreur lors de la modification d'un utilisateur");
+    } else { 
       res.sendStatus(200);
     }
   });
 });
 
+app.delete('/api/users/:userID', (req, res) => {
+  const idUser = req.params.userID;
+  connection.query('DELETE FROM users WHERE userID = ?', [idUser], err => {
+    if (err) {
+      console.log(err);
+      res.status(500), send("Erreur lors de la suppression d'un utilisateur");
+    } else {
+      res.sendStatus(200);
+    }
+  })
+})
+
 app.get('/api/travels', (req, res) => {
   connection.query('SELECT * from travels', (err, results) => {
     if (err) {
-      res.status(500).send('Erreur lors de la récupération des travels');
+      res.status(500).send('Erreur lors de la récupération des voyages');
     } else {
       res.json(results);
     }
@@ -71,7 +83,7 @@ app.post('/api/travels', (req, res) => {
   connection.query('INSERT INTO travels SET ?', formData, (err, results) => {
     if (err) {
       console.log(err);
-      res.status(500).send('Error saving a travel');
+      res.status(500).send("Erreur lors de la sauvegarde d'un voyage");
     } else {
       res.sendStatus(200);
     }
@@ -84,7 +96,7 @@ app.put('/api/travels/:travelID', (req, res) => {
   connection.query('UPDATE travels SET ? WHERE travelID = ?', [formData, idTravel], err => {
     if (err) {
       console.log(err);
-      res.status(500).send("Error editing a travel");
+      res.status(500).send("Erreur lors de la modification d'un voyage");
     } else {
       res.sendStatus(200);
     }
