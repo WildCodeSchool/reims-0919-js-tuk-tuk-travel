@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import Calendar from 'react-input-calendar'
 import axios from 'axios'
-import Moment from 'moment'
-import { extendMoment } from 'moment-range'
+// import Moment from 'moment'
+// import { extendMoment } from 'moment-range'
 import '../App.css'
 
 

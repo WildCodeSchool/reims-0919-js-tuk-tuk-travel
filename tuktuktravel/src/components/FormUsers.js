@@ -5,13 +5,14 @@ class FormUsers extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      firstname: '',
       lastname: '',
+      firstname: '',
+      password: '',
       birthday: '',
       address: '',
       email: '',
       phone_number: '',
-      description: '',
+      description: ''
     };
   }
 
@@ -24,9 +25,9 @@ class FormUsers extends Component {
   submit = e => {
     e.preventDefault();
     const {...user} = this.state
-    axios.post('http://localhost:8000/api/users',{user})
+    axios.post('http://localhost:8000/api/users',user)
     .then(res =>{
-      console.log(res, "user added")
+      alert(`Hello ${this.state.firstname}`)
     }).catch(event => {
       console.error(event);
       alert('User not added')
@@ -39,10 +40,12 @@ class FormUsers extends Component {
     return(
       <div>
         <form onSubmit={this.submit} >
-          <label htmlFor="firstname">Prénom</label>
-          <input type="text" id="firstname" onChange={this.change} />
           <label htmlFor="lastname">Nom</label>
           <input type="text" id="lastname" onChange={this.change} />
+          <label htmlFor="firstname">Prénom</label>
+          <input type="text" id="firstname" onChange={this.change} />
+          <label htmlFor="password">Mot de passe</label>
+          <input type="text" id="password" onChange={this.change} />
           <label htmlFor="birthday">Age</label>
           <input type="text" id="birthday" onChange={this.change} />
           <label htmlFor="address">Adresse</label>
