@@ -14,48 +14,32 @@ class TravelForm extends Component {
       destination : '',
       start_date : '',
       end_date : '',
+      numberTravelers : '',
       description : '',
-      
-      
+       
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-
   }
 
   handleInputChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleSubmit(event) {
+  handleSubmit(e) {
       alert('Votre destination : ' + this.state.destination);
-      event.preventDefault()
-      
-      
-  
-      const {destination} = this.state
+      e.preventDefault()
+      const {...destination} = this.state
       console.log({destination})
       
-      axios.post('http://localhost:8000/api/travels/',{ destination})
-      
+      axios.post('http://localhost:8000/api/travels/',destination)
       .then(res => {
-      
-        console.log(res, 'Signature added!');
-    
-        
-  }).catch(event => {
-    console.error(event);
-    alert(`Erreur lors de l'ajout d'un employé`);
+        console.log(res, 'Travel added!');
+      }).catch(event => {
+      console.error(event);
+      alert(`Erreur lors de l'ajout d'un voyage`);
   });
 }
-
-    
-  
-  
-
-
-
-  
 
   render() {
     console.log(this.state)
@@ -66,11 +50,15 @@ class TravelForm extends Component {
           value={this.state.destination} onChange={this.handleInputChange}/>
         
         <label htmlFor='start_date'>Date de départ: </label>
-          <input id='start_date' type='date 'name='start_date'></input>
+          <input id='start_date' type='date 'name='start_date' value={this.state.start_date} onChange={this.handleInputChange}></input>
         
         <label htmlFor='end_date'>Date de retour: </label>
-          <Calendar format='DD/MM/YYYY' date={this.state.current} />
-        
+          <Calendar format='DD/MM/YYYY' date={this.state.current} value={this.state.end_date} onChange={this.handleInputChange}/>
+          
+          <label htmlFor='numberTravelers'>Nombre de voyageurs: </label>
+          <input id='numberTravelers' type='text' name='numberTravelers' placeholder='Nombre de voyageurs..'
+          value={this.state.numberTravelers} onChange={this.handleInputChange}/>
+
         <label htmlFor='description'>Description: </label>
           <textarea name ='description' placeholder = 'Votre message..'
           rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>

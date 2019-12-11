@@ -77,10 +77,13 @@ app.get('/api/travels', (req, res) => {
   });
 });
 
+// POST TRAVEL
+
 app.post('/api/travels', (req, res) => {
-  const formData = req.body;
-  console.log(req.body)
-  connection.query('INSERT INTO travels SET ?', formData, (err, results) => {
+  const formData = req.body
+  console.log(formData)
+  connection.query('INSERT INTO travels (destination, description) VALUES (?,?)', [formData.destination,formData.description], (err, results) => {
+
     if (err) {
       console.log(err);
       res.status(500).send("Erreur lors de la sauvegarde d'un voyage");
@@ -90,8 +93,9 @@ app.post('/api/travels', (req, res) => {
   });
 });
 
+// UPDATE TRAVEL
 app.put('/api/travels/:travelID', (req, res) => {
-  const idTravel = req.params.travelID;
+  const idTravel = req.body.travelID;
   const formData = req.body;
   connection.query('UPDATE travels SET ? WHERE travelID = ?', [formData, idTravel], err => {
     if (err) {
@@ -102,6 +106,20 @@ app.put('/api/travels/:travelID', (req, res) => {
     }
   });
 });
+
+app.delete('/api/travels/:travelID', (req, res) => {
+  const idTravel = req.params.travelID;
+  connection.query('DELETE FROM travels WHERE travelID = ?', [idTravel], err => {
+    if (err) {
+       console.log(err);
+      res.status(500).send("Error deleting a travel");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
+
 
 app.listen(port, (err) => {
   if (err) {
