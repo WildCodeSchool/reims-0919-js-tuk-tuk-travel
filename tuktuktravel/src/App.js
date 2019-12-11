@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <FormUsers />
         <TravelCards />
-        < TravelForm />
+        <TravelForm />
       </header>
     </div>
   );
