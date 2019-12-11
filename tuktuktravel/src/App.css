@@ -40,3 +40,23 @@
   line-height: 30px;
   padding-right: 15px;
 }
+
+
+/* UserConnexion */
+
+.connexion-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form-connexion{
+  align-items: flex-end;
+}
+
+.send-button{
+  margin: 1%;
+}
+
+.connexion-form .send-button{
+  align-items: center;
+}
