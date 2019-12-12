@@ -4,7 +4,7 @@ import UserConnexion from './components/UserConnexion';
 import './App.css'
 import FormUsers from './components/FormUsers'
 import TravelForm from './components/TravelForm'
-import { Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -15,6 +15,11 @@ function App() {
         <Route path="/travelcards" component={TravelCards}/>
         <Route path="/travelform" component={TravelForm}/>
       </Switch>
+
+      <UserConnexion/>
+      <FormUsers/>
+      <TravelCards/>
+      <TravelForm/>
     </div>
   );
 }
