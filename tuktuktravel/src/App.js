@@ -15,11 +15,6 @@ function App() {
         <Route path="/travelcards" component={TravelCards}/>
         <Route path="/travelform" component={TravelForm}/>
       </Switch>
-
-      <UserConnexion/>
-      <FormUsers/>
-      <TravelCards/>
-      <TravelForm/>
     </div>
   );
 }
