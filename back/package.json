@@ -9,7 +9,7 @@
     "client" : "npm start --prefix ../tuktuktravel",
     "dev" : "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Herve Bourelle, Xenia Lecomte, Maxime Fery, Sylvie",
+  "author": "Herve Bourelle, Xenia Lecomte, Maxime Fery, Sylvie Lecrocq",
   "license": "MIT",
   "dependencies": {
     "client": "npm start --prefix ../tuktuktravel",
