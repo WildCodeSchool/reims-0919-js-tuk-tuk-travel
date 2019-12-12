@@ -10,16 +10,15 @@ import { Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Home />        
-      </header>
-    
+
       <Switch>
-        <Route exact path="/userconnexion" component={UserConnexion}/>
+        <Route exact path="/" component={Home}/>
+        <Route path="/userconnexion" component={UserConnexion}/>
         <Route path="/formusers"component={FormUsers}/>
-        <Route path="/travelcards" component={TravelCards}/>
-        <Route path="/travelform" component={TravelForm}/>
+        <Route exact path="/travelcards" component={TravelCards}/>
+        <Route exact path="/travelform" component={TravelForm}/>
       </Switch>
+
     </div>
   );
 }
