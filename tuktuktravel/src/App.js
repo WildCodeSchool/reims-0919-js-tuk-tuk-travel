@@ -19,7 +19,6 @@ function App() {
         <Route exact path="/travelform" component={TravelForm}/>
       </Switch>
 
-
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import myLogo from '../img/tuk-tuk logo.png'
+import myLogo from '../img/tuk-tuk logo.png';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -7,9 +8,9 @@ const Home = () => {
     <div className = "logo">
       <img src={myLogo} alt='logo'/>
 
-      <button>S'inscrire</button>
+      <Link to="/formusers"><button>S'inscrire</button></Link>
 
-      <button>Proposer un Tuk Tuk</button>
+      <Link to="/travelform"><button>Proposer un Tuk Tuk</button></Link>
 
 
     </div>
