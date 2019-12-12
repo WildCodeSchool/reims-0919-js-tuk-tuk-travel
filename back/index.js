@@ -1,7 +1,9 @@
 const connection = require('./config/conf');
 const express = require('express');
 const bodyParser = require('body-parser');
-const app = express()
+const app = express();
+const multer = require('multer'); // npm install --save multer
+const fs = require('fs');
 const port = 8000;
 
 app.use(bodyParser.json());
@@ -19,6 +21,7 @@ app.get('/', (req, res) => {
   res.send('Bienvenue sur Express');
 });
 
+//GET USERS
 app.get('/api/users', (req, res) => {
   connection.query('SELECT * from users', (err, results) => {
     if (err) {
@@ -29,6 +32,7 @@ app.get('/api/users', (req, res) => {
   });
 });
 
+//POST USERS
 app.post('/api/users', (req, res) => {
   const formData = req.body
   console.log(req.body)
@@ -42,6 +46,7 @@ app.post('/api/users', (req, res) => {
   });
 });
 
+//UPDATE USERS
 app.put('/api/users/:userID', (req, res) => {
   const idUser = req.params.userID;
   const formData = req.body;
@@ -55,6 +60,7 @@ app.put('/api/users/:userID', (req, res) => {
   });
 });
 
+//DELETE USERS
 app.delete('/api/users/:userID', (req, res) => {
   const idUser = req.params.userID;
   connection.query('DELETE FROM users WHERE userID = ?', [idUser], err => {
@@ -67,6 +73,8 @@ app.delete('/api/users/:userID', (req, res) => {
   })
 })
 
+
+// GET TRAVEL
 app.get('/api/travels', (req, res) => {
   connection.query('SELECT * from travels', (err, results) => {
     if (err) {
@@ -77,8 +85,8 @@ app.get('/api/travels', (req, res) => {
   });
 });
 
-// POST TRAVEL
 
+// POST TRAVEL
 app.post('/api/travels', (req, res) => {
   const formData = req.body
   console.log(formData)
@@ -120,6 +128,31 @@ app.delete('/api/travels/:travelID', (req, res) => {
 });
 
 
+//UPLOAD PICS
+
+const upload = multer({ dest: 'tmp/',
+limits: {
+  files: 1, // allow only 1 file per request,
+  fieldSize: 3* 1024 * 1024 // 3 MB (max file size)
+},
+fileFilter: (req, file, cb) => {
+  // allow png only
+  if (!file.originalname.match(/\.(png)$/)) {
+      return cb(('Only image png are allowed.'), false);
+  }
+  cb(null, true);
+} 
+});
+
+app.post('/uploaddufichier', upload.single('uploadfile'), function (req, res, next) {
+  fs.rename(req.file.path, 'img/' + req.file.originalname, function(err){
+    if (err) {res.redirect(targetUrl)
+        res.send('problème durant le transfert');
+    } else {
+        res.send('Fichier transféré avec succès');
+    }
+  });
+})
 
 app.listen(port, (err) => {
   if (err) {
