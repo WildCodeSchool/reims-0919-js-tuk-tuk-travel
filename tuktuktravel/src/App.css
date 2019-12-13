@@ -68,19 +68,26 @@
 
 .firstpage{
   background: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
 }
 
 .buttons{
   display: flex;
   flex-direction: column;
+  width: 100%;
   
 }
 
 .buttons button{
-  border-radius: 30px;
+  border-radius: 15px;
   margin: 15px;
-  padding: 8px;
+  padding: 5px 10px 5px 10px;
   background-color: #1B75BC;
   color : white;
   font-weight: bolder;
+  border: none;
+  width: 25%;
+  cursor: pointer;
 }
