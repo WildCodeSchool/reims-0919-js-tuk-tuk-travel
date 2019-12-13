@@ -16,7 +16,7 @@ const Home = () => {
 
         <Link to="/formusers"><button>S'inscrire</button></Link>
 
-        <Link to="/travelform"><button>Connection</button></Link>
+        <Link to="/travelform"><button>Proposer un Tuk-Tuk</button></Link>
 
       </div>
 
