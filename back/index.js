@@ -4,12 +4,14 @@ const bodyParser = require('body-parser');
 const app = express();
 const multer = require('multer'); // npm install --save multer
 const fs = require('fs');
+var cors = require('cors') // npm install cors
 const port = 8000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(cors())
 
 app.use((req, res, next)=> {
   res.header('Access-Control-Allow-Origin', '*');
@@ -90,7 +92,7 @@ app.get('/api/travels', (req, res) => {
 app.post('/api/travels', (req, res) => {
   const formData = req.body
   console.log(formData)
-  connection.query('INSERT INTO travels (destination, description) VALUES (?,?)', [formData.destination,formData.description], (err, results) => {
+  connection.query('INSERT INTO travels (destination, start_date, end_date, number_of_travelers_max, description) VALUES (?,?,?,?,?)', [formData.destination, formData.start_date, formData.end_date, formData.number_of_travelers_max, formData.description], (err, results) => {
 
     if (err) {
       console.log(err);
