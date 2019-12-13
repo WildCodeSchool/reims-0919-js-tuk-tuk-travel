@@ -12,7 +12,7 @@ class TravelForm extends Component {
       destination : '',
       start_date : '',
       end_date : '',
-      numberTravelers : '',
+      number_of_travelers_max : '',
       description : '',
        
     }
@@ -32,10 +32,10 @@ class TravelForm extends Component {
       
       axios.post('http://localhost:8000/api/travels/',destination)
       .then(res => {
-        console.log(res, 'Travel added!');
+        alert('Tuk Tuk ajouté!');
       }).catch(event => {
       console.error(event);
-      alert(`Erreur lors de l'ajout d'un voyage`);
+      alert(`Erreur lors de l'ajout d'un Tuk Tuk`);
   });
 }
 
@@ -48,14 +48,14 @@ class TravelForm extends Component {
           value={this.state.destination} onChange={this.handleInputChange}/>
         
         <label htmlFor='start_date'>Date de départ: </label>
-          <input id='start_date' type='date 'name='start_date' value={this.state.start_date} onChange={this.handleInputChange}></input>
+          <input id='start_date' type='date' name='start_date' value={this.state.start_date} onChange={this.handleInputChange}></input>
         
         <label htmlFor='end_date'>Date de retour: </label>
-          <Calendar format='DD/MM/YYYY' date={this.state.current} value={this.state.end_date} onChange={this.handleInputChange}/>
+          <input type='date' id='end_date' name='end_date' date={this.state.current} value={this.state.end_date} onChange={this.handleInputChange}/>
           
-          <label htmlFor='numberTravelers'>Nombre de voyageurs: </label>
-          <input id='numberTravelers' type='text' name='numberTravelers' placeholder='Nombre de voyageurs..'
-          value={this.state.numberTravelers} onChange={this.handleInputChange}/>
+          <label htmlFor='number_of_travelers_max'>Nombre de voyageurs: </label>
+          <input id='number_of_travelers_max' type='text' name='number_of_travelers_max' placeholder='Nombre de voyageurs..'
+          value={this.state.number_of_travelers_max} onChange={this.handleInputChange}/>
 
         <label htmlFor='description'>Description: </label>
           <textarea name ='description' placeholder = 'Votre message..'
