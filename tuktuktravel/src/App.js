@@ -5,6 +5,7 @@ import './App.css'
 import FormUsers from './components/FormUsers'
 import TravelForm from './components/TravelForm'
 import Home from './components/Home';
+import UploadFile from './components/UploadFile'
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/userconnexion" component={UserConnexion}/>
         <Route path="/formusers"component={FormUsers}/>
+        <Route exact path="/UploadFile" component={UploadFile}/>
         <Route exact path="/travelcards" component={TravelCards}/>
         <Route exact path="/travelform" component={TravelForm}/>
       </Switch>
