@@ -23,7 +23,6 @@ class UserConnexion extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="user_connexion">
         <h1>Connectes-toi !:)</h1>
