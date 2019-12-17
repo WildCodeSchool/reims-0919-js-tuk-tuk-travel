@@ -6,17 +6,17 @@ import '../App.css'
 const Home = () => {
 
   return (
-    <div className = 'firstpage'>
+    <div className='firstpage'>
 
       <figure>
         <img src={myLogo} alt='logo'/>
       </figure>
 
-      <div className = 'buttons'>
+      <div className='buttons'>
 
-        <Link to="/formusers"><button>S'inscrire</button></Link>
+        <Link to="/formusers">S'inscrire</Link>
 
-        <Link to="/travelform"><button>Connection</button></Link>
+        <Link to="/travelform">Connection</Link>
 
       </div>
 
