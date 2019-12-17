@@ -6,11 +6,12 @@ import FormUsers from './components/FormUsers'
 import TravelForm from './components/TravelForm'
 import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
+import Nav from './components/Nav'
 
 function App() {
   return (
     <div className="App">
-
+      <Nav />
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/userconnexion" component={UserConnexion}/>

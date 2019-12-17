@@ -4,7 +4,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const multer = require('multer'); // npm install --save multer
 const fs = require('fs');
-var cors = require('cors') // npm install cors
+const cors = require('cors') // npm install cors
+const jwt = require('jsonwebtoken') // npm install jsonwebtoken
+const verifyToken = require('./verifyToken')
+const key = require('./key')
 const port = 8000;
 
 app.use(bodyParser.json());
@@ -55,7 +58,7 @@ app.put('/api/users/:userID', (req, res) => {
   connection.query('UPDATE users SET ? WHERE userID = ?', [formData, idUser], err => {
     if (err) {
       console.log(err);
-      res.status(500).send("Erreur lors de la modification d'un utilisateur");
+      res.status(500).send('Erreur lors de la modification d\'un utilisateur');
     } else { 
       res.sendStatus(200);
     }
@@ -68,7 +71,7 @@ app.delete('/api/users/:userID', (req, res) => {
   connection.query('DELETE FROM users WHERE userID = ?', [idUser], err => {
     if (err) {
       console.log(err);
-      res.status(500), send("Erreur lors de la suppression d'un utilisateur");
+      res.status(500), send('Erreur lors de la suppression d\'un utilisateur');
     } else {
       res.sendStatus(200);
     }
@@ -117,6 +120,7 @@ app.put('/api/travels/:travelID', (req, res) => {
   });
 });
 
+// DELETE TRAVEL
 app.delete('/api/travels/:travelID', (req, res) => {
   const idTravel = req.params.travelID;
   connection.query('DELETE FROM travels WHERE travelID = ?', [idTravel], err => {
@@ -127,11 +131,44 @@ app.delete('/api/travels/:travelID', (req, res) => {
       res.sendStatus(200);
     }
   });
+}); 
+
+// LOGIN & TOKEN
+
+app.post('/api/login', (req, res) => {
+  const formData = req.body
+  const email = formData.email
+  const password = formData.password
+  if (email && password) {
+    connection.query('SELECT userID, password FROM users WHERE email = ?', email , (err, results) => {
+      if (err) {
+        res.status(500).send("Erreur de login");
+      } else {
+        const user = results[0];
+        if (user && password === user.password){
+          //console.log('bravo')
+          jwt.sign({user}, key , {expiresIn: '20min'}, (err, token) => {
+            res.json({
+                token
+            })
+        })
+          //res.json({id: user.userID});
+        }
+        else {
+          res.status(401).send();
+        }
+      }
+    });
+  }
+  else {
+    res.status(400).send();
+  }
 });
 
 
-//UPLOAD PICS
 
+
+// UPLOAD FILE
 const upload = multer({ dest: 'tmp/',
 limits: {
   files: 1, // allow only 1 file per request,
@@ -140,7 +177,7 @@ limits: {
 fileFilter: (req, file, cb) => {
   // allow png only
   if (!file.originalname.match(/\.(png)$/)) {
-      return cb(('Only image png are allowed.'), false);
+    return cb(('Only image png are allowed.'), false);
   }
   cb(null, true);
 } 
@@ -149,7 +186,7 @@ fileFilter: (req, file, cb) => {
 app.post('/uploaddufichier', upload.single('uploadfile'), function (req, res, next) {
   fs.rename(req.file.path, 'img/' + req.file.originalname, function(err){
     if (err) {res.redirect(targetUrl)
-        res.send('problème durant le transfert');
+      res.send('problème durant le transfert');
     } else {
         res.send('Fichier transféré avec succès');
     }
