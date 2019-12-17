@@ -40,7 +40,7 @@ class UserConnexion extends Component {
             <div className="form-data">
               <label htmlFor="password">Mot de passe </label>
               <input
-                type="text"
+                type="password"
                 id="password"
                 name="password"
                 onChange={this.onChange}
