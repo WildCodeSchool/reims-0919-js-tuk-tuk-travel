@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import axios from 'axios'
 import '../App.css'
 
 class UserConnexion extends Component {
@@ -19,7 +20,17 @@ class UserConnexion extends Component {
   }
 
   submitForm(e) {
-    e.preventDefault();
+    e.preventDefault()
+    const {...userLogin} = this.state
+      console.log({userLogin})
+      
+      axios.post('http://localhost:8000/api/travels/',userLogin)
+      .then(res => {
+        alert('Connecté!');
+      }).catch(event => {
+      console.error(event);
+      alert(`Erreur lors de la connexion`);
+  });
   }
 
   render() {
