@@ -28,7 +28,7 @@ class FormUsers extends Component {
     const {...user} = this.state
     axios.post('http://localhost:8000/api/users',user)
     .then(res =>{
-      alert(`Hello ${this.state.firstname}`)
+      alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
     }).catch(event => {
       console.error(event);
       alert('User not added')
@@ -39,16 +39,16 @@ class FormUsers extends Component {
 
   render(){
     return(
-      <div>
-        <form onSubmit={this.submit} >
+      <div >
+        <form className='add-user' onSubmit={this.submit} >
           <label htmlFor="lastname">Nom</label>
           <input type="text" id="lastname" onChange={this.change} />
           <label htmlFor="firstname">Prénom</label>
           <input type="text" id="firstname" onChange={this.change} />
           <label htmlFor="password">Mot de passe</label>
           <input type="text" id="password" onChange={this.change} />
-          <label htmlFor="birthday">Age</label>
-          <input type="text" id="birthday" onChange={this.change} />
+          <label htmlFor="birthday">Date de naissance</label>
+          <input type="date" id="birthday" onChange={this.change} />
           <label htmlFor="address">Adresse</label>
           <input type="text" id="address" onChange={this.change} />
           <label htmlFor="email">e-mail</label>
