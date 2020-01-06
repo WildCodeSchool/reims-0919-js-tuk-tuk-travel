@@ -41,7 +41,7 @@ class UserConnexion extends Component {
         <form onSubmit={this.submitForm}>
           <div className="form-data">
               <label htmlFor="email">E-mail </label>
-              <input
+              <input className="input-user_connexion"
                 type="email"
                 id="email"
                 name="email"
@@ -50,7 +50,7 @@ class UserConnexion extends Component {
             </div>
             <div className="form-data">
               <label htmlFor="password">Mot de passe </label>
-              <input
+              <input className="input-user_connexion"
                 type="password"
                 id="password"
                 name="password"
@@ -58,8 +58,8 @@ class UserConnexion extends Component {
                 value={this.state.password}
               />
             </div>
-            <div className="form-data">
-              <input type="submit" value="Envoyer" />
+            <div className="submit-button">
+              <input type="submit" value="Connexion" />
             </div>
         </form>
       </div>
