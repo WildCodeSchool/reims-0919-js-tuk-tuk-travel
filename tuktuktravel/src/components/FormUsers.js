@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import UploadFile from './UploadFile'
 import '../App.css'
 
 class FormUsers extends Component {
@@ -59,6 +60,7 @@ class FormUsers extends Component {
           <input type="text" id="description" onChange={this.change} />
           <button>Envoyer</button>
         </form>
+        <UploadFile />
       </div>
     );
   }
