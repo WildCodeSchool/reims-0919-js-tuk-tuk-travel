@@ -67,12 +67,22 @@
 
 /* --------------- UserConnexion --------------- */
 
-.connexion-form{
+.user_connexion{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-top: 10em;
 }
 
-.input-form-connexion{
+.submit-button{
+  margin-top: 1.7em;
+}
+
+.form-data{
+  margin-top: 0.7em;
+}
+
+/* .input-form-connexion{
   align-items: flex-end;
 }
 
@@ -82,7 +92,7 @@
 
 .connexion-form .send-button{
   align-items: center;
-}
+} */
 
 /* --------------- CSS Home --------------- */
 .input-file {

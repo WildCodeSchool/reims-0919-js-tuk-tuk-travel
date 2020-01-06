@@ -18,6 +18,8 @@ const Home = () => {
 
         <Link to="/userconnexion">Connection</Link>
 
+        <Link to="/travelform">Créer un voyage</Link>
+
       </div>
 
     </div>
