@@ -20,7 +20,7 @@
   color: #09d3ac;
 }
 
-/*css TravelCard*/
+/* --------------- CSS TravelCard --------------- */
 
 .travel-cards {
   font-family: "Roboto";
@@ -47,7 +47,7 @@
 
 }
 
-/*CSS ADD USER ADD TRAVEL*/
+/*--------------- CSS ADD USER ADD TRAVEL --------------- */
 .add-travel, .add-user {
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@
   margin-top: 100px;
 }
 
-/*CSS UPLOAD FILE*/
+/* --------------- CSS UPLOAD FILE --------------- */
 .label-file {
     cursor: pointer;
     color: #00b1ca;
@@ -64,28 +64,25 @@
 .label-file:hover {
     color: #25a5c4;
 }
-/*CSS Home*/
 
-.input-file {
-    display: none;
-}
-#lastname ,#password{
-  font-family: 'Font Awesome\ 5 Free','Roboto';
-  font-weight: 900;
-  content: '\f30c';
-}
-.upload-file {
+/* --------------- UserConnexion --------------- */
+
+.user_connexion{
   display: flex;
   flex-direction: column;
-}
-/* UserConnexion */
-
-.connexion-form{
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin-top: 10em;
 }
 
-.input-form-connexion{
+.submit-button{
+  margin-top: 1.7em;
+}
+
+.form-data{
+  margin-top: 0.7em;
+}
+
+/* .input-form-connexion{
   align-items: flex-end;
 }
 
@@ -95,9 +92,23 @@
 
 .connexion-form .send-button{
   align-items: center;
+} */
+
+/* --------------- CSS Home --------------- */
+.input-file {
+  display: none;
 }
 
-/*CSS Home*/
+#lastname ,#password{
+font-family: 'Font Awesome\ 5 Free','Roboto';
+font-weight: 900;
+content: '\f30c';
+}
+
+.upload-file {
+display: flex;
+flex-direction: column;
+}
 
 .firstpage{
   background: white;
@@ -109,8 +120,7 @@
 .buttons{
   display: flex;
   flex-direction: column;
-  width: 100%;
-  
+  width: 100%; 
 }
 
 .buttons button{
@@ -137,7 +147,7 @@
   cursor: pointer;
 }
 
-/*CSS Nav*/
+/* --------------- CSS Nav --------------- */
 
 .Nav {
   display: flex;
