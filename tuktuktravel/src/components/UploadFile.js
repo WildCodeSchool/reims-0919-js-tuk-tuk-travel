@@ -22,7 +22,7 @@ class UploadFile extends React.Component {
     this.setState({file:e.target.files[0]})
   }
   fileUpload(file){
-    const url = 'http://localhost:8000/uploaddufichier';
+    const url = 'http://localhost:8000/uploaddufichier'
     const formData = new FormData();
     formData.append('file',file)
     const config = {
@@ -37,7 +37,7 @@ class UploadFile extends React.Component {
     return (
       <form onSubmit={this.onFormSubmit}>
         <p>Ajoutez votre avatar</p>
-        <input type="file" onChange={this.onChange} />
+        <input type="file" name='file' onChange={this.onChange} />
         <button type="submit">Upload</button>
       </form>
    )
