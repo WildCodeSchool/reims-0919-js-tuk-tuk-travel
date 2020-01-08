@@ -58,7 +58,7 @@ class FormUsers extends Component {
           <input type="text" id="phone_number" onChange={this.change} />
           <label htmlFor="description">Description</label>
           <input type="text" id="description" onChange={this.change} />
-          <button>Envoyer</button>
+          <button className='send-form-users'>Envoyer</button>
         </form>
         <UploadFile />
       </div>

@@ -36,7 +36,7 @@ class UserConnexion extends Component {
   render() {
     return (
       <div className="user_connexion">
-        <h1>Connectes-toi !:)</h1>
+        <h1>Connecte - toi  ! :)</h1>
 
         <form onSubmit={this.submitForm}>
           <div className="form-data">
@@ -56,6 +56,7 @@ class UserConnexion extends Component {
                 name="password"
                 onChange={this.onChange}
                 value={this.state.password}
+                maxlength="13" size="13"
               />
             </div>
             <div className="submit-button">
