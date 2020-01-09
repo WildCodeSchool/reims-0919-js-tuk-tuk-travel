@@ -128,6 +128,8 @@
 .add-user > label{
   font-family: 'Roboto', sans-serif;
 }
+
+
 /* --------------------------------------------------------------------------- TRAVEL FORM --------------------------------------------------------------------------------- */
 
 .add-travel {
@@ -138,11 +140,11 @@
 
 }
 
-.title-travel-form{
+.title-travel-form {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-top: 2em;
+  margin-top: 1.5em;
   margin-left: 0.5em;
   font-size: 2em;
   font-family: 'Bebas Neue', cursive;
@@ -150,18 +152,31 @@
 }
 
 .input-add-travel {
-  border-radius:6px;
+  border-radius:7px;
   background-color: rgb(235, 229, 229);
-  border: 0;
+  border: none;
+  width: 15em;
+  height: 2.5em;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
 
 .input-add-travel:focus {
-  background: #eaeaea;
+  background: #bebebe;
 
 }
 
+.add-tuktuk{
+  border:none;
+  padding: 0.7em 2em 0.7em 2em;
+  border-radius:12px;
+  margin: 2em 1em 0em 1em;
+  background: rgb(0, 145, 255);
+  color:#fff;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
 
