@@ -11,7 +11,8 @@ class FormUsers extends Component {
       firstname: '',
       password: '',
       birthday: '',
-      address: '',
+      country: '',
+      city: '',
       email: '',
       phone_number: '',
       description: ''
@@ -50,8 +51,10 @@ class FormUsers extends Component {
           <input type="text" id="password" onChange={this.change} />
           <label htmlFor="birthday">Date de naissance</label>
           <input type="date" id="birthday" onChange={this.change} />
-          <label htmlFor="address">Adresse</label>
-          <input type="text" id="address" onChange={this.change} />
+          <label htmlFor="country">Pays</label>
+          <input type="text" id="country" onChange={this.change} />
+          <label htmlFor="city">Ville</label>
+          <input type="text" id="city" onChange={this.change} />
           <label htmlFor="email">e-mail</label>
           <input type="text" id="email" onChange={this.change} />
           <label htmlFor="phone_number">Numéro de téléphone</label>
