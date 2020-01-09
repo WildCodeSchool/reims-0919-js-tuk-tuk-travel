@@ -2,7 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 
+
 /* ------------------------------------------------------------------------~~~~ ALL APP ~~~~~----------------------------------------------------------------------------- */
+
 
 .App {
   text-align: center;
@@ -24,7 +26,9 @@
 }
 
 
+
 /* ------------------------------------------------------------------------------- HOME ------------------------------------------------------------------------------------- */
+
 
 .firstpage{
   background: white;
@@ -41,6 +45,7 @@
   display: flex;
   flex-direction: column;
   width: 100%; 
+  font-size: 1.5em;
 }
 
 .Nav .tuk-tuk-home, .fa-home {
@@ -54,7 +59,7 @@
 
 .home-link a{
   border:none;
-  padding: 1.7em 0 1.7em 0;
+  padding: 1em 0 1em 0;
   border-radius:12px;
   margin: 1em 1em 0em 1em;
   background: rgb(0, 145, 255);
@@ -67,7 +72,9 @@
 }
 
 
+
 /* --------------------------------------------------------------------------- TRAVELCARDS --------------------------------------------------------------------------------- */
+
 
 .travel-cards {
   font-family: "Roboto";
@@ -97,6 +104,7 @@
 
 
 /* --------------------------------------------------------------------------- FORM USER ------------------------------------------------------------------------------------ */
+
 
 .title-form-user{
   font-family: 'Bebas Neue', cursive;
@@ -140,7 +148,10 @@
   margin-top: 0.5em;
 }
 
+
+
 /* --------------------------------------------------------------------------- TRAVEL FORM --------------------------------------------------------------------------------- */
+
 
 .add-travel {
   display: flex;
@@ -162,6 +173,7 @@
 }
 
 .input-add-travel {
+  font-family: 'Roboto', sans-serif;
   border-radius:7px;
   background-color: rgb(235, 229, 229);
   border: none;
@@ -188,17 +200,11 @@
   font-size: 1em;
 }
 
-/* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
-/* 
-.label-file {
-    cursor: pointer;
-    color: #00b1ca;
-    font-weight: bold;
-}
 
-.label-file:hover {
-    color: #25a5c4;
-} */
+
+/* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
+
+
 .upload-avatar{
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
@@ -221,30 +227,44 @@
   margin-bottom: 0.3em;
 }
 
+
+
 /* -------------------------------------------------------------------------- USER CONNEXION ------------------------------------------------------------------------------ */
+
+
+.title-user-connexion{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2em;
+  text-align: left;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-bottom: 0.3em;
+}
+
+#lastname ,#password {
+  font-family: 'Font Awesome\ 5 Free','Roboto';
+  font-weight: 900;
+  content: '\f30c';
+}
 
 .user_connexion{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-top: 10em;
+  align-items: center;
+  margin-top: 5em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
 }
 
-
-#lastname ,#password{
-  font-family: 'Font Awesome\ 5 Free','Roboto';
-  font-weight: 900;
-  content: '\f30c';
-  }
-
-.upload-file {
-  display: flex;
-  flex-direction: column;
-  }
-      
-
-.submit-button{
-  margin-top: 1.7em;
+.user_connexion > input {
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 18em;
+  height: 2.5em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  font-size: 0.7em;
 }
 
 .submit-button input{
@@ -256,18 +276,3 @@
   color:#fff;
   text-decoration: none;
 }
-
-.form-data{
-  margin-top: 0.7em;
-}
-
-
-
-/* --------------------------------------------------------------------------- FORM USERS --------------------------------------------------------------------------------- */
-
-.send-form-users {
-  margin-top: 1em;
-}
-
-
-
