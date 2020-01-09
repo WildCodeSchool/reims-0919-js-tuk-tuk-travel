@@ -41,7 +41,8 @@ class FormUsers extends Component {
 
   render(){
     return(
-      <div >
+      <div className='form-users'>
+        <div className="title-form-user">INFOS PERSONNELLES</div>
         <form className='add-user' onSubmit={this.submit} >
           <label htmlFor="lastname">Nom</label>
           <input type="text" id="lastname" onChange={this.change} />
@@ -55,7 +56,7 @@ class FormUsers extends Component {
           <input type="text" id="country" onChange={this.change} />
           <label htmlFor="city">Ville</label>
           <input type="text" id="city" onChange={this.change} />
-          <label htmlFor="email">e-mail</label>
+          <label htmlFor="email">E-mail</label>
           <input type="text" id="email" onChange={this.change} />
           <label htmlFor="phone_number">Numéro de téléphone</label>
           <input type="text" id="phone_number" onChange={this.change} />

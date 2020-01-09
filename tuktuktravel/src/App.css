@@ -26,21 +26,6 @@
 
 /* ------------------------------------------------------------------------------- HOME ------------------------------------------------------------------------------------- */
 
-.input-file {
-  display: none;
-}
-
-#lastname ,#password{
-font-family: 'Font Awesome\ 5 Free','Roboto';
-font-weight: 900;
-content: '\f30c';
-}
-
-.upload-file {
-display: flex;
-flex-direction: column;
-}
-
 .firstpage{
   background: white;
   display: flex;
@@ -68,13 +53,13 @@ flex-direction: column;
 
 
 .home-link a{
-    border:none;
-    padding: 1.7em 0 1.7em 0;
-    border-radius:12px;
-    margin: 1em 1em 0em 1em;
-    background: rgb(0, 145, 255);
-    color:#fff;
-    text-decoration: none;
+  border:none;
+  padding: 1.7em 0 1.7em 0;
+  border-radius:12px;
+  margin: 1em 1em 0em 1em;
+  background: rgb(0, 145, 255);
+  color:#fff;
+  text-decoration: none;
 }
 
 .home-link a:hover{
@@ -113,13 +98,36 @@ flex-direction: column;
 
 /* --------------------------------------------------------------------------- FORM USER ------------------------------------------------------------------------------------ */
 
+.title-form-user{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2em;
+  display: flex;
+  margin-top: 0.4em;
+  margin-left: 0.3em;
+  
+}
+
 .add-user {
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 1em;
 }
 
+.send-form-users{
+  border:none;
+  padding: 1em 2em 1em 2em;
+  border-radius:12px;
+  margin: 1em 1em 0em 1em;
+  background: rgb(0, 145, 255);
+  color:#fff;
+  text-decoration: none;
+}
+
+.add-user > label{
+  font-family: 'Roboto', sans-serif;
+}
 /* --------------------------------------------------------------------------- TRAVEL FORM --------------------------------------------------------------------------------- */
 
 .add-travel {
@@ -176,6 +184,19 @@ flex-direction: column;
   justify-content: center;
   margin-top: 10em;
 }
+
+
+#lastname ,#password{
+  font-family: 'Font Awesome\ 5 Free','Roboto';
+  font-weight: 900;
+  content: '\f30c';
+  }
+
+.upload-file {
+  display: flex;
+  flex-direction: column;
+  }
+      
 
 .submit-button{
   margin-top: 1.7em;
