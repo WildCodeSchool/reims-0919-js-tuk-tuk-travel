@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
-
-
-
+/* @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap'); */
+/* @font-face {
+  font-family: "Roboto";
+  src: url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+ }
+ @font-face {
+  font-family: "Bebas Neue";
+  src: url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+ } */
+ @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 
 /* ------------------------------------------------------------------------~~~~ ALL APP ~~~~~----------------------------------------------------------------------------- */
 
@@ -56,15 +62,48 @@
 
 
 
-/* --------------------------------------------------------------------- ADD USER & ADD TRAVEL ----------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------- FORM USER ------------------------------------------------------------------------------------ */
 
-.add-travel, .add-user {
+.add-user {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
 }
 
+/* --------------------------------------------------------------------------- TRAVEL FORM --------------------------------------------------------------------------------- */
+
+.add-travel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+
+}
+
+.title-travel-form{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 2em;
+  margin-left: 0.5em;
+  font-size: 2em;
+  font-family: 'Bebas Neue', cursive;
+
+}
+
+.input-add-travel {
+  border-radius:6px;
+  background-color: rgb(235, 229, 229);
+  border: 0;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.input-add-travel:focus {
+  background: #eaeaea;
+
+}
 
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
@@ -80,8 +119,7 @@
 }
 
 
-
-/* --------------------------------------------------------------------------- USER CONNEXION ------------------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------- USER CONNEXION ------------------------------------------------------------------------------ */
 
 .user_connexion{
   display: flex;
