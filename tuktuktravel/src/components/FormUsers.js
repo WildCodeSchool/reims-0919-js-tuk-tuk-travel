@@ -48,7 +48,7 @@ class FormUsers extends Component {
           <label htmlFor="firstname">Prénom</label>
           <input type="text" id="firstname" onChange={this.change} />
           <label htmlFor="password">Mot de passe</label>
-          <input type="text" id="password" onChange={this.change} />
+          <input type="password" id="password" onChange={this.change} />
           <label htmlFor="birthday">Date de naissance</label>
           <input type="date" id="birthday" onChange={this.change} />
           <label htmlFor="country">Pays</label>
