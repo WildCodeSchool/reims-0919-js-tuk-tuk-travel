@@ -41,7 +41,7 @@ app.get('/api/users', (req, res) => {
 app.post('/api/users', (req, res) => {
   const formData = req.body
   console.log(req.body)
-    connection.query('INSERT INTO users (lastname, firstname, password, birthday, country, city, email, phone_number, description) VALUES (?,?,?,?,?,?,?,?)', [formData.lastname, formData.firstname, formData.password, formData.birthday, formData.address, formData.email, formData.phone_number, formData.description], (err, results) => {
+    connection.query('INSERT INTO users (lastname, firstname, password, birthday, country, city, email, phone_number, description) VALUES (?,?,?,?,?,?,?,?,?)', [formData.lastname, formData.firstname, formData.password, formData.birthday, formData.country, formData.city, formData.email, formData.phone_number, formData.description], (err, results) => {
     if (err) {
       console.log(err);
       res.status(500).send("Erreur lors de la sauvegarde d'un utilisateur");
