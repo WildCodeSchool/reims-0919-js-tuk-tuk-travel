@@ -14,11 +14,11 @@ const Home = () => {
 
       <div className='buttons'>
 
-        <Link to="/formusers">S'inscrire</Link>
+        <Link to="/formusers" className='enter-link'>S'inscrire</Link>
 
-        <Link to="/userconnexion">Connection</Link>
+        <Link to="/userconnexion">Se connecter</Link>
 
-        <Link to="/travelform">Créer un voyage</Link>
+        {/* <Link to="/travelform">Créer un voyage</Link> */}
 
       </div>
 

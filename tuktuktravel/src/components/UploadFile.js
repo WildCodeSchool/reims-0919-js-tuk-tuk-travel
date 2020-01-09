@@ -37,7 +37,7 @@ class UploadFile extends React.Component {
     return (
       <form onSubmit={this.onFormSubmit}>
         <p>Ajoutez votre avatar</p>
-        <input type="file" name='file' onChange={this.onChange} />
+        <input type="file" name='file' className='avatar' onChange={this.onChange} />
         <button type="submit">Upload</button>
       </form>
    )
