@@ -23,7 +23,7 @@ class TravelCards extends Component {
     return (
       <div className='travel-cards'>
         <h3>Voyages</h3>
-        <img alt ='New York' style={{width:'100%',textAlign:'center'}} src ='http://img.over-blog-kiwi.com/0/26/98/15/20161012/ob_dc8aae_ny-2014.jpg'></img> 
+        <img alt ='New York' style={{width:'100%',textAlign:'center',borderRadius: '20px',height: '45vh'}} src ='http://img.over-blog-kiwi.com/0/26/98/15/20161012/ob_dc8aae_ny-2014.jpg'></img> 
           {this.state.travels.map(res =>{
             return <div key={res.travelID} className='liste-travel' >
                 <ul>
