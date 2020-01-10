@@ -11,35 +11,35 @@ import '../App.css'
 const NavFooter = () => {
   return(
     <div className='footer'>
-      <Link className='lien' to="/">
-        <figure className='logoAccueil'>
-          <img src={logoAccueil} alt='logo accueil'/>
+      <Link className='link-footer' to="/">
+        <figure className='logos-footer'>
+          <img className='img-footer' src={logoAccueil} alt='logo accueil'/>
         </figure>
-        <p>Accueil</p>
+        <p className="title_footer">Accueil</p>
       </Link>
-      <Link className='lien' to="/TravelCards">
-        <figure className='logoExplorer'>
-          <img src={logoExplorer} alt='logo explorer'/>
+      <Link className='link-footer' to="/TravelCards">
+        <figure className='logos-footer'>
+          <img className='img-footer' src={logoExplorer} alt='logo explorer'/>
         </figure>
-        <p>Voyages</p>
+        <p className="title_footer">Voyages</p>
       </Link>
-      <Link className='lien' to="/TravelForm">
-        <figure className='logoProposer'>
-          <img src={logoProposer} alt='logo proposer'/>
+      <Link className='link-footer' to="/TravelForm">
+        <figure className='logos-purpose'>
+          <img className='img-footer-purpose' src={logoProposer} alt='logo proposer'/>
         </figure>
-        <p>Proposer un voyage</p>
+        <p className="title_footer">Proposer un voyage</p>
       </Link>
       <div className='lien'>
-        <figure className='logoVoyages'>
-          <img src={logoVoyages} alt='logo voyages'/>
+        <figure className='logos-footer'>
+          <img className='img-footer' src={logoVoyages} alt='logo voyages'/>
         </figure>
-        <p>Mes voyages</p>
+        <p className="title_footer">Mes voyages</p>
       </div>
       <div className='lien'>
-        <figure className='logoparametre'>
-          <img src={logoParametre} alt='logo parametres'/>
+        <figure className='logos-footer'>
+          <img className='img-footer' src={logoParametre} alt='logo parametres'/>
         </figure>
-        <p>Paramètres</p>
+        <p className="title_footer">Paramètres</p>
       </div>
     </div>
   )  
