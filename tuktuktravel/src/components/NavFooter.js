@@ -11,31 +11,31 @@ import '../App.css'
 const NavFooter = () => {
   return(
     <div className='footer'>
-      <Link classname='lien' to="/">
+      <Link className='lien' to="/">
         <figure className='logoAccueil'>
           <img src={logoAccueil} alt='logo accueil'/>
         </figure>
         <p>Accueil</p>
       </Link>
-      <Link classname='lien' to="/TravelCards">
+      <Link className='lien' to="/TravelCards">
         <figure className='logoExplorer'>
           <img src={logoExplorer} alt='logo explorer'/>
         </figure>
         <p>Voyages</p>
       </Link>
-      <Link classname='lien' to="/TravelForm">
+      <Link className='lien' to="/TravelForm">
         <figure className='logoProposer'>
           <img src={logoProposer} alt='logo proposer'/>
         </figure>
         <p>Proposer un voyage</p>
       </Link>
-      <div classname='lien'>
+      <div className='lien'>
         <figure className='logoVoyages'>
           <img src={logoVoyages} alt='logo voyages'/>
         </figure>
         <p>Mes voyages</p>
       </div>
-      <div classname='lien'>
+      <div className='lien'>
         <figure className='logoparametre'>
           <img src={logoParametre} alt='logo parametres'/>
         </figure>
