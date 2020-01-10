@@ -48,7 +48,7 @@ class TravelForm extends Component {
           <label htmlFor='destination'>Destination: </label>
             <input className = 'input-add-travel' id='destination' type='text' name='destination' placeholder='Votre destination..'
             value={this.state.destination} onChange={this.handleInputChange}
-            maxlength="20" size="20"/>
+            maxLength="20" size="20"/>
           
           <label htmlFor='start_date'>Date de départ: </label>
             <input className = 'input-add-travel' id='start_date' type='date' name='start_date' 
@@ -62,7 +62,7 @@ class TravelForm extends Component {
             <label htmlFor='number_of_travelers_max'>Nombre de voyageurs: </label>
             <input className = 'input-add-travel' id='number_of_travelers_max' type='text' name='number_of_travelers_max' placeholder='Voyageurs'
             value={this.state.number_of_travelers_max} onChange={this.handleInputChange}
-            maxlength="6" size="6"/>
+            maxLength="6" size="6"/>
 
           <label htmlFor='description'>Description: </label>
             <textarea  className = 'input-add-travel' name ='description' placeholder = 'Projets, activités durant le voyage..'
