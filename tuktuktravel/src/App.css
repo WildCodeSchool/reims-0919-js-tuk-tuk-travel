@@ -279,18 +279,18 @@
 
 /* ------------------------------------------------------------------------------ FOOTER ---------------------------------------------------------------------------------- */
 
-.footer{
+.footer {
  display: flex;
  flex-direction: row;
  justify-content: space-evenly;
  width: 100%;
- 
 }
  
-p{
+p {
   font-size: 0.8em;
 }  
-a{
+
+a {
   color: black;
   text-decoration: none;
 }
