@@ -221,5 +221,21 @@ flex-direction: column;
   margin-top: 1em;
 }
 
+/*FOOTER*/
 
-
+.footer{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-evenly;
+ width: 100%;
+ 
+}
+ 
+p{
+  font-size: 0.8em;
+}  
+a{
+  color: black;
+  text-decoration: none;
+  
+}
