@@ -7,6 +7,7 @@ import TravelForm from './components/TravelForm'
 import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav'
+import NavFooter from './components/NavFooter';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/travelcards" component={TravelCards}/>
         <Route exact path="/travelform" component={TravelForm}/>
       </Switch>
+      <NavFooter />
 
     </div>
   );
