@@ -65,10 +65,10 @@ class TravelForm extends Component {
             maxlength="6" size="6"/>
 
           <label htmlFor='description'>Description: </label>
-            <textarea className = 'input-add-travel' name ='description' placeholder = 'Projets, activités durant le voyage..'
+            <textarea  className = 'input-add-travel' name ='description' placeholder = 'Projets, activités durant le voyage..'
             rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>
           
-          <input type='submit' value='Ajouter' className='button'/>
+          <input type='submit' value='Ajouter' className="add-tuktuk" />
           
         </form>
       </div>
