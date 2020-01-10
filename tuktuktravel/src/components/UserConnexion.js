@@ -45,7 +45,7 @@ class UserConnexion extends Component {
              
                 <label htmlFor="password">Mot de passe </label>
                 <input className="input-user_connexion" type="password" id="password" name="password"
-                  onChange={this.onChange} value={this.state.password} maxlength="13" size="13"/>
+                  onChange={this.onChange} value={this.state.password} maxLength="13" size="13"/>
               
               <div className="submit-button">
                 <input type="submit" value="Connexion" />
