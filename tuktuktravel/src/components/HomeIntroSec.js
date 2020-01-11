@@ -15,7 +15,7 @@ class HomeIntroSec extends Component {
           TROUVE TON  VOYAGE IDEAL
         </div>
         <div className='text-intro'> 
-          Le monde est plus ouvert que jamais, autant en profiter
+          Dis nous où tu veux aller, comment et les activités réalisées sur place
         </div>
         <div className='intro-link'>
           <Link to="/introthird">Suivant</Link>

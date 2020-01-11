@@ -11,11 +11,11 @@ class HomeIntroThird extends Component {
         <figure className='figure-img-third-page'>
           <img className='img-third-page' src={imgThirdPage} alt='third page'/>
         </figure>
-        <div className='title-intro'> 
-          TROUVE TON  VOYAGE IDEAL
+        <div className='title-intro-third'> 
+          ORGANISE LE FACILEMENT
         </div>
         <div className='text-intro'> 
-          Le monde est plus ouvert que jamais, autant en profiter
+          Echange directement avec tes co-voyageurs dans notre messagerie
         </div>
         <div className='intro-link'>
           <Link to="/home">Suivant</Link>
