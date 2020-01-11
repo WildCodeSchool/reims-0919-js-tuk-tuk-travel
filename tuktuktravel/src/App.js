@@ -7,11 +7,17 @@ import TravelForm from './components/TravelForm'
 import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
 import NavFooter from './components/NavFooter';
+import HomeIntroFirst from './components/HomeIntroFirst';
+import HomeIntroSec from './components/HomeIntroSec';
+import HomeIntroThird from './components/HomeIntroThird';
 
 function App() {
   return (
     <div className="App">
       <Switch>
+        <Route exact path="/introfirst" component={HomeIntroFirst}/>
+        <Route exact path="/introsecond" component={HomeIntroSec}/>
+        <Route exact path="/introthird" component={HomeIntroThird}/>
         <Route exact path="/" component={Home}/>
         <Route path="/userconnexion" component={UserConnexion}/>
         <Route path="/formusers"component={FormUsers}/>
