@@ -7,16 +7,22 @@ class HomeIntroThird extends Component {
 
   render() {
     return (
-      <div className='home-intro-third'>
-        <figure>
-          <img className='img-third-page' src={imgThirdPage} alt='image third page'/>
+      <div className='home-intro'>
+        <figure className='figure-img-third-page'>
+          <img className='img-third-page' src={imgThirdPage} alt='third page'/>
         </figure>
-      
-        <Link to="/">Suivant</Link>
+        <div className='title-intro'> 
+          TROUVE TON  VOYAGE IDEAL
+        </div>
+        <div className='text-intro'> 
+          Le monde est plus ouvert que jamais, autant en profiter
+        </div>
+        <div className='intro-link'>
+          <Link to="/home">Suivant</Link>
+        </div>
       </div>
-
     )
-  }
-}
+    }
+    }
 
 export default HomeIntroThird;

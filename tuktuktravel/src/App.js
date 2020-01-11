@@ -15,10 +15,10 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/introfirst" component={HomeIntroFirst}/>
+        <Route exact path="/" component={HomeIntroFirst}/>
         <Route exact path="/introsecond" component={HomeIntroSec}/>
         <Route exact path="/introthird" component={HomeIntroThird}/>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/home" component={Home}/>
         <Route path="/userconnexion" component={UserConnexion}/>
         <Route path="/formusers"component={FormUsers}/>
         <Route exact path="/travelcards" component={TravelCards}/>

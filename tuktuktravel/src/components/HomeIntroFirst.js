@@ -7,17 +7,19 @@ class HomeIntroFirst extends Component {
 
   render() {
     return (
-      <div className='home-intro-first'>
-        <figure>
-          <img className='img-first-page' src={imgFirstPage} alt='image first page'/>
+      <div className='home-intro'>
+        <figure className='figure-img-first-page'>
+          <img className='img-first-page' src={imgFirstPage} alt='first page'/>
         </figure>
-        <div className='title-intro-first'> 
+        <div className='title-intro'> 
           EXPLORE LE MONDE
         </div>
-        <div className='text-intro-first'> 
+        <div className='text-intro'> 
           Le monde est plus ouvert que jamais, autant en profiter
         </div>
-        <Link to="/introsecond">Suivant</Link>
+        <div className='intro-link'>
+        <Link  to="/introsecond">Suivant</Link>
+        </div>
       </div>
     )
   }

@@ -7,12 +7,19 @@ class HomeIntroSec extends Component {
 
   render() {
     return (
-      <div className='home-intro-sec'>
-        <figure>
-          <img className='img-sec-page' src={imgSecPage} alt='image second page'/>
+      <div className='home-intro'>
+        <figure className='figure-img-sec-page'>
+          <img className='img-sec-page' src={imgSecPage} alt='second page'/>
         </figure>
-
-        <Link to="/introthird">Suivant</Link>
+        <div className='title-intro'> 
+          TROUVE TON  VOYAGE IDEAL
+        </div>
+        <div className='text-intro'> 
+          Le monde est plus ouvert que jamais, autant en profiter
+        </div>
+        <div className='intro-link'>
+          <Link to="/introthird">Suivant</Link>
+        </div>
       </div>
     )
   }
