@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Moment from 'react-moment';
 import '../App.css'
+import NavFooter from "./NavFooter";
 
 class TravelCards extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class TravelCards extends Component {
                   <li>Description: {res.description}</li>
                 </ul>
               </div>})}
+              <NavFooter/>
       </div>
     )
   }

@@ -1,15 +1,15 @@
 import React from 'react';
-import TravelCards from './components/TravelCards'
-import UserConnexion from './components/UserConnexion';
-import './App.css'
-import FormUsers from './components/FormUsers'
-import TravelForm from './components/TravelForm'
-import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
-import NavFooter from './components/NavFooter';
 import HomeIntroFirst from './components/HomeIntroFirst';
 import HomeIntroSec from './components/HomeIntroSec';
 import HomeIntroThird from './components/HomeIntroThird';
+import Home from './components/Home';
+import FormUsers from './components/FormUsers'
+import UserConnexion from './components/UserConnexion';
+import TravelForm from './components/TravelForm'
+import TravelCards from './components/TravelCards'
+import NavFooter from './components/NavFooter';
+import './App.css'
 
 function App() {
   return (
@@ -24,8 +24,6 @@ function App() {
         <Route exact path="/travelcards" component={TravelCards}/>
         <Route exact path="/travelform" component={TravelForm}/>
       </Switch>
-      <NavFooter />
-
     </div>
   );
 }

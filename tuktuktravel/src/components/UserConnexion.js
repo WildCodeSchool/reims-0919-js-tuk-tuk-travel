@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import axios from 'axios'
 import '../App.css'
+import NavFooter from "./NavFooter";
 
 class UserConnexion extends Component {
   constructor(props) {
@@ -51,6 +52,7 @@ class UserConnexion extends Component {
                 <input type="submit" value="Connexion" />
               </div>
           </form>
+          <NavFooter/>
       </div>
     )
   }
