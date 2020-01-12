@@ -24,7 +24,7 @@ class UserConnexion extends Component {
     const {...userLogin} = this.state
       console.log({userLogin})
       
-      axios.post('http://localhost:8000/api/travels/',userLogin)
+      axios.post('http://localhost:8000/api/login',userLogin)
       .then(res => {
         alert('Connecté!');
       }).catch(event => {
