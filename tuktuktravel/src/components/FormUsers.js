@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import UploadFile from './UploadFile'
 import '../App.css'
+import CountryList from './CountryList';
 
 class FormUsers extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class FormUsers extends Component {
 
 
   render(){
+    console.log(this.state)
     return(
       <div className='form-users'>
         <div className="title-form-user">INFOS PERSONNELLES</div>
@@ -52,8 +54,8 @@ class FormUsers extends Component {
           <input type="text" id="password" onChange={this.change} />
           <label htmlFor="birthday">Date de naissance</label>
           <input type="date" id="birthday" onChange={this.change} />
-          <label htmlFor="country">Pays</label>
-          <input type="text" id="country" onChange={this.change} />
+          <label htmlFor="countrys">Pays</label>
+          <CountryList country={this.state.country} change={this.change} id='countrys' />
           <label htmlFor="city">Ville</label>
           <input type="text" id="city" onChange={this.change} />
           <label htmlFor="email">E-mail</label>
