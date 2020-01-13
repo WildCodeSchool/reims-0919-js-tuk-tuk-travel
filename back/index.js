@@ -8,6 +8,7 @@ const cors = require('cors') // npm install cors
 const jwt = require('jsonwebtoken') // npm install jsonwebtoken
 const verifyToken = require('./verifyToken')
 const key = require('./key')
+const bcrypt = require('bcrypt') // npm install bcrypt
 const port = 8000;
 
 app.use(bodyParser.json());
@@ -39,8 +40,12 @@ app.get('/api/users', (req, res) => {
 
 //POST USERS
 app.post('/api/users', (req, res) => {
-  const formData = req.body
-  console.log(req.body)
+  const {lastname, firstname, password, birthday, country, city, email, phone_number, description}  = req.body
+  const hash = bcrypt.hashSync(password, 10, (err, hash) => {
+    return hash
+  });
+  formData = {lastname, firstname, password: hash, birthday, country, city, email, phone_number, description};
+  console.log(formData)
     connection.query('INSERT INTO users (lastname, firstname, password, birthday, country, city, email, phone_number, description) VALUES (?,?,?,?,?,?,?,?,?)', [formData.lastname, formData.firstname, formData.password, formData.birthday, formData.country, formData.city, formData.email, formData.phone_number, formData.description], (err, results) => {
     if (err) {
       console.log(err);
