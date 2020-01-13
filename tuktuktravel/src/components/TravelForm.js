@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Calendar from 'react-input-calendar'
 import axios from 'axios'
 import '../App.css'
+import NavFooter from "./NavFooter"
 
 
 
@@ -71,6 +72,7 @@ class TravelForm extends Component {
           <input type='submit' value='Ajouter' className="add-tuktuk" />
           
         </form>
+        <NavFooter/>
       </div>
 
     )

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import UploadFile from './UploadFile'
 import '../App.css'
+import NavFooter from './NavFooter';
 
 class FormUsers extends Component {
   constructor(props) {
@@ -65,6 +66,7 @@ class FormUsers extends Component {
           <button className='send-form-users'>Envoyer</button>
         </form>
         <UploadFile />
+        <NavFooter/>
       </div>
     );
   }

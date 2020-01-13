@@ -11,7 +11,7 @@ import '../App.css'
 const NavFooter = () => {
   return(
     <div className='footer'>
-      <Link className='link-footer' to="/">
+      <Link className='link-footer' to="/home">
         <figure className='logos-footer'>
           <img className='img-footer' src={logoAccueil} alt='logo accueil'/>
         </figure>
