@@ -41,7 +41,6 @@ class FormUsers extends Component {
 
 
   render(){
-    console.log(this.state)
     return(
       <div className='form-users'>
         <div className="title-form-user">INFOS PERSONNELLES</div>
