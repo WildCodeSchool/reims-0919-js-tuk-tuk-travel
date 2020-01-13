@@ -2,24 +2,13 @@ import React, { Component } from 'react';
 import '../App.css'
 
 class CountryList extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       country: '',
-    }
-  }
-  change = e => {
-    this.setState({
-      country: e.target.value
-    })
-  }
-
+ 
   render(){
-    console.log(this.state)
+    const{country}=this.props
     return(
       <div className="list-of-country">
-        <select className="countrys" onChange={this.change}>
+        <select className="countrys" onChange={this.props.change} id='country'>
+          <option value="">Sélectionnez un pays svp</option>
           <optgroup label="Europe">
             <option value="allemagne">Allemagne</option>
             <option value="albanie">Albanie</option>

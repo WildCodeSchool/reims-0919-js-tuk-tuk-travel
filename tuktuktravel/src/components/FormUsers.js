@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import UploadFile from './UploadFile'
 import '../App.css'
+import CountryList from './CountryList';
 import NavFooter from './NavFooter';
 
 class FormUsers extends Component {
@@ -53,8 +54,8 @@ class FormUsers extends Component {
           <input type="text" id="password" onChange={this.change} />
           <label htmlFor="birthday">Date de naissance</label>
           <input type="date" id="birthday" onChange={this.change} />
-          <label htmlFor="country">Pays</label>
-          <input type="text" id="country" onChange={this.change} />
+          <label htmlFor="countrys">Pays</label>
+          <CountryList country={this.state.country} change={this.change} id='countrys' />
           <label htmlFor="city">Ville</label>
           <input type="text" id="city" onChange={this.change} />
           <label htmlFor="email">E-mail</label>
