@@ -8,8 +8,9 @@ import FormUsers from './components/FormUsers'
 import UserConnexion from './components/UserConnexion';
 import TravelForm from './components/TravelForm'
 import TravelCards from './components/TravelCards'
-import NavFooter from './components/NavFooter';
+import Cgu from './components/Cgu'
 import './App.css'
+
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
         <Route exact path="/introsecond" component={HomeIntroSec}/>
         <Route exact path="/introthird" component={HomeIntroThird}/>
         <Route exact path="/home" component={Home}/>
-        <Route path="/userconnexion" component={UserConnexion}/>
         <Route path="/formusers"component={FormUsers}/>
+        <Route path="/cgu"component={Cgu}/>
+        <Route path="/userconnexion" component={UserConnexion}/>
         <Route exact path="/travelcards" component={TravelCards}/>
         <Route exact path="/travelform" component={TravelForm}/>
       </Switch>

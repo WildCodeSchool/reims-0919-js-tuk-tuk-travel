@@ -4,6 +4,7 @@ import UploadFile from './UploadFile'
 import '../App.css'
 import CountryList from './CountryList';
 import NavFooter from './NavFooter';
+import { Link } from 'react-router-dom';
 
 class FormUsers extends Component {
   constructor(props) {
@@ -64,9 +65,11 @@ class FormUsers extends Component {
           <input type="text" id="phone_number" onChange={this.change} />
           <label htmlFor="description">Description</label>
           <input type="text" id="description" onChange={this.change} />
+          <Link  to="/cgu">Conditions générales d'utilisation</Link>
           <button className='send-form-users'>Envoyer</button>
         </form>
         <UploadFile />
+        
         <NavFooter/>
       </div>
     );
