@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Calendar from 'react-input-calendar'
 import axios from 'axios'
 import '../App.css'
+import NavFooter from "./NavFooter"
 
 
 
@@ -42,29 +43,37 @@ class TravelForm extends Component {
   render() {
     console.log(this.state)
     return(
-      <form className = 'add-travel' onSubmit={this.handleSubmit}>
-        <label htmlFor='destination'>Destination: </label>
-          <input id='destination' type='text' name='destination' placeholder='Votre destination..'
-          value={this.state.destination} onChange={this.handleInputChange}/>
-        
-        <label htmlFor='start_date'>Date de départ: </label>
-          <input id='start_date' type='date' name='start_date' value={this.state.start_date} onChange={this.handleInputChange}></input>
-        
-        <label htmlFor='end_date'>Date de retour: </label>
-          <input type='date' id='end_date' name='end_date' date={this.state.current} value={this.state.end_date} onChange={this.handleInputChange}/>
+      <div className='travel-form'>
+        <div className='title-travel-form'>PROPOSER UN TUK-TUK</div>
+        <form className = 'add-travel' onSubmit={this.handleSubmit}>
+          <label htmlFor='destination'>Destination: </label>
+            <input className = 'input-add-travel' id='destination' type='text' name='destination' placeholder='Votre destination..'
+            value={this.state.destination} onChange={this.handleInputChange}
+            maxLength="20" size="20"/>
           
-          <label htmlFor='number_of_travelers_max'>Nombre de voyageurs: </label>
-          <input id='number_of_travelers_max' type='text' name='number_of_travelers_max' placeholder='Nombre de voyageurs..'
-          value={this.state.number_of_travelers_max} onChange={this.handleInputChange}/>
+          <label htmlFor='start_date'>Date de départ: </label>
+            <input className = 'input-add-travel' id='start_date' type='date' name='start_date' 
+            value={this.state.start_date} onChange={this.handleInputChange}
+            ></input>
+          
+          <label htmlFor='end_date'>Date de retour: </label>
+            <input className = 'input-add-travel' type='date' id='end_date' name='end_date' 
+            date={this.state.current} value={this.state.end_date} onChange={this.handleInputChange}/>
+            
+            <label htmlFor='number_of_travelers_max'>Nombre de voyageurs: </label>
+            <input className = 'input-add-travel' id='number_of_travelers_max' type='text' name='number_of_travelers_max' placeholder='Voyageurs'
+            value={this.state.number_of_travelers_max} onChange={this.handleInputChange}
+            maxLength="6" size="6"/>
 
-        <label htmlFor='description'>Description: </label>
-          <textarea name ='description' placeholder = 'Votre message..'
-          rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>
-        
-        <input type='submit' value='Ajouter' className='button'/>
-        
-      </form>
-
+          <label htmlFor='description'>Description: </label>
+            <textarea  className = 'input-add-travel' name ='description' placeholder = 'Projets, activités durant le voyage..'
+            rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>
+          
+          <input type='submit' value='Ajouter' className="add-tuktuk" />
+          
+        </form>
+        <NavFooter/>
+      </div>
 
     )
   }

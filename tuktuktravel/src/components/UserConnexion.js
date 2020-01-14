@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import axios from 'axios'
 import '../App.css'
+import NavFooter from "./NavFooter";
 
 class UserConnexion extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class UserConnexion extends Component {
     const {...userLogin} = this.state
       console.log({userLogin})
       
-      axios.post('http://localhost:8000/api/travels/',userLogin)
+      axios.post('http://localhost:8000/api/login',userLogin)
       .then(res => {
         alert('Connecté!');
       }).catch(event => {
@@ -35,36 +36,24 @@ class UserConnexion extends Component {
 
   render() {
     return (
-      <div className="user_connexion">
-        <h1>Connecte - toi  ! :)</h1>
-
-        <form onSubmit={this.submitForm}>
-          <div className="form-data">
-              <label htmlFor="email">E-mail </label>
-              <input className="input-user_connexion"
-                type="email"
-                id="email"
-                name="email"
-                onChange={this.onChange}
-                value={this.state.email}/>
-            </div>
-            <div className="form-data">
-              <label htmlFor="password">Mot de passe </label>
-              <input className="input-user_connexion"
-                type="password"
-                id="password"
-                name="password"
-                onChange={this.onChange}
-                value={this.state.password}
-                maxlength="13" size="13"
-              />
-            </div>
-            <div className="submit-button">
-              <input type="submit" value="Connexion" />
-            </div>
-        </form>
+      <div>
+      <div className="title-user-connexion">Connecte - toi  ! </div>
+          <form className="user_connexion" onSubmit={this.submitForm}>
+  
+                <label htmlFor="email">E-mail </label>
+                <input className="input-user_connexion" type="email" id="email" name="email"
+                  onChange={this.onChange} value={this.state.email}/>
+             
+                <label htmlFor="password">Mot de passe </label>
+                <input className="input-user_connexion" type="password" id="password" name="password"
+                  onChange={this.onChange} value={this.state.password} maxLength="13" size="13"/>
+              
+              <div className="submit-button">
+                <input type="submit" value="Connexion" />
+              </div>
+          </form>
+          <NavFooter/>
       </div>
-
     )
   }
 }

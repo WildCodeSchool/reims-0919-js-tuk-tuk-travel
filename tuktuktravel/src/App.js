@@ -1,25 +1,31 @@
 import React from 'react';
-import TravelCards from './components/TravelCards'
-import UserConnexion from './components/UserConnexion';
-import './App.css'
-import FormUsers from './components/FormUsers'
-import TravelForm from './components/TravelForm'
-import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
-import Nav from './components/Nav'
+import HomeIntroFirst from './components/HomeIntroFirst';
+import HomeIntroSec from './components/HomeIntroSec';
+import HomeIntroThird from './components/HomeIntroThird';
+import Home from './components/Home';
+import FormUsers from './components/FormUsers'
+import UserConnexion from './components/UserConnexion';
+import TravelForm from './components/TravelForm'
+import TravelCards from './components/TravelCards'
+import Cgu from './components/Cgu'
+import './App.css'
+
 
 function App() {
   return (
     <div className="App">
-      <Nav />
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/userconnexion" component={UserConnexion}/>
+        <Route exact path="/" component={HomeIntroFirst}/>
+        <Route exact path="/introsecond" component={HomeIntroSec}/>
+        <Route exact path="/introthird" component={HomeIntroThird}/>
+        <Route exact path="/home" component={Home}/>
         <Route path="/formusers"component={FormUsers}/>
+        <Route path="/cgu"component={Cgu}/>
+        <Route path="/userconnexion" component={UserConnexion}/>
         <Route exact path="/travelcards" component={TravelCards}/>
         <Route exact path="/travelform" component={TravelForm}/>
       </Switch>
-
     </div>
   );
 }

@@ -8,17 +8,15 @@ const Home = () => {
   return (
     <div className='firstpage'>
 
-      <figure>
+      <figure className="tuktuk-logo">
         <img src={myLogo} alt='logo'/>
       </figure>
 
-      <div className='buttons'>
+      <div className='home-link'>
 
-        <Link to="/formusers" className='enter-link'>S'inscrire</Link>
+        <Link to="/formusers" >S'inscrire</Link>
 
         <Link to="/userconnexion">Se connecter</Link>
-
-        {/* <Link to="/travelform">Créer un voyage</Link> */}
 
       </div>
 
