@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 
 
-/* ------------------------------------------------------------------------~~~~ ALL APP ~~~~~----------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------- ALL APP --------------------------------------------------------------------------------- */
 
 
 .App {
@@ -27,7 +27,7 @@
 
 
 
-/* ------------------------------------------------------------------------------ INTRO FIRST ---------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------ HOME INTRO ---------------------------------------------------------------------------------- */
 
 
 .home-intro{
@@ -36,6 +36,7 @@
   width: 100%; 
   align-items: center;
 }
+
 
 /* ----- first page ----- */
 
@@ -48,6 +49,7 @@
   margin-top: 4em;
 }
 
+
 /* ----- second page ----- */
 
 .figure-img-sec-page{
@@ -59,6 +61,7 @@
   width: 40%; 
   margin-top: 2em;
 }
+
 
 /* ----- third page ----- */
 
@@ -79,6 +82,7 @@
   width: 90%;
 }
 /*----------------*/
+
 
 .title-intro {
   font-family: 'Bebas Neue', cursive;
@@ -108,6 +112,8 @@
   text-decoration: none;
 }
 
+
+
 /* ------------------------------------------------------------------------------- HOME ------------------------------------------------------------------------------------- */
 
 
@@ -136,7 +142,6 @@
   margin-left: 0.5em;
   margin-top: 0.5em;
 }
-
 
 .home-link a{
   border:none;
@@ -181,7 +186,6 @@
 .liste-travel {
   box-shadow: 2px 5px 10px rgb(202, 202, 202);
   margin-bottom: 35px;
-
 }
 
 
@@ -240,7 +244,6 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2em;
-
 }
 
 .title-travel-form {
@@ -251,7 +254,6 @@
   margin-left: 0.5em;
   font-size: 2em;
   font-family: 'Bebas Neue', cursive;
-
 }
 
 .input-add-travel {
@@ -267,7 +269,6 @@
 
 .input-add-travel:focus {
   background: #bebebe;
-
 }
 
 .add-tuktuk{
@@ -359,7 +360,10 @@
   text-decoration: none;
 }
 
+
+
 /* ------------------------------------------------------------------------------ FOOTER ---------------------------------------------------------------------------------- */
+
 
 .footer {
  display: flex;
@@ -401,7 +405,9 @@
 }
 
 
+
 /* ------------------------------------------------------------------------------    CGU    ---------------------------------------------------------------------------------- */
+
 
 .back-arrow{
   width: 2em;
@@ -409,12 +415,40 @@
 
 .fig-back-arrow{
   margin: 0;
-  margin-top: 1em;
-  margin-left: 1em;
+  margin-left: 0.5em;
   text-align: left;
+  position: fixed;
 }
 
 .text-cgu {
   text-align: justify;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
+.add-user > a {
+  text-decoration: none; color: black; font-size: 0.7em;
+}
+
+.add-user > a:hover {
+  text-decoration: none; color: grey;
+}
+
+.title-cgu{
+  margin-top: 1em;
+}
+
+
+
+/* ----------------------------------------------------------------------------  COUNTRY LIST    ----------------------------------------------------------------------------- */
+
+
+.list-of-country > select {
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 18em;
+  height: 2.2em;
+  margin-bottom: 0.6em;
+  margin-top: 0.5em;
+}
