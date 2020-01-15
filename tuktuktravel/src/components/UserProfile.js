@@ -47,81 +47,100 @@ class UserProfile extends Component {
 
   render(){
     return(
-      <div className='form-users'>
+      <div className='profile-form-users'>
         <div className="title-form-user">PROFIL</div>
         
-          <form className='add-user' onSubmit={this.submit} >
-            <div className='modify-bloc'>
+          <form className='modify-user' onSubmit={this.submit} >
+            
               <label htmlFor="lastname">Nom</label>
-              <input type="text" id="lastname" onChange={this.change} />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
+              <div className='profile-input-img'>
+                <input type="text" id="lastname" onChange={this.change} />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
 
-            <div className='modify-bloc'>
+            
               <label htmlFor="firstname">Prénom</label>
-              <input type="text" id="firstname" onChange={this.change} />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
+              <div className='profile-input-img'>
+                <input type="text" id="firstname" onChange={this.change} />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
 
-            <div className='modify-bloc'>
+            
+              <label htmlFor="sex">Sexe</label>
+              <div className='profile-input-img'>
+                <select className="sex" id="sex" onChange={this.change} >
+                  <option value=""></option>
+                  <option value="homme">Homme</option>
+                  <option value="femme">Femme</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+            
               <label htmlFor="password">Mot de passe</label>
-              <input type="text" id="password" onChange={this.change} />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
-
-            <div className='modify-bloc'>
+              <div className='profile-input-img'>
+                <input type="text" id="password" onChange={this.change} />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
+            
               <label htmlFor="birthday">Date de naissance</label>
-              <input type="date" id="birthday" onChange={this.change} />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
-
-            <div className='modify-bloc'>
+              <div className='profile-input-img'>
+                <input type="date" id="birthday" onChange={this.change} />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
+            
               <label htmlFor="countrys">Pays</label>
-              <CountryList country={this.state.country} change={this.change} id='countrys' />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
+              <div className='profile-input-img'>
+                <CountryList country={this.state.country} change={this.change} id='countrys' />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
 
-            <div className='modify-bloc'>
+            
               <label htmlFor="city">Ville</label>
-              <input type="text" id="city" onChange={this.change} />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
+              <div className='profile-input-img'>
+                <input type="text" id="city" onChange={this.change} />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
 
-            <div className='modify-bloc'>
+            
               <label htmlFor="email">E-mail</label>
-              <input type="text" id="email" onChange={this.change} />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
+              <div className='profile-input-img'>
+                <input type="text" id="email" onChange={this.change} />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
 
-            <div className='modify-bloc'>
+            
               <label htmlFor="phone_number">Numéro de téléphone</label>
-              <input type="text" id="phone_number" onChange={this.change} />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
+              <div className='profile-input-img'>
+                <input type="text" id="phone_number" onChange={this.change} />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
 
-            <div className='modify-bloc'>
+            
               <label htmlFor="description">Description</label>
-              <input type="text" id="description" onChange={this.change} />
-              <figure className='logo-modify'>
-                <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-              </figure>
-            </div>
+              <div className='profile-input-img'>
+                <input type="text" id="description" onChange={this.change} />
+                <figure className='logo-modify'>
+                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
+                </figure>
+              </div>
+
 
             <button className='send-form-users'>Envoyer</button>
           

@@ -459,24 +459,8 @@
 
 /* ----------------------------------------------------------------------------  USER PROFILE    ----------------------------------------------------------------------------- */
 
-.logo-modify > img {
-  width: 1.5em;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
 
-
-.modify-bloc {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  /* background-color: violet; */
-  vertical-align: middle;
-
-}
-
-.modify-bloc > input {
+.profile-input-img > input {
   border-radius:7px;
   background-color: rgb(235, 229, 229);
   border: none;
@@ -486,7 +470,48 @@
   margin-top: 0.5em;
 }
 
-.logo-modify {
+.profile-input-img > select {
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 18em;
+  height: 2.2em;
+  margin-bottom: 0.6em;
+  margin-top: 0.5em;
+}
+
+.profile-input-img > img {
+  align-items: inherit;
+}
+
+.profile-input-img{
+  display: flex;
+  margin-top: 0.2em;
+}
+
+.logo-modify > img {
+  width: 1.5em;
   margin: 0;
   padding: 0;
 }
+
+.logo-modify {
+  text-align: right;
+}
+
+.modify-user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
+/* .modify-bloc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: violet;
+  vertical-align: middle;
+
+} */
+
