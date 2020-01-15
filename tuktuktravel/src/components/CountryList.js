@@ -8,7 +8,7 @@ class CountryList extends Component {
     return(
       <div className="list-of-country">
         <select className="countrys" onChange={this.props.change} id='country'>
-          <option value="">Sélectionnez un pays svp</option>
+          <option value="">Sélectionnez un pays</option>
           <optgroup label="Europe">
             <option value="allemagne">Allemagne</option>
             <option value="albanie">Albanie</option>
