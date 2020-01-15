@@ -454,3 +454,39 @@
   margin-bottom: 0.6em;
   margin-top: 0.5em;
 }
+
+
+
+/* ----------------------------------------------------------------------------  USER PROFILE    ----------------------------------------------------------------------------- */
+
+.logo-modify > img {
+  width: 1.5em;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+.modify-bloc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* background-color: violet; */
+  vertical-align: middle;
+
+}
+
+.modify-bloc > input {
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 18em;
+  height: 2.2em;
+  margin-bottom: 0.6em;
+  margin-top: 0.5em;
+}
+
+.logo-modify {
+  margin: 0;
+  padding: 0;
+}
