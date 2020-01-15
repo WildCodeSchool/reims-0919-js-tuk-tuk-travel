@@ -23,17 +23,19 @@ class TravelCards extends Component {
   render() {
     return (
       <div className='travel-cards'>
-        <h3>Voyages</h3>
-        <img alt ='New York' style={{width:'100%',textAlign:'center',borderRadius: '20px',height: '45vh'}} src ='http://img.over-blog-kiwi.com/0/26/98/15/20161012/ob_dc8aae_ny-2014.jpg'></img> 
-          {this.state.travels.map(res =>{
-            return <div key={res.travelID} className='liste-travel' >
-                <ul>
-                  <li>Destination: {res.destination}</li>
-                  <li>Depart: <Moment format="DD/MM/YYYY">{res.start_date}</Moment></li>
-                  <li>Retour: <Moment format="DD/MM/YYYY">{res.end_date}</Moment></li>
-                  <li>Nombre de voyageurs: {res.number_of_travelers_max}</li>
-                  <li>Description: {res.description}</li>
-                </ul>
+        <div className='title-travel-cards'>Voyages</div>
+        <figure className='fig-img-travel-cards'>
+          <img className='img-travel-cards' alt ='New York' src ='http://img.over-blog-kiwi.com/0/26/98/15/20161012/ob_dc8aae_ny-2014.jpg'></img> 
+        </figure>  
+        {this.state.travels.map(res =>{
+          return <div key={res.travelID} className='liste-travel' >
+            <ul>
+              <li>Destination: {res.destination}</li>
+              <li>Depart: <Moment format="DD/MM/YYYY">{res.start_date}</Moment></li>
+              <li>Retour: <Moment format="DD/MM/YYYY">{res.end_date}</Moment></li>
+              <li>Nombre de voyageurs: {res.number_of_travelers_max}</li>
+              <li>Description: {res.description}</li>
+            </ul>
               </div>})}
               <NavFooter/>
       </div>

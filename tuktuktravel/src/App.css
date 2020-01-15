@@ -162,30 +162,32 @@
 /* --------------------------------------------------------------------------- TRAVELCARDS --------------------------------------------------------------------------------- */
 
 
-.travel-cards {
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 14px;
+.title-travel-cards {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.2em;
+  text-align: left;
+  text-decoration: none;
+  margin-top: 0.2em;
+  margin-bottom: 0;
+  margin-left: 0.3em;
 }
 
+.fig-img-travel-cards {
+  margin: 0;
+  margin-bottom: 3.5em;
+}
+
+.fig-img-travel-cards > img {
+  width: 100%;
+  height: auto;
+  box-shadow: 2px 5px 10px rgb(156, 152, 152);
+}
 .liste-travel li {
   margin-top: inherit;
-  font-size: 18px;
+  font-size: 1.2em;
+  color: rgb(66, 66, 66);
   text-align: left;
   list-style: none;
-  border-bottom: 1px dotted #777;
-}
-
-.liste-travel > ul {
-  line-height: 30px;
-  padding-right: 15px;
-}
-
-.liste-travel {
-  box-shadow: 2px 5px 10px rgb(202, 202, 202);
-  margin-bottom: 35px;
 }
 
 
