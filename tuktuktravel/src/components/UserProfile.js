@@ -4,6 +4,7 @@ import axios from 'axios';
 import UploadFile from './UploadFile'
 import CountryList from './CountryList';
 import NavFooter from './NavFooter';
+import logoModify from '../img/modify-icon.png';
 import '../App.css'
 
 
@@ -53,6 +54,9 @@ class UserProfile extends Component {
             
             <label htmlFor="lastname">Nom</label>
             <input type="text" id="lastname" onChange={this.change} />
+            <figure className='logo-modify'>
+              <img className='img-logo-modify' src={logoAccueil} alt='Modify'/>
+            </figure>
             
             <label htmlFor="firstname">Prénom</label>
             <input type="text" id="firstname" onChange={this.change} />
