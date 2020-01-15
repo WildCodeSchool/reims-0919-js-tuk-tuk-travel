@@ -8,7 +8,7 @@ import '../App.css'
 
 
 
-class UserProfil extends Component {
+class UserProfile extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -33,9 +33,9 @@ class UserProfil extends Component {
   submit = e => {
     e.preventDefault();
     const {...user} = this.state
-    axios.post('http://localhost:8000//api/users/:userID',user)
+    axios.get('http://localhost:8000/api/users',user)
     .then(res =>{
-      alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
+      alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} modifié`)
     }).catch(event => {
       console.error(event);
       alert('User not added')
@@ -47,35 +47,47 @@ class UserProfil extends Component {
   render(){
     return(
       <div className='form-users'>
-        <div className="title-form-user">INFOS PERSONNELLES</div>
-        <form className='add-user' onSubmit={this.submit} >
-          <label htmlFor="lastname">Nom</label>
-          <input type="text" id="lastname" onChange={this.change} />
-          <label htmlFor="firstname">Prénom</label>
-          <input type="text" id="firstname" onChange={this.change} />
-          <label htmlFor="password">Mot de passe</label>
-          <input type="text" id="password" onChange={this.change} />
-          <label htmlFor="birthday">Date de naissance</label>
-          <input type="date" id="birthday" onChange={this.change} />
-          <label htmlFor="countrys">Pays</label>
-          <CountryList country={this.state.country} change={this.change} id='countrys' />
-          <label htmlFor="city">Ville</label>
-          <input type="text" id="city" onChange={this.change} />
-          <label htmlFor="email">E-mail</label>
-          <input type="text" id="email" onChange={this.change} />
-          <label htmlFor="phone_number">Numéro de téléphone</label>
-          <input type="text" id="phone_number" onChange={this.change} />
-          <label htmlFor="description">Description</label>
-          <input type="text" id="description" onChange={this.change} />
-          <button className='send-form-users'>Envoyer</button>
-        </form>
+        <div className="title-form-user">PROFIL</div>
+        
+          <form className='add-user' onSubmit={this.submit} >
+            
+            <label htmlFor="lastname">Nom</label>
+            <input type="text" id="lastname" onChange={this.change} />
+            
+            <label htmlFor="firstname">Prénom</label>
+            <input type="text" id="firstname" onChange={this.change} />
+            
+            <label htmlFor="password">Mot de passe</label>
+            <input type="text" id="password" onChange={this.change} />
+            
+            <label htmlFor="birthday">Date de naissance</label>
+            <input type="date" id="birthday" onChange={this.change} />
+            
+            <label htmlFor="countrys">Pays</label>
+            <CountryList country={this.state.country} change={this.change} id='countrys' />
+            
+            <label htmlFor="city">Ville</label>
+            <input type="text" id="city" onChange={this.change} />
+            
+            <label htmlFor="email">E-mail</label>
+            <input type="text" id="email" onChange={this.change} />
+            
+            <label htmlFor="phone_number">Numéro de téléphone</label>
+            <input type="text" id="phone_number" onChange={this.change} />
+            
+            <label htmlFor="description">Description</label>
+            <input type="text" id="description" onChange={this.change} />
+            
+            <button className='send-form-users'>Envoyer</button>
+          
+          </form>
         
         <UploadFile />
-        
         <NavFooter/>
+
       </div>
     );
   }
 }
 
-export default UserProfil;
+export default UserProfile;

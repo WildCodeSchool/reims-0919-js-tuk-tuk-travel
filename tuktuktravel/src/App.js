@@ -5,6 +5,7 @@ import HomeIntroSec from './components/HomeIntroSec';
 import HomeIntroThird from './components/HomeIntroThird';
 import Home from './components/Home';
 import FormUsers from './components/FormUsers'
+import UserProfile from './components/UserProfile'
 import UserConnexion from './components/UserConnexion';
 import TravelForm from './components/TravelForm'
 import TravelCards from './components/TravelCards'
