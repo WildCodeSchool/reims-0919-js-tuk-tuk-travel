@@ -35,12 +35,13 @@ const NavFooter = () => {
         </figure>
         <p className="title_footer">Mes voyages</p>
       </div>
-      <div className='lien'>
+      <Link className='link-footer' to="/profile">
         <figure className='logos-footer'>
           <img className='img-footer' src={logoParametre} alt='logo parametres'/>
         </figure>
         <p className="title_footer">Paramètres</p>
-      </div>
+      </Link>
+      
     </div>
   )  
 }

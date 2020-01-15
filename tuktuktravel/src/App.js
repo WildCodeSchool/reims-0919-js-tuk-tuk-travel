@@ -21,6 +21,7 @@ function App() {
         <Route exact path="/introthird" component={HomeIntroThird}/>
         <Route exact path="/home" component={Home}/>
         <Route path="/formusers"component={FormUsers}/>
+        <Route path="/profile"component={UserProfile}/>
         <Route path="/cgu"component={Cgu}/>
         <Route path="/userconnexion" component={UserConnexion}/>
         <Route exact path="/travelcards" component={TravelCards}/>
