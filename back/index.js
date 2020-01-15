@@ -40,13 +40,13 @@ app.get('/api/users', (req, res) => {
 
 //POST USERS
 app.post('/api/users', (req, res) => {
-  const {lastname, firstname, password, birthday, country, city, email, phone_number, description}  = req.body
+  const {lastname, firstname, sex, password, birthday, country, city, email, phone_number, description}  = req.body
   const hash = bcrypt.hashSync(password, 10, (err, hash) => {
     return hash
   });
-  formData = {lastname, firstname, password: hash, birthday, country, city, email, phone_number, description};
+  formData = {lastname, firstname, sex, password: hash, birthday, country, city, email, phone_number, description};
   console.log(formData)
-    connection.query('INSERT INTO users (lastname, firstname, password, birthday, country, city, email, phone_number, description) VALUES (?,?,?,?,?,?,?,?,?)', [formData.lastname, formData.firstname, formData.password, formData.birthday, formData.country, formData.city, formData.email, formData.phone_number, formData.description], (err, results) => {
+    connection.query('INSERT INTO users (lastname, firstname, sex, password, birthday, country, city, email, phone_number, description) VALUES (?,?,?,?,?,?,?,?,?,?)', [formData.lastname, formData.firstname, formData.sex, formData.password, formData.birthday, formData.country, formData.city, formData.email, formData.phone_number, formData.description], (err, results) => {
     if (err) {
       console.log(err);
       res.status(500).send("Erreur lors de la sauvegarde d'un utilisateur");
