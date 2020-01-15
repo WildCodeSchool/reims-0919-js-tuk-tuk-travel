@@ -480,31 +480,35 @@
   margin-top: 0.5em;
 }
 
-.profile-input-img > img {
-  align-items: inherit;
-}
-
-.profile-input-img{
-  display: flex;
-  margin-top: 0.2em;
-}
-
 .logo-modify > img {
   width: 1.5em;
   margin: 0;
   padding: 0;
 }
 
-.logo-modify {
-  text-align: right;
+.profile-input-img{
+  display: flex;
+  margin: 0;
+  right: 6em;
 }
 
-.modify-user{
+
+.profile-input-img > .logo-modify {
+  background-color: lightcoral;
+  display: flex;
+  margin-right: 0;
+}
+
+
+
+
+/* .modify-user{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1em;
-}
+} */
+
 
 /* .modify-bloc {
   display: flex;
