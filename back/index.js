@@ -4,11 +4,15 @@ const bodyParser = require('body-parser');
 const app = express();
 const multer = require('multer'); // npm install --save multer
 const fs = require('fs');
-const cors = require('cors') // npm install cors
-const jwt = require('jsonwebtoken') // npm install jsonwebtoken
-const verifyToken = require('./verifyToken')
-const key = require('./key')
-const bcrypt = require('bcrypt') // npm install bcrypt
+const cors = require('cors'); // npm install cors
+const passport = require('passport'); // npm install passport
+const LocalStrategy = require('passport-local');
+const jwt = require('jsonwebtoken'); // npm install jsonwebtoken
+const JwtStrategy = require('passport-jwt').Strategy; // npm install passport-jwt
+const ExtractJwt = require('passport-jwt').ExtractJwt; // npm install passport-local
+const verifyToken = require('./verifyToken');
+const key = require('./key');
+const bcrypt = require('bcrypt'); // npm install bcrypt
 const port = 8000;
 
 app.use(bodyParser.json());
@@ -23,6 +27,35 @@ app.use((req, res, next)=> {
   next();
 });
 
+// PASSEPORT CONFIG STRATEGY
+passport.use(new LocalStrategy(
+  {
+      usernameField: 'email',
+      passwordField: 'password',
+      nameField: 'name',
+      session: false
+  },
+  function (email, password, cb) {
+    connection.query('SELECT email, password, name FROM users WHERE email = ?', email , function (err, user) {
+      if (err) { return cb(err); }
+      if (!user) { return cb(null, false); }
+      if (bcrypt.compareSync(password, user[0].password)!=true) { return cb(null, false); }
+      return cb(null, user);
+  })
+})
+)
+
+passport.use(new JwtStrategy({
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secretOrKey: key
+},
+function (jwtPayload, cb) {
+  console.log(jwtPayload)
+  return cb(null, jwtPayload);
+}
+));
+
+// TEST
 app.get('/', (req, res) => {
   res.send('Bienvenue sur Express');
 });
