@@ -71,6 +71,17 @@ app.get('/api/users', (req, res) => {
   });
 });
 
+app.get('/api/users/:userID', (req, res) => {
+  const idUser = req.params.userID;
+  connection.query('SELECT * from users WHERE userID = ?', [idUser], (err, results) => {
+    if (err) {
+      res.status(500).send("Erreur lors de la récupération des utilisateurs");
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 //POST USERS
 app.post('/api/users', (req, res) => {
   const {lastname, firstname, sex, password, birthday, country, city, email, phone_number, description}  = req.body
