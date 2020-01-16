@@ -1,4 +1,4 @@
-const authReducer = (state  = {}, action) => {
+const authReducer = (state  = {token: ""}, action) => {
   switch (action.type) {
       case  "CREATE_SESSION":
           return { ...state, token: action.token}

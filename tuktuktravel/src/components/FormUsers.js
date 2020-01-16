@@ -12,6 +12,7 @@ class FormUsers extends Component {
     this.state = {
       lastname: '',
       firstname: '',
+      sex: '',
       password: '',
       birthday: '',
       country: '',
@@ -51,8 +52,15 @@ class FormUsers extends Component {
           <input type="text" id="lastname" onChange={this.change} />
           <label htmlFor="firstname">Prénom</label>
           <input type="text" id="firstname" onChange={this.change} />
+          <label htmlFor="sex">Sexe</label>
+          <select className="sex" id="sex" onChange={this.change} >
+          <option value=""></option>
+          <option value="homme">Homme</option>
+          <option value="femme">Femme</option>
+          <option value="autre">Autre</option>
+          </select>
           <label htmlFor="password">Mot de passe</label>
-          <input type="text" id="password" onChange={this.change} />
+          <input type="password" id="password" onChange={this.change} />
           <label htmlFor="birthday">Date de naissance</label>
           <input type="date" id="birthday" onChange={this.change} />
           <label htmlFor="countrys">Pays</label>

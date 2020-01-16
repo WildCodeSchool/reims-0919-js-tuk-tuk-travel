@@ -5,6 +5,7 @@ import HomeIntroSec from './components/HomeIntroSec';
 import HomeIntroThird from './components/HomeIntroThird';
 import Home from './components/Home';
 import FormUsers from './components/FormUsers'
+import UserProfile from './components/UserProfile'
 import UserConnexion from './components/UserConnexion';
 import TravelForm from './components/TravelForm'
 import TravelCards from './components/TravelCards'
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/introthird" component={HomeIntroThird}/>
         <Route exact path="/home" component={Home}/>
         <Route path="/formusers"component={FormUsers}/>
+        <Route path="/profile"component={UserProfile}/>
         <Route path="/cgu"component={Cgu}/>
         <Route path="/userconnexion" component={UserConnexion}/>
         <Route exact path="/travelcards" component={TravelCards}/>
