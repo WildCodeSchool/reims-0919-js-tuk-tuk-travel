@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Moment from 'react-moment';
 import '../App.css'
 import NavFooter from "./NavFooter";
+import { connect } from  'react-redux';
 
 class TravelCards extends Component {
   constructor(props) {
@@ -43,4 +44,9 @@ class TravelCards extends Component {
   }
 }
 
-export default TravelCards;
+function  mapStateToProps(state) {
+  return {
+      token:  state.auth.token,
+  }
+}
+export default connect(mapStateToProps)(TravelCards)
