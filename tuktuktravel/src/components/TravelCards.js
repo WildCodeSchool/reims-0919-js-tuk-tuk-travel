@@ -13,7 +13,14 @@ class TravelCards extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/api/travels')
+    fetch('http://localhost:8000/api/travels',
+    {
+      method:'GET',
+      headers:{
+        'Authorization':  'Bearer '  +  this.props.token,
+        'Content-Type':  'application/json'
+      }
+    })
     .then(res => res.json())
     .then(data =>
       this.setState({
