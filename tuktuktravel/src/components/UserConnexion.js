@@ -30,7 +30,7 @@ class UserConnexion extends Component {
       axios.post('http://localhost:8000/api/login',userLogin)
       .then(res  => {
         if (!res.ok) {
-          this.props.history.push('/api/login')
+          this.props.history.push('/userconnexion')
          // throw  new  Error(res.statusText)
           
         }
@@ -46,7 +46,7 @@ class UserConnexion extends Component {
             message : res.message
           }
         )
-        this.props.history.push("/travelCards")
+        this.props.history.replace("/")
         this.setState({ "flash":  res.flash })
       })
       .catch(err  =>  this.setState({ "flash":  err.flash }))

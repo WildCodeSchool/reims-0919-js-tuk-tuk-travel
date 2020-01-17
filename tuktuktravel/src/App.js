@@ -10,6 +10,8 @@ import UserConnexion from './components/UserConnexion';
 import TravelForm from './components/TravelForm'
 import TravelCards from './components/TravelCards'
 import Cgu from './components/Cgu'
+import requireAuth from './hoc/requireAuth'
+import requireNotAuth from './hoc/requireNotAuth'
 import './App.css'
 
 
@@ -24,10 +26,10 @@ function App() {
         <Route path="/formusers"component={FormUsers}/>
         <Route path="/profile"component={UserProfile}/>
         <Route path="/cgu"component={Cgu}/>
-        <Route path="/userconnexion" component={UserConnexion}/>
-        <Route exact path="/travelcards" component={TravelCards}/>
+        <Route path="/userconnexion" component={UserConnexion} component={requireNotAuth(UserConnexion)}/>
+        <Route exact path="/travelcards" component={TravelCards} component={requireAuth(TravelCards)}/>
         <Route exact path="/travelform" component={TravelForm}/>
-      </Switch>
+      </Switch> 
     </div>
   );
 }
