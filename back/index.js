@@ -1,6 +1,7 @@
 const connection = require('./config/conf');
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan'); // npm i morgan
 const app = express();
 const multer = require('multer'); // npm install --save multer
 const fs = require('fs');
@@ -15,10 +16,12 @@ const key = require('./key');
 const bcrypt = require('bcrypt'); // npm install bcrypt
 const port = 8000;
 
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(express.static(__dirname  +  '/public'));
 app.use(cors())
 
 app.use((req, res, next)=> {
@@ -32,13 +35,15 @@ passport.use(new LocalStrategy(
   {
       usernameField: 'email',
       passwordField: 'password',
-      nameField: 'name',
       session: false
   },
   function (email, password, cb) {
-    connection.query('SELECT email, password, name FROM users WHERE email = ?', email , function (err, user) {
+    console.log('hello')
+    connection.query('SELECT email, password FROM users WHERE email = ?', email , function (err, user) {
       if (err) { return cb(err); }
       if (!user) { return cb(null, false); }
+      console.log(user)
+      console.log(user[0].password)
       if (bcrypt.compareSync(password, user[0].password)!=true) { return cb(null, false); }
       return cb(null, user);
   })
@@ -184,35 +189,22 @@ app.delete('/api/travels/:travelID', (req, res) => {
 
 // LOGIN & TOKEN
 
-app.post('/api/login', (req, res) => {
-  const formData = req.body
-  const email = formData.email
-  const password = formData.password
-  if (email && password) {
-    connection.query('SELECT userID, password FROM users WHERE email = ?', email , (err, results) => {
-      if (err) {
-        res.status(500).send("Erreur de login");
-      } else {
-        const user = results[0];
-        if (user && password === user.password){
-          //console.log('bravo')
-          jwt.sign({user}, key , {expiresIn: '20min'}, (err, token) => {
-            res.json({
-                token
-            })
-        })
-          //res.json({id: user.userID});
-        }
-        else {
-          res.status(401).send();
-        }
-      }
-    });
-  }
-  else {
-    res.status(400).send();
-  }
-});
+app.post('/api/login', function(req, res)  {
+  passport.authenticate('local',(err, users, info) => {
+    if(err)
+      return res.status(500).send(err)
+    if (!users)
+      return res.status(400).json({flash: 'erreur de login'});
+
+    const {email} = users[0];
+    const token = jwt.sign({email}, key, {expiresIn: 1*60});
+    console.log(users[0])
+    return res.json({
+      user: {email},
+      token
+    })
+ })(req, res)
+})
 
 
 
