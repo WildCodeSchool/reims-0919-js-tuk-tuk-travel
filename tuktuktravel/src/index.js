@@ -6,8 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
 import { createStore } from  'redux'; // npm install --save redux
 import { Provider } from  'react-redux'; // npm install --save react-redux
-import authReducer from './reducers/authReducer';
-const store = createStore(authReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() )
+import allReducers from './reducers/authReducer';
+const store = createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() )
 
 ReactDOM.render(
     <BrowserRouter><Provider  store={store}><App /></Provider></BrowserRouter>, 

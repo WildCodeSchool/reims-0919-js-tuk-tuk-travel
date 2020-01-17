@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import axios from 'axios'
 import '../App.css'
 import NavFooter from "./NavFooter";
+import { connect } from  'react-redux';
 
 class UserConnexion extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class UserConnexion extends Component {
     this.state = {
       email: '',
       password: '',
+      flash: ''
     }
     this.onChange = this.onChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
@@ -26,13 +28,29 @@ class UserConnexion extends Component {
       console.log({userLogin})
       
       axios.post('http://localhost:8000/api/login',userLogin)
-      .then(res => {
-        alert('Connecté!');
-      }).catch(event => {
-      console.error(event);
-      alert(`Erreur lors de la connexion`);
-  });
-  }
+      .then(res  => {
+        if (!res.ok) {
+          this.props.history.push('/api/login')
+         // throw  new  Error(res.statusText)
+          
+        }
+        return res.json()
+      })
+      .then(res  =>  {
+        console.log(res.token)
+        this.props.dispatch(
+          {
+            type : "CREATE_SESSION",
+            user: res.user,
+            token : res.token,
+            message : res.message
+          }
+        )
+        this.props.history.push("/travelCards")
+        this.setState({ "flash":  res.flash })
+      })
+      .catch(err  =>  this.setState({ "flash":  err.flash }))
+    }
 
   render() {
     return (
@@ -58,4 +76,10 @@ class UserConnexion extends Component {
   }
 }
 
-export default UserConnexion;
+function  mapStateToProps(state) {
+  return {
+      token:  state.auth.token,
+  }
+};
+
+export  default  connect(mapStateToProps)(UserConnexion)

@@ -15,6 +15,7 @@ class UserProfile extends Component {
     this.state = {
       lastname: '',
       firstname: '',
+      sex: '',
       password: '',
       birthday: '',
       country: '',

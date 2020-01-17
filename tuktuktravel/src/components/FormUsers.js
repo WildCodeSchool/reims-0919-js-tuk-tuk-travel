@@ -53,12 +53,14 @@ class FormUsers extends Component {
           <label htmlFor="firstname">Prénom</label>
           <input type="text" id="firstname" onChange={this.change} />
           <label htmlFor="sex">Sexe</label>
-          <select className="sex" id="sex" onChange={this.change} >
-          <option value=""></option>
-          <option value="homme">Homme</option>
-          <option value="femme">Femme</option>
-          <option value="autre">Autre</option>
-          </select>
+          <div className='sex-form-user'>
+            <select className="sex sex-form-user" id="sex" onChange={this.change} >
+            <option value=""></option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="autre">Autre</option>
+            </select>
+          </div>
           <label htmlFor="password">Mot de passe</label>
           <input type="password" id="password" onChange={this.change} />
           <label htmlFor="birthday">Date de naissance</label>

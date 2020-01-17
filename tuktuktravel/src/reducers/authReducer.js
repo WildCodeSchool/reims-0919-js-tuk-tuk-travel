@@ -1,3 +1,5 @@
+import {combineReducers} from  'redux'
+
 const authReducer = (state  = {token: ""}, action) => {
   switch (action.type) {
       case  "CREATE_SESSION":
@@ -6,5 +8,8 @@ const authReducer = (state  = {token: ""}, action) => {
           return  state;
   }}
 
-  export default authReducer;
+  const  allReducers  =  combineReducers({
+    auth:  authReducer,
+});
+  export default allReducers;
   
