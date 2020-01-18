@@ -1,6 +1,6 @@
 import  React, { Component } from  'react';
 import { connect } from  'react-redux';
-import { createBrowserHistory } from 'history';
+import { browserHistory } from 'react-router-dom';
 
 export  default  function (ComposedComponent) {
     class  Authentication  extends  Component {
