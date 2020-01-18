@@ -8,7 +8,7 @@ export  default  function (ComposedComponent) {
             if (this.props.authenticated)
                 this.props.history.push('/travelcards');
         }
-        componentWillUpdate() {
+        componentDidDUpdate() {
             if (this.props.authenticated)
                 this.props.history.push('/travelcards');
         }

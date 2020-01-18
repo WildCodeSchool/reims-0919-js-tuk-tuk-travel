@@ -54,8 +54,8 @@ class UserConnexion extends Component {
             message : res.message
           }
         )
-        //this.props.history.push("/travelcards")
-        this.props.history.replace("/")
+        this.props.history.push("/travelcards")
+        //this.props.history.replace("/travelcards")
         this.setState({ "flash":  res.flash })
       })
       .catch(err  =>  this.setState({ "flash":  err.flash }))

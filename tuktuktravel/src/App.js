@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Redirect  exact  from='/'  to='/travelcards'  />
+       {/* <Redirect  exact  from='/userconnexion'  to='/travelcards'  />*/}
         <Route exact path="/" component={HomeIntroFirst}/>
         <Route exact path="/introsecond" component={HomeIntroSec}/>
         <Route exact path="/introthird" component={HomeIntroThird}/>

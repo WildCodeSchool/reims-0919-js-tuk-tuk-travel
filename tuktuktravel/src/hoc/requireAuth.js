@@ -8,7 +8,7 @@ export  default  function (ComposedComponent) {
             if (!this.props.authenticated)
                 this.props.history.push('/userconnexion');
         }
-        componentWillUpdate() {
+        componentDidUpdate() {
             if (!this.props.authenticated)
                 this.props.history.push('/userconnexion');
         }
