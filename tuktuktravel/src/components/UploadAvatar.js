@@ -2,7 +2,7 @@ import React from 'react'
 import { post } from 'axios';
 import { connect } from  'react-redux';
 
-class UploadFile extends React.Component {
+class UploadAvatar extends React.Component {
 
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ class UploadFile extends React.Component {
       //console.log(this.state.file.name);
       this.props.dispatch( 
         {
-          type : "AVATAR",
+          type : "SEND_AVATAR",
           avatar : this.state.file.name,
         }
       )
@@ -58,4 +58,4 @@ function  mapStateToProps(state) {
   }
 };
 
-export  default  connect(mapStateToProps)(UploadFile)
+export  default  connect(mapStateToProps)(UploadAvatar)

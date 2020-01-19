@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import axios from 'axios'
 import '../App.css'
 import NavFooter from "./NavFooter"
+import UploadCityPic from "./UploadCityPic"
+import { connect } from  'react-redux';
 
 
 
@@ -14,6 +16,7 @@ class TravelForm extends Component {
       end_date : '',
       number_of_travelers_max : '',
       description : '',
+      cityPic: ''
        
     }
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -28,6 +31,7 @@ class TravelForm extends Component {
       alert('Votre destination : ' + this.state.destination);
       e.preventDefault()
       const {...destination} = this.state
+      destination.cityPic = this.props.cityPic
       console.log({destination})
       
       axios.post('http://localhost:8000/api/travels/',destination)
@@ -71,7 +75,8 @@ class TravelForm extends Component {
           <input type='submit' value='Ajouter' className="add-tuktuk" />
           
         </form>
-        <NavFooter/>
+        <UploadCityPic />
+        {/*<NavFooter/>*/}
       </div>
 
     )
@@ -80,4 +85,10 @@ class TravelForm extends Component {
 
 
 
-export default TravelForm;
+function  mapStateToProps(state) {
+  return {
+      cityPic:  state.cityPic.cityPic,
+  }
+};
+
+export  default  connect(mapStateToProps)(TravelForm)

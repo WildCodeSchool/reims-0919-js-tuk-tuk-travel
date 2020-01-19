@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import UploadFile from './UploadFile'
+import UploadAvatar from './UploadAvatar'
 import '../App.css'
 import CountryList from './CountryList';
 import NavFooter from './NavFooter';
@@ -82,7 +82,7 @@ class FormUsers extends Component {
           <Link  to="/cgu">Conditions générales d'utilisation</Link>
           <button className='send-form-users'>Envoyer</button>
         </form>
-        <UploadFile />
+        <UploadAvatar />
         
         {/*<NavFooter/>*/}
       </div>
