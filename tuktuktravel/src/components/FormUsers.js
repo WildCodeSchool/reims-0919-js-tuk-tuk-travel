@@ -19,7 +19,8 @@ class FormUsers extends Component {
       city: '',
       email: '',
       phone_number: '',
-      description: ''
+      description: '',
+      avatar: ''
     };
   }
 
@@ -66,7 +67,7 @@ class FormUsers extends Component {
           <label htmlFor="birthday">Date de naissance</label>
           <input type="date" id="birthday" onChange={this.change} />
           <label htmlFor="countrys">Pays</label>
-          <CountryList country={this.state.country} change={this.change} id='countrys' />
+          <CountryList country={this.state.country} change={this.change} />
           <label htmlFor="city">Ville</label>
           <input type="text" id="city" onChange={this.change} />
           <label htmlFor="email">E-mail</label>
@@ -78,9 +79,9 @@ class FormUsers extends Component {
           <Link  to="/cgu">Conditions générales d'utilisation</Link>
           <button className='send-form-users'>Envoyer</button>
         </form>
-        <UploadFile />
+        <UploadFile avatar={this.state.avatar} change={this.change} id='avatar'/>
         
-        <NavFooter/>
+        {/*<NavFooter/>*/}
       </div>
     );
   }
