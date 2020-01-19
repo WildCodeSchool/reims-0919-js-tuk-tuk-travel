@@ -22,11 +22,8 @@ class UploadFile extends React.Component {
         {
           type : "AVATAR",
           avatar : this.state.file.name,
-          
         }
       )
-
-
     })
   }
   onChange(e) {

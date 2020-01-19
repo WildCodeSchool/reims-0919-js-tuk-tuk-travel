@@ -5,6 +5,7 @@ import '../App.css'
 import CountryList from './CountryList';
 import NavFooter from './NavFooter';
 import { Link } from 'react-router-dom';
+import { connect } from  'react-redux';
 
 class FormUsers extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class FormUsers extends Component {
       email: '',
       phone_number: '',
       description: '',
-      avatar: ''
+      avatar: '',
     };
   }
 
@@ -33,6 +34,8 @@ class FormUsers extends Component {
   submit = e => {
     e.preventDefault();
     const {...user} = this.state
+    user.avatar = this.props.avatar
+    console.log(user)
     axios.post('http://localhost:8000/api/users',user)
     .then(res =>{
       alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
@@ -79,7 +82,7 @@ class FormUsers extends Component {
           <Link  to="/cgu">Conditions générales d'utilisation</Link>
           <button className='send-form-users'>Envoyer</button>
         </form>
-        <UploadFile avatar={this.state.avatar} change={this.change} id='avatar'/>
+        <UploadFile />
         
         {/*<NavFooter/>*/}
       </div>
@@ -87,4 +90,10 @@ class FormUsers extends Component {
   }
 }
 
-export default FormUsers;
+function  mapStateToProps(state) {
+  return {
+      avatar:  state.avatar.avatar,
+  }
+};
+
+export  default  connect(mapStateToProps)(FormUsers)
