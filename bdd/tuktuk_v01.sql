@@ -7,7 +7,6 @@ CREATE TABLE `users`(
   `lastname` VARCHAR(100) NOT NULL,
   `firstname` VARCHAR(100) NOT NULL, 
   `password` VARCHAR(255) NOT NULL,
-  `confirmpassword` VARCHAR(255) NOT NULL,
   `birthday` DATE NOT NULL,
   `sex` VARCHAR(10) NOT NULL,  
   `country` VARCHAR(100) NOT NULL,
