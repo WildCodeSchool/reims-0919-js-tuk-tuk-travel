@@ -1,8 +1,9 @@
 import React, { Component } from "react"
 import axios from 'axios'
 import '../App.css'
-import NavFooter from "./NavFooter";
 import { connect } from  'react-redux';
+import back from '../img/arrow-back.png'
+import { Link } from 'react-router-dom';
 
 class UserConnexion extends Component {
   constructor(props) {
@@ -27,10 +28,18 @@ class UserConnexion extends Component {
     const {...userLogin} = this.state
       console.log({userLogin})
       
-      axios.post('http://localhost:8000/api/login',userLogin)
+      fetch('http://localhost:8000/api/login',
+        {
+         method: 'POST',
+         headers:  new  Headers({
+          'Content-Type':  'application/json'
+        }),
+        body:  JSON.stringify(this.state),
+        })
+      
       .then(res  => {
         if (!res.ok) {
-          this.props.history.push('/api/login')
+          this.props.history.push('/userconnexion')
          // throw  new  Error(res.statusText)
           
         }
@@ -46,7 +55,8 @@ class UserConnexion extends Component {
             message : res.message
           }
         )
-        this.props.history.push("/travelCards")
+        this.props.history.push("/travelcards")
+        //this.props.history.replace("/travelcards")
         this.setState({ "flash":  res.flash })
       })
       .catch(err  =>  this.setState({ "flash":  err.flash }))
@@ -56,7 +66,13 @@ class UserConnexion extends Component {
     return (
       <div>
       <div className="title-user-connexion">Connecte - toi  ! </div>
+        <Link className='link-cgu-to-formuser' to="/Home">
+          <figure className='fig-back-arrow'>
+            <img className='back-arrow' src={back} alt='Arrow to back'/>
+          </figure>
+        </Link>
           <form className="user_connexion" onSubmit={this.submitForm}>
+            
   
                 <label htmlFor="email">E-mail </label>
                 <input className="input-user_connexion" type="email" id="email" name="email"
@@ -70,7 +86,6 @@ class UserConnexion extends Component {
                 <input type="submit" value="Connexion" />
               </div>
           </form>
-          <NavFooter/>
       </div>
     )
   }

@@ -18,7 +18,7 @@ class HomeIntroSec extends Component {
           Dis nous où tu veux aller, comment et les activités réalisées sur place
         </div>
         <div className='intro-link'>
-          <Link to="/introthird">Suivant</Link>
+          <Link to="/home">Suivant</Link>
         </div>
       </div>
     )

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import UploadFile from './UploadFile'
+import UploadAvatar from './UploadAvatar'
 import '../App.css'
 import CountryList from './CountryList';
-import NavFooter from './NavFooter';
 import { Link } from 'react-router-dom';
+import back from '../img/arrow-back.png'
+import { connect } from  'react-redux';
 
 class FormUsers extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class FormUsers extends Component {
       city: '',
       email: '',
       phone_number: '',
-      description: ''
+      description: '',
+      avatar: '',
     };
   }
 
@@ -32,6 +34,8 @@ class FormUsers extends Component {
   submit = e => {
     e.preventDefault();
     const {...user} = this.state
+    user.avatar = this.props.avatar
+    console.log(user)
     axios.post('http://localhost:8000/api/users',user)
     .then(res =>{
       alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
@@ -47,6 +51,11 @@ class FormUsers extends Component {
     return(
       <div className='form-users'>
         <div className="title-form-user">INFOS PERSONNELLES</div>
+        <Link className='link-cgu-to-formuser' to="/Home">
+          <figure className='fig-back-arrow'>
+            <img className='back-arrow' src={back} alt='Arrow to back'/>
+          </figure>
+        </Link>
         <form className='add-user' onSubmit={this.submit} >
           <label htmlFor="lastname">Nom</label>
           <input type="text" id="lastname" onChange={this.change} />
@@ -66,7 +75,7 @@ class FormUsers extends Component {
           <label htmlFor="birthday">Date de naissance</label>
           <input type="date" id="birthday" onChange={this.change} />
           <label htmlFor="countrys">Pays</label>
-          <CountryList country={this.state.country} change={this.change} id='countrys' />
+          <CountryList country={this.state.country} change={this.change} />
           <label htmlFor="city">Ville</label>
           <input type="text" id="city" onChange={this.change} />
           <label htmlFor="email">E-mail</label>
@@ -78,12 +87,16 @@ class FormUsers extends Component {
           <Link  to="/cgu">Conditions générales d'utilisation</Link>
           <button className='send-form-users'>Envoyer</button>
         </form>
-        <UploadFile />
-        
-        <NavFooter/>
+        <UploadAvatar />
       </div>
     );
   }
 }
 
-export default FormUsers;
+function  mapStateToProps(state) {
+  return {
+      avatar:  state.avatar.avatar,
+  }
+};
+
+export  default  connect(mapStateToProps)(FormUsers)
