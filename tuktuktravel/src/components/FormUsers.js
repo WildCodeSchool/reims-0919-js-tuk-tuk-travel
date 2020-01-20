@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from  'react-redux';
 import axios from 'axios';
 import UploadAvatar from './UploadAvatar'
-import '../App.css'
 import CountryList from './CountryList';
-import { Link } from 'react-router-dom';
 import back from '../img/arrow-back.png'
-import { connect } from  'react-redux';
+import '../App.css'
+
 
 class FormUsers extends Component {
   constructor(props) {

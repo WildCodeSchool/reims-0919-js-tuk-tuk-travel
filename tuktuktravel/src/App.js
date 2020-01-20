@@ -1,5 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import requireAuth from './hoc/requireAuth'
+import requireNotAuth from './hoc/requireNotAuth'
 import HomeIntroFirst from './components/HomeIntroFirst';
 import HomeIntroSec from './components/HomeIntroSec';
 import Home from './components/Home';
@@ -9,8 +11,6 @@ import UserConnexion from './components/UserConnexion';
 import TravelForm from './components/TravelForm'
 import TravelCards from './components/TravelCards'
 import Cgu from './components/Cgu'
-import requireAuth from './hoc/requireAuth'
-import requireNotAuth from './hoc/requireNotAuth'
 import './App.css'
 
 
