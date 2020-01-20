@@ -38,12 +38,10 @@ passport.use(new LocalStrategy(
       session: false
   },
   function (email, password, cb) {
-    console.log('hello')
+    console.log('hello toto')
     connection.query('SELECT email, password FROM users WHERE email = ?', email , function (err, user) {
       if (err) { return cb(err); }
       if (!user) { return cb(null, false); }
-      console.log(user)
-      console.log(user[0].password)
       if (bcrypt.compareSync(password, user[0].password)!=true) { return cb(null, false); }
       return cb(null, user);
   })
@@ -134,7 +132,7 @@ app.delete('/api/users/:userID', (req, res) => {
 
 
 // GET TRAVEL
-app.get('/api/travels', (req, res) => {
+app.get('/api/travels', passport.authenticate('jwt', { session:  false }), (req, res) => {
   connection.query('SELECT * from travels', (err, results) => {
     if (err) {
       res.status(500).send('Erreur lors de la récupération des voyages');
@@ -198,7 +196,7 @@ app.post('/api/login', function(req, res)  {
 
     const {email} = users[0];
     const token = jwt.sign({email}, key, {expiresIn: 1*60});
-    console.log(users[0])
+    console.log(token)
     return res.json({
       user: {email},
       token
