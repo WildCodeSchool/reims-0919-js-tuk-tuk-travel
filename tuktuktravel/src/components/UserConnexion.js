@@ -53,7 +53,7 @@ class UserConnexion extends Component {
             token : res.token,
             message : res.message
           }
-        )
+       
         //this.props.history.push("/travelcards")
         this.props.history.replace("/")
         this.setState({ "flash":  res.flash })

@@ -21,6 +21,7 @@ class TravelCards extends Component {
         'Content-Type':  'application/json'
       }
     })
+
     .then(res => {
       if(!res.ok) {
         this.props.history.push('/userconnexion')
