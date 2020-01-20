@@ -387,7 +387,7 @@
 .footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 1em;
   position: fixed; bottom: 0em;
   width: 100%;
