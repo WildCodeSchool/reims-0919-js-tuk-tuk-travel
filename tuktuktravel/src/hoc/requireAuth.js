@@ -1,6 +1,6 @@
 import  React, { Component } from  'react';
 import { connect } from  'react-redux';
-import { browserHistory } from  'react-router';
+import { browserHistory } from  'react-router-dom';
 
 export  default  function (ComposedComponent) {
     class  Authentication  extends  Component {
@@ -8,7 +8,7 @@ export  default  function (ComposedComponent) {
             if (!this.props.authenticated)
                 this.props.history.push('/userconnexion');
         }
-        componentWillUpdate() {
+        componentDidUpdate() {
             if (!this.props.authenticated)
                 this.props.history.push('/userconnexion');
         }
