@@ -394,7 +394,7 @@
   background-color: white;
  }
  .title_footer {
-   font-size: 1em;
+   font-size: 0.8em;
    margin-top: 0;
    margin-bottom: 0;
  }  
@@ -410,6 +410,7 @@
  }
  .logos-footer {
    margin: 0;
+   padding: 0;
  }
  .logos-purpose{
    margin: 0;
@@ -502,16 +503,19 @@
 
 .profile-input-img{
   display: flex;
-  margin: 0;
-  right: 6em;
+  justify-content: space-evenly;
 }
 
-
-.profile-input-img > .logo-modify {
-  background-color: lightcoral;
-  display: flex;
-  margin-right: 0;
+.profile-sex > select{
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 18em;
+  height: 2.2em;
+  margin-bottom: 0.6em;
+  margin-top: 0.5em;
 }
 
-
-
+.profile-sex {
+  justify-content: left;
+}
