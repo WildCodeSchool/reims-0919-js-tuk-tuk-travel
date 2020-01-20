@@ -223,7 +223,7 @@ fileFilter: (req, file, cb) => {
 });
 
 app.post('/uploaddufichier', upload.single('file'), function (req, res, next) {
-  fs.rename(req.file.path, 'img/' + req.file.originalname, function(err){
+  fs.rename(req.file.path, '../tuktuktravel/public/' + req.file.originalname, function(err){
     if (err) {res.redirect(targetUrl)
       res.send('problème durant le transfert');
     } else {
