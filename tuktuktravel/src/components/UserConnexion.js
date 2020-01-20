@@ -27,7 +27,15 @@ class UserConnexion extends Component {
     const {...userLogin} = this.state
       console.log({userLogin})
       
-      axios.post('http://localhost:8000/api/login',userLogin)
+      fetch('http://localhost:8000/api/login',
+        {
+         method: 'POST',
+         headers:  new  Headers({
+          'Content-Type':  'application/json'
+        }),
+        body:  JSON.stringify(this.state),
+        })
+      
       .then(res  => {
         if (!res.ok) {
           this.props.history.push('/userconnexion')
@@ -45,7 +53,8 @@ class UserConnexion extends Component {
             token : res.token,
             message : res.message
           }
-        )
+       
+        //this.props.history.push("/travelcards")
         this.props.history.replace("/")
         this.setState({ "flash":  res.flash })
       })

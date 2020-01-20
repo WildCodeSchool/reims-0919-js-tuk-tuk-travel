@@ -21,11 +21,19 @@ class TravelCards extends Component {
         'Content-Type':  'application/json'
       }
     })
-    .then(res => res.json())
-    .then(data =>
+
+    .then(res => {
+      if(!res.ok) {
+        this.props.history.push('/userconnexion')
+      }
+      return res.json()
+    })
+    .then(data => {
       this.setState({
         travels: data
-    }))
+    })
+  })
+  .catch()
   }
 
   render() {
