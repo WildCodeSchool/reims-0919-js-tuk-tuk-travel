@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import HomeIntroFirst from './components/HomeIntroFirst';
 import HomeIntroSec from './components/HomeIntroSec';
 import HomeIntroThird from './components/HomeIntroThird';
@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
+       {/* <Redirect  exact  from='/userconnexion'  to='/travelcards'  />*/}
         <Route exact path="/" component={HomeIntroFirst}/>
         <Route exact path="/introsecond" component={HomeIntroSec}/>
         <Route exact path="/introthird" component={HomeIntroThird}/>

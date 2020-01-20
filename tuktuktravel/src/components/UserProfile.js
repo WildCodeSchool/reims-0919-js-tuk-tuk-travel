@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import UploadFile from './UploadFile'
+import UploadAvatar from './UploadAvatar'
 import CountryList from './CountryList';
 import NavFooter from './NavFooter';
 import logoModify from '../img/modify-icon.png';
@@ -147,7 +147,7 @@ class UserProfile extends Component {
           
           </form>
         
-        <UploadFile />
+        <UploadAvatar />
         <NavFooter/>
 
       </div>

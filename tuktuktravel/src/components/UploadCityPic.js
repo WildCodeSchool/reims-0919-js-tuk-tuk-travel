@@ -1,7 +1,8 @@
 import React from 'react'
-import axios, { post } from 'axios';
+import { post } from 'axios';
+import { connect } from  'react-redux';
 
-class UploadFile extends React.Component {
+class UploadCityPic extends React.Component {
 
   constructor(props) {
     super(props);
@@ -16,6 +17,13 @@ class UploadFile extends React.Component {
     e.preventDefault() // Stop form submit
     this.fileUpload(this.state.file).then((response)=>{
       console.log(response.data);
+      //console.log(this.state.file.name);
+      this.props.dispatch( 
+        {
+          type : "SEND_CITY_PIC",
+          cityPic : this.state.file.name,
+        }
+      )
     })
   }
   onChange(e) {
@@ -30,18 +38,24 @@ class UploadFile extends React.Component {
             'content-type': 'multipart/form-data'
         }
     }
-    return  post(url, formData,config)
+    return  post(url, formData, config)
   }
 
   render() {
     return (
       <form className="upload-file" onSubmit={this.onFormSubmit}>
-        <p className="title-add-avatar">Ajoute ton avatar</p>
-        <input type="file" name='file' className='avatar' onChange={this.onChange} />
+        <p className="title-add-avatar">Ajoute une image</p>
+        <input type="file" name='file' className='avatar' onChange={this.onChange} id='cityPic' />
         <button className="upload-avatar" type="submit">Upload</button>
       </form>
    )
   }
 }
 
-export default UploadFile;
+function  mapStateToProps(state) {
+  return {
+    cityPic: state.cityPic.cityPic,
+  }
+};
+
+export  default  connect(mapStateToProps)(UploadCityPic)
