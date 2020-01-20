@@ -93,7 +93,7 @@ app.post('/api/users', (req, res) => {
   });
   formData = {lastname, firstname, sex, password: hash, birthday, country, city, email, phone_number, description};
   console.log(formData)
-    connection.query('INSERT INTO users (lastname, firstname, sex, password, birthday, country, city, email, phone_number, description) VALUES (?,?,?,?,?,?,?,?,?,?)', [formData.lastname, formData.firstname, formData.sex, formData.password, formData.birthday, formData.country, formData.city, formData.email, formData.phone_number, formData.description], (err, results) => {
+    connection.query('INSERT INTO users (lastname, firstname, sex, password, birthday, country, city, email, phone_number, description, avatar) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [formData.lastname, formData.firstname, formData.sex, formData.password, formData.birthday, formData.country, formData.city, formData.email, formData.phone_number, formData.description, formData.avatar], (err, results) => {
     if (err) {
       console.log(err);
       res.status(500).send("Erreur lors de la sauvegarde d'un utilisateur");
@@ -147,7 +147,7 @@ app.get('/api/travels', passport.authenticate('jwt', { session:  false }), (req,
 app.post('/api/travels', (req, res) => {
   const formData = req.body
   console.log(formData)
-  connection.query('INSERT INTO travels (destination, start_date, end_date, number_of_travelers_max, description) VALUES (?,?,?,?,?)', [formData.destination, formData.start_date, formData.end_date, formData.number_of_travelers_max, formData.description], (err, results) => {
+  connection.query('INSERT INTO travels (destination, start_date, end_date, number_of_travelers_max, description, citypic) VALUES (?,?,?,?,?,?)', [formData.destination, formData.start_date, formData.end_date, formData.number_of_travelers_max, formData.description, formData.cityPic], (err, results) => {
 
     if (err) {
       console.log(err);
