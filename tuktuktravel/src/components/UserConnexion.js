@@ -27,15 +27,7 @@ class UserConnexion extends Component {
     const {...userLogin} = this.state
       console.log({userLogin})
       
-      fetch('http://localhost:8000/api/login',
-        {
-         method: 'POST',
-         headers:  new  Headers({
-          'Content-Type':  'application/json'
-        }),
-        body:  JSON.stringify(this.state),
-        })
-      
+      axios.post('http://localhost:8000/api/login',userLogin)
       .then(res  => {
         if (!res.ok) {
           this.props.history.push('/userconnexion')
