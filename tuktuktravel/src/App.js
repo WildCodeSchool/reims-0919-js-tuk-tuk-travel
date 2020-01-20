@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import HomeIntroFirst from './components/HomeIntroFirst';
 import HomeIntroSec from './components/HomeIntroSec';
-import HomeIntroThird from './components/HomeIntroThird';
 import Home from './components/Home';
 import FormUsers from './components/FormUsers'
 import UserProfile from './components/UserProfile'
@@ -22,7 +21,6 @@ function App() {
        {/* <Redirect  exact  from='/userconnexion'  to='/travelcards'  />*/}
         <Route exact path="/" component={HomeIntroFirst}/>
         <Route exact path="/introsecond" component={HomeIntroSec}/>
-        <Route exact path="/introthird" component={HomeIntroThird}/>
         <Route exact path="/home" component={Home}/>
         <Route path="/formusers"component={FormUsers}/>
         <Route path="/profile"component={UserProfile}/>
