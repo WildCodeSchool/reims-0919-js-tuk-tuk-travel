@@ -172,12 +172,10 @@
   margin-bottom: 0;
   margin-left: 0.3em;
 }
-
 .fig-img-travel-cards {
   margin: 0;
   margin-bottom: 3.5em;
 }
-
 .fig-img-travel-cards > img {
   width: 100%;
   height: auto;
@@ -190,6 +188,15 @@
   text-align: left;
   list-style: none;
 }
+.liste-travel {
+  border-top: 4mm ridge rgba(219, 38, 38, 0.815);
+}
+.place-holder {
+  width:18em;
+  height: auto;
+}
+
+
 
 
 
