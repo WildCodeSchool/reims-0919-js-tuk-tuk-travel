@@ -39,7 +39,7 @@ passport.use(new LocalStrategy(
   },
   function (email, password, cb) {
     console.log('hello toto')
-    connection.query('SELECT email, password FROM users WHERE email = ?', email , function (err, user) {
+    connection.query('SELECT userID, email, password FROM users WHERE email = ?', email , function (err, user) {
       if (err) { return cb(err); }
       if (!user) { return cb(null, false); }
       if (bcrypt.compareSync(password, user[0].password)!=true) { return cb(null, false); }
@@ -194,11 +194,11 @@ app.post('/api/login', function(req, res)  {
     if (!users)
       return res.status(400).json({flash: 'erreur de login'});
 
-    const {email} = users[0];
-    const token = jwt.sign({email}, key, {expiresIn: 20*60});
+    const {userID} = users[0];
+    const token = jwt.sign({userID}, key, {expiresIn: 20*60});
     console.log(token)
     return res.json({
-      user: {email},
+      user: {userID},
       token
     })
  })(req, res)
