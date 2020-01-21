@@ -195,7 +195,7 @@ app.post('/api/login', function(req, res)  {
       return res.status(400).json({flash: 'erreur de login'});
 
     const {email} = users[0];
-    const token = jwt.sign({email}, key, {expiresIn: 200*60});
+    const token = jwt.sign({email}, key, {expiresIn: 1*60});
     console.log(token)
     return res.json({
       user: {email},
