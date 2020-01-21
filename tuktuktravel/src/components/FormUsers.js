@@ -81,7 +81,7 @@ class FormUsers extends Component {
           
           <form className='add-user' onSubmit={this.submit} />
             <div className='firstSection'>
-              <div>
+              <div className="div-add-user">
                 <label htmlFor="lastname">Nom</label>
                 <input type="text" id="lastname" onChange={this.change} />
 
@@ -100,27 +100,29 @@ class FormUsers extends Component {
 
                 <label htmlFor="password">Mot de passe</label>
                 <input type="password" id="password" onChange={this.change} />
-                <label htmlFor="comfirm-password"> Comfirmation de Mot de passe</label>
+                <label htmlFor="comfirm-password"> Confirmation mot de passe</label>
                 <input type="password" id="password" onChange={this.change} />
 
                 <label htmlFor="birthday">Date de naissance</label>
-                <input type="date" id="birthday" onChange={this.change} />
-
-                <div className='nextButton'>
-                  <button onClick = {this.nextPage}>Suivant</button>
+                <div className='input-birthday' >
+                  <input type="date" id="birthday" onChange={this.change} />
+                </div>
+                <div >
+                  <button className='nextButton' onClick = {this.nextPage}>Suivant</button>
                 </div>
               </div>
             </div>
         </div>
         :
         <div>
-          <button onClick = {this.previousPage}>
-            <figure className='fig-back-arrow'>
+          <figure className='fig-back-arrow link-back-arrow'>
+            <button onClick = {this.previousPage}>
               <img className='back-arrow' src={back} alt='Arrow to back'/>
-            </figure>
-          </button>
+            </button>
+          </figure>
+          
 
-          <div className='secondSection'>
+          <div className='secondSection div-add-user'>
             <label htmlFor="countrys">Pays</label>
             <CountryList country={this.state.country} change={this.change} />
 
