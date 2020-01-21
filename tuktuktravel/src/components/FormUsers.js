@@ -16,6 +16,7 @@ class FormUsers extends Component {
       firstname: '',
       sex: '',
       password: '',
+      comfirm_password: '',
       birthday: '',
       country: '',
       city: '',
@@ -87,6 +88,8 @@ class FormUsers extends Component {
                 </select>
               </div>
               <label htmlFor="password">Mot de passe</label>
+              <input type="password" id="password" onChange={this.change} />
+              <label htmlFor="comfirm-password"> Comfirmation de Mot de passe</label>
               <input type="password" id="password" onChange={this.change} />
 
               <label htmlFor="birthday">Date de naissance</label>
