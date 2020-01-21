@@ -47,15 +47,16 @@ class UserConnexion extends Component {
         return res.json()
       })
       .then(res  =>  {
-        console.log(res.token)
+        console.log(res.user.userID)
         this.props.dispatch(
           {
             type : "CREATE_SESSION",
-            user: res.user,
+            userID: res.user.userID,
             token : res.token,
             message : res.message
           }
         )
+        
         this.props.history.push("/travelcards")
         //this.props.history.replace("/travelcards")
         this.setState({ "flash":  res.flash })
@@ -95,6 +96,7 @@ class UserConnexion extends Component {
 function  mapStateToProps(state) {
   return {
       token:  state.auth.token,
+      userID: state.auth.userID
   }
 };
 
