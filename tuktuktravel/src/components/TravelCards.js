@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Moment from 'react-moment';
 import '../App.css'
 import NavFooter from "./NavFooter";
+import SearchField from './SearchField'
 import { connect } from  'react-redux';
 
 class TravelCards extends Component {
@@ -39,6 +40,7 @@ class TravelCards extends Component {
     return (
       <div className='travel-cards'>
         <div className='title-travel-cards'>Voyages</div>
+        <SearchField />
         {this.state.travels.map(res =>{
           return <div key={res.travelID} className='liste-travel' >
             <ul>
