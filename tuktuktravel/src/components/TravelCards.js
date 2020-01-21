@@ -4,6 +4,7 @@ import '../App.css'
 import NavFooter from "./NavFooter";
 import SearchField from './SearchField'
 import { connect } from  'react-redux';
+import { Link } from 'react-router-dom';
 
 class TravelCards extends Component {
   constructor(props) {
@@ -45,7 +46,8 @@ class TravelCards extends Component {
           return <div key={res.travelID} className='liste-travel' >
             <ul>
               <figure className='fig-img-travel-cards'>
-              <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
+              <Link  to={{pathname:"/traveldetails",
+                state: {cityPic: res.cityPic, travelID: res.travelID, destination:res.destination}}}><img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img></Link>
               </figure>
               <li>Destination: {res.destination}</li>
               <li>Depart: <Moment format="DD/MM/YYYY">{res.start_date}</Moment></li>
