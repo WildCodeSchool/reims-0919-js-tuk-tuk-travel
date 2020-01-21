@@ -6,6 +6,7 @@ import CountryList from './CountryList';
 import { Link } from 'react-router-dom';
 import back from '../img/arrow-back.png'
 import { connect } from  'react-redux';
+import logoOk from '../img/logoOk.png';
 
 class FormUsers extends Component {
   constructor(props) {
@@ -22,8 +23,15 @@ class FormUsers extends Component {
       phone_number: '',
       description: '',
       avatar: '',
+      isAdded: false
     };
   }
+
+  /*added = () => {
+    this.setState ({
+      isAdded: true
+    })
+  }*/
 
   change = e => {
     this.setState({
@@ -38,7 +46,10 @@ class FormUsers extends Component {
     console.log(user)
     axios.post('http://localhost:8000/api/users',user)
     .then(res =>{
-      alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
+      this.setState({
+        isAdded: true
+      })
+      //alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
     }).catch(event => {
       console.error(event);
       alert('User not added')
@@ -86,6 +97,13 @@ class FormUsers extends Component {
           <input type="text" id="description" onChange={this.change} />
           <Link  to="/cgu">Conditions générales d'utilisation</Link>
           <button className='send-form-users'>Envoyer</button>
+          {this.state.isAdded ?
+          <div className='addUser'>
+            <figure className='logo-ok'>
+              <img src={logoOk} alt='logo Ok'/>
+            </figure>
+            <p className="user-added">Utilisateur ajouté</p>
+          </div> : null}
         </form>
         <UploadAvatar />
       </div>
