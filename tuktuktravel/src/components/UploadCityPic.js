@@ -43,11 +43,12 @@ class UploadCityPic extends React.Component {
 
   render() {
     return (
-      <form className="upload-file" onSubmit={this.onFormSubmit}>
+      <div>
+      {/*<form className="upload-file" onSubmit={this.onFormSubmit}></form>*/}
         <p className="title-add-avatar">Ajoute une image</p>
         <input type="file" name='file' className='avatar' onChange={this.onChange} id='cityPic' />
-        <button className="upload-avatar" type="submit">Upload</button>
-      </form>
+        <button className="upload-avatar" onClick={this.onFormSubmit}>Upload</button>
+      </div>
    )
   }
 }

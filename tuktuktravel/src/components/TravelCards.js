@@ -43,6 +43,7 @@ class TravelCards extends Component {
         <div className='title-travel-cards'>Voyages</div>
         <SearchField />
         {this.state.travels.map(res =>{
+          console.log(res)
           return <div key={res.travelID} className='liste-travel' >
             <ul>
               <figure className='fig-img-travel-cards'>

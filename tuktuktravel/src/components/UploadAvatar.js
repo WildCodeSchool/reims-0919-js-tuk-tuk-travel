@@ -43,11 +43,11 @@ class UploadAvatar extends React.Component {
 
   render() {
     return (
-      <form className="upload-file" onSubmit={this.onFormSubmit}>
+      <div className="upload-file">
         <p className="title-add-avatar">Ajoute ton avatar</p>
         <input type="file" name='file' className='avatar' onChange={this.onChange} id='avatar' />
-        <button className="upload-avatar" type="submit">Upload</button>
-      </form>
+        <button onClick={this.onFormSubmit}>Upload</button>
+      </div>
    )
   }
 }
