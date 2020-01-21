@@ -5,6 +5,8 @@ import axios from 'axios';
 import UploadAvatar from './UploadAvatar'
 import CountryList from './CountryList';
 import back from '../img/arrow-back.png'
+import { connect } from  'react-redux';
+import logoOk from '../img/logoOk.png';
 import '../App.css'
 
 
@@ -24,6 +26,7 @@ class FormUsers extends Component {
       phone_number: '',
       description: '',
       avatar: '',
+      isAdded: false,
       firstSection: true,
       secondSection: false
     };
@@ -56,7 +59,10 @@ class FormUsers extends Component {
     console.log(user)
     axios.post('http://localhost:8000/api/users',user)
     .then(res =>{
-      alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
+      this.setState({
+        isAdded: true
+      })
+      //alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
     }).catch(event => {
       console.error(event);
       alert('User not added')
@@ -139,9 +145,35 @@ class FormUsers extends Component {
             
             <button className='send-form-users' onClick={this.submit}>Envoyer</button>
           </div>
-          
+
+          <label htmlFor="password">Mot de passe</label>
+          <input type="password" id="password" onChange={this.change} />
+          <label htmlFor="birthday">Date de naissance</label>
+          <input type="date" id="birthday" onChange={this.change} />
+          <label htmlFor="countrys">Pays</label>
+          <CountryList country={this.state.country} change={this.change} />
+          <label htmlFor="city">Ville</label>
+          <input type="text" id="city" onChange={this.change} />
+          <label htmlFor="email">E-mail</label>
+          <input type="text" id="email" onChange={this.change} />
+          <label htmlFor="phone_number">Numéro de téléphone</label>
+          <input type="text" id="phone_number" onChange={this.change} />
+          <label htmlFor="description">Description</label>
+          <input type="text" id="description" onChange={this.change} />
+          <Link  to="/cgu">Conditions générales d'utilisation</Link>
+          <button className='send-form-users'  onClick={this.submit} >Envoyer</button>
+          {this.state.isAdded ?
+          <div className='addUser'>
+            <figure className='logo-ok'>
+              <img src={logoOk} alt='logo Ok'/>
+            </figure>
+            <p className="user-added">Utilisateur ajouté</p>
+          </div> : null}
+       
+                
           <UploadAvatar />
         </div>}
+
       </div>
     );
   }
