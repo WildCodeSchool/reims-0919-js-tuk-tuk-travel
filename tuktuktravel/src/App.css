@@ -161,46 +161,6 @@
 
 
 
-/* --------------------------------------------------------------------------- TRAVELCARDS --------------------------------------------------------------------------------- */
-
-
-.title-travel-cards {
-  font-family: 'Bebas Neue', cursive;
-  font-size: 2.2em;
-  text-align: left;
-  text-decoration: none;
-  margin-top: 0.2em;
-  margin-bottom: 0;
-  margin-left: 0.3em;
-}
-.fig-img-travel-cards {
-  margin: 0;
-  margin-bottom: 3.5em;
-}
-.fig-img-travel-cards > img {
-  width: 100%;
-  height: auto;
-  box-shadow: 2px 5px 10px rgb(156, 152, 152);
-}
-.liste-travel li {
-  margin-top: inherit;
-  font-size: 1.2em;
-  color: rgb(66, 66, 66);
-  text-align: left;
-  list-style: none;
-}
-.liste-travel {
-  border-top: 4mm ridge rgba(219, 38, 38, 0.815);
-}
-.place-holder {
-  width:18em;
-  height: auto;
-}
-
-
-
-
-
 /* --------------------------------------------------------------------------- FORM USER ------------------------------------------------------------------------------------ */
 
 
@@ -255,80 +215,6 @@
   margin-top: 0.5em;
 }
 
-/* --------------------------------------------------------------------------- TRAVEL FORM --------------------------------------------------------------------------------- */
-
-
-.add-travel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2em;
-}
-
-.title-travel-form {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-top: 1.5em;
-  margin-left: 0.5em;
-  font-size: 2em;
-  font-family: 'Bebas Neue', cursive;
-}
-
-.input-add-travel {
-  font-family: 'Roboto', sans-serif;
-  border-radius:7px;
-  background-color: rgb(235, 229, 229);
-  border: none;
-  width: 15em;
-  height: 2.5em;
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
-}
-
-.input-add-travel:focus {
-  background: #bebebe;
-}
-
-.add-tuktuk{
-  border:none;
-  padding: 0.7em 2em 0.7em 2em;
-  border-radius:12px;
-  margin: 2em 1em 0em 1em;
-  background: rgb(0, 145, 255);
-  color:#fff;
-  text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-}
-
-
-
-/* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
-
-
-.upload-avatar{
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  text-decoration: none;
-  color:#fff;
-  border:none;
-  border-radius:12px;
-  background: rgb(0, 145, 255);
-  padding: 0.8em 2em 0.8em 2em;
-  margin-top: 1.2em;
-  margin-bottom: 1em;
-}
-
-.title-add-avatar{
-  font-family: 'Bebas Neue', cursive;
-  font-size: 2em;
-  text-align: left;
-  margin-top: 0.5em;
-  margin-left: 0.5em;
-  margin-bottom: 0.3em;
-}
-
 
 
 /* -------------------------------------------------------------------------- USER CONNEXION ------------------------------------------------------------------------------ */
@@ -381,46 +267,167 @@
 
 
 
-/* ------------------------------------------------------------------------------ FOOTER ---------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------  USER PROFILE    ----------------------------------------------------------------------------- */
 
 
-.footer {
+.profile-input-img > input {
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 18em;
+  height: 2.2em;
+  margin-bottom: 0.6em;
+  margin-top: 0.5em;
+}
+
+.profile-input-img > select {
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 18em;
+  height: 2.2em;
+  margin-bottom: 0.6em;
+  margin-top: 0.5em;
+}
+
+.logo-modify > img {
+  width: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-input-img{
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 1em;
-  position: fixed; bottom: 0em;
+}
+
+.profile-sex > select{
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 18em;
+  height: 2.2em;
+  margin-bottom: 0.6em;
+  margin-top: 0.5em;
+}
+
+.profile-sex {
+  justify-content: left;
+}
+
+
+
+/* --------------------------------------------------------------------------- TRAVEL FORM --------------------------------------------------------------------------------- */
+
+
+.add-travel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.title-travel-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 1.5em;
+  margin-left: 0.5em;
+  font-size: 2em;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.input-add-travel {
+  font-family: 'Roboto', sans-serif;
+  border-radius:7px;
+  background-color: rgb(235, 229, 229);
+  border: none;
+  width: 15em;
+  height: 2.5em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.input-add-travel:focus {
+  background: #bebebe;
+}
+
+.add-tuktuk{
+  border:none;
+  padding: 0.7em 2em 0.7em 2em;
+  border-radius:12px;
+  margin: 2em 1em 0em 1em;
+  background: rgb(0, 145, 255);
+  color:#fff;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+
+
+/* --------------------------------------------------------------------------- TRAVEL CARDS --------------------------------------------------------------------------------- */
+
+
+.title-travel-cards {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.2em;
+  text-align: left;
+  text-decoration: none;
+  margin-top: 0.2em;
+  margin-bottom: 0;
+  margin-left: 0.3em;
+}
+.fig-img-travel-cards {
+  margin: 0;
+  margin-bottom: 3.5em;
+}
+.fig-img-travel-cards > img {
   width: 100%;
-  height: 10%;
-  background-color: white;
- }
- .title_footer {
-   font-size: 0.8em;
-   margin-top: 0;
-   margin-bottom: 0;
- }  
- .link-footer {
-   color: black;
-   text-decoration: none;
-   margin: 0;
- }
- .img-footer {
-   width: auto;
-   height: 3em;
-   margin: 0;
- }
- .logos-footer {
-   margin: 0;
-   padding: 0;
- }
- .logos-purpose{
-   margin: 0;
-   padding: 0;;
- }
- .img-footer-purpose{
-   width: auto;
-   height: 3.2em;
- }
+  height: auto;
+  box-shadow: 2px 5px 10px rgb(156, 152, 152);
+}
+.liste-travel li {
+  margin-top: inherit;
+  font-size: 1.2em;
+  color: rgb(66, 66, 66);
+  text-align: left;
+  list-style: none;
+}
+.liste-travel {
+  border-top: 4mm ridge rgba(219, 38, 38, 0.815);
+}
+.place-holder {
+  width:18em;
+  height: auto;
+}
+
+
+
+/* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
+
+
+.upload-avatar{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  text-decoration: none;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  background: rgb(0, 145, 255);
+  padding: 0.8em 2em 0.8em 2em;
+  margin-top: 1.2em;
+  margin-bottom: 1em;
+}
+
+.title-add-avatar{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2em;
+  text-align: left;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-bottom: 0.3em;
+}
 
 
 
@@ -473,50 +480,61 @@
 
 
 
-/* ----------------------------------------------------------------------------  USER PROFILE    ----------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------ NAV FOOTER ---------------------------------------------------------------------------------- */
 
 
-.profile-input-img > input {
-  border-radius:7px;
-  background-color: rgb(235, 229, 229);
-  border: none;
-  width: 18em;
-  height: 2.2em;
-  margin-bottom: 0.6em;
-  margin-top: 0.5em;
-}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 1em;
+  position: fixed; bottom: 0em;
+  width: 100%;
+  height: 10%;
+  background-color: rgb(243, 241, 241)
+ }
 
-.profile-input-img > select {
-  border-radius:7px;
-  background-color: rgb(235, 229, 229);
-  border: none;
-  width: 18em;
-  height: 2.2em;
-  margin-bottom: 0.6em;
-  margin-top: 0.5em;
-}
+ .title_footer {
+   font-size: 0.9em;
+   margin-top: 0.1em;
+   margin-bottom: 0;
+ }
 
-.logo-modify > img {
-  width: 1.5em;
+ .link-footer {
+   color: black;
+   text-decoration: none;
+   margin: 0;
+ }
+
+ .img-footer {
+   width: auto;
+   height: 3em;
+   margin: 0;
+ }
+
+ .logos-footer {
+   margin: 0;
+   padding: 0;
+ }
+
+ /* ----- PURPOSE -----*/
+ 
+ .logos-purpose{
   margin: 0;
   padding: 0;
-}
+  margin-top: -1.5em;
+  margin-bottom: 0em;
+ }
 
-.profile-input-img{
-  display: flex;
-  justify-content: space-evenly;
-}
+ .img-footer-purpose{
+   width: auto;
+   height: 4.5em;
+   margin-top: 0.1em;
 
-.profile-sex > select{
-  border-radius:7px;
-  background-color: rgb(235, 229, 229);
-  border: none;
-  width: 18em;
-  height: 2.2em;
-  margin-bottom: 0.6em;
-  margin-top: 0.5em;
-}
+ }
 
-.profile-sex {
-  justify-content: left;
-}
+ .title_footer_purpose {
+  font-size: 0.9em;
+  margin-top: 0.03em;
+  margin-bottom: 0;
+ }
