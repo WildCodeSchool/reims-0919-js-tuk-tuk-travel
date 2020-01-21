@@ -15,8 +15,8 @@ class TravelForm extends Component {
       end_date : '',
       number_of_travelers_max : '',
       description : '',
-      cityPic: ''
-       
+      cityPic: '',
+      userID: ''
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -31,6 +31,7 @@ class TravelForm extends Component {
       e.preventDefault()
       const {...destination} = this.state
       destination.cityPic = this.props.cityPic
+      destination.userID = this.props.userID
       console.log({destination})
       
       axios.post('http://localhost:8000/api/travels/',destination)
@@ -82,11 +83,10 @@ class TravelForm extends Component {
   }
 }
 
-
-
 function  mapStateToProps(state) {
   return {
       cityPic:  state.cityPic.cityPic,
+      userID: state.auth.userID
   }
 };
 
