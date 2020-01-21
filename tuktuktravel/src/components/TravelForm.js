@@ -1,10 +1,9 @@
 import React, { Component } from "react"
-import axios from 'axios'
-import '../App.css'
-import NavFooter from "./NavFooter"
-import UploadCityPic from "./UploadCityPic"
 import { connect } from  'react-redux';
-
+import axios from 'axios'
+import UploadCityPic from "./UploadCityPic"
+import NavFooter from "./NavFooter"
+import '../App.css'
 
 
 class TravelForm extends Component {
@@ -76,7 +75,7 @@ class TravelForm extends Component {
           
         </form>
         <UploadCityPic />
-        {/*<NavFooter/>*/}
+        <NavFooter/>
       </div>
 
     )
