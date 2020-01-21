@@ -73,6 +73,7 @@ class FormUsers extends Component {
         {this.state.firstSection?
         <div>
           <div className="title-form-user">INFOS PERSONNELLES</div>
+          <div className="page-form-user">1/2</div>
           <Link className='link-back-arrow' to="/Home">
             <figure className='fig-back-arrow'>
               <img className='back-arrow' src={back} alt='Arrow to back'/>
@@ -120,7 +121,8 @@ class FormUsers extends Component {
               <img className='back-arrow' src={back} alt='Arrow to back'/>
             </button>
           </figure>
-          
+            
+          <div className="sec-page-form-user">2/2</div>
 
           <div className='secondSection div-add-user'>
             <label htmlFor="countrys">Pays</label>
@@ -138,13 +140,14 @@ class FormUsers extends Component {
             <label htmlFor="description">Description</label>
             <input type="text" id="description" onChange={this.change} />
             
-            <Link  to="/cgu">Conditions générales d'utilisation</Link>
+            <Link className='cgu' to="/cgu">Conditions générales d'utilisation</Link>
             
             <button className='send-form-users' onClick={this.submit}>Envoyer</button>
           </div>
-          
           <UploadAvatar />
+          
         </div>}
+        
       </div>
     );
   }

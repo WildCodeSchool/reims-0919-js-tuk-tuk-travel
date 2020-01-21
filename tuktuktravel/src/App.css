@@ -209,7 +209,17 @@
   margin-top: 1em;
 }
 
+
+
+
+
 /*------ First Part ------*/
+
+.page-form-user {
+  text-align: right;
+  margin-right: 0.5em;
+  font-family: 'Roboto', sans-serif;
+}
 
 .input-birthday > input{
   border-radius:7px;
@@ -232,6 +242,7 @@
 }
 
 .nextButton {
+  font-family: 'Roboto', sans-serif;
   border:none;
   padding: 1em 2em 1em 2em;
   border-radius:12px;
@@ -245,10 +256,39 @@
 
 /*------ Second Part ------*/
 
+.sec-page-form-user {
+  font-family: 'Roboto', sans-serif;
+  text-align: right;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+}
+
 .fig-back-arrow > button {
   border: none;
   background-color: white;
 }
+
+.send-form-users {
+  font-family: 'Roboto', sans-serif;
+  border:none;
+  padding: 1em 2em 1em 2em;
+  border-radius:12px;
+  background: rgb(0, 145, 255);
+  color:#fff;
+  text-decoration: none;
+  margin-top: 2em;
+  font-size: 0.8em;
+  margin-bottom: 4em;
+}
+
+.div-add-user > a {
+  text-decoration: none;
+  color: #282c34;
+  font-size: 0.7em;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
 
 /* -------------------------------------------------------------------------- USER CONNEXION ------------------------------------------------------------------------------ */
 
