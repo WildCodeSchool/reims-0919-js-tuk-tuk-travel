@@ -5,7 +5,6 @@ import axios from 'axios';
 import UploadAvatar from './UploadAvatar'
 import CountryList from './CountryList';
 import back from '../img/arrow-back.png'
-import { connect } from  'react-redux';
 import logoOk from '../img/logoOk.png';
 import '../App.css'
 
