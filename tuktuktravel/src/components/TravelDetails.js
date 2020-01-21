@@ -38,6 +38,7 @@ class TravelDetails extends Component {
     return (
       <div>
         <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}></img>
+        <h1>{this.props.location.state.destination} </h1>
       </div>
 
     )
