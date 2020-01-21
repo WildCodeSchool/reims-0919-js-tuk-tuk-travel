@@ -45,13 +45,11 @@ class TravelCards extends Component {
           return <div key={res.travelID} className='liste-travel' >
             <ul>
               <figure className='fig-img-travel-cards'>
-              <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
+                <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
               </figure>
-              <li>Destination: {res.destination}</li>
+              <li>{res.destination}</li>
               <li>Depart: <Moment format="DD/MM/YYYY">{res.start_date}</Moment></li>
               <li>Retour: <Moment format="DD/MM/YYYY">{res.end_date}</Moment></li>
-              <li>Nombre de voyageurs: {res.number_of_travelers_max}</li>
-              <li>Description: {res.description}</li>
             </ul>
               </div>})}
               <NavFooter/>
