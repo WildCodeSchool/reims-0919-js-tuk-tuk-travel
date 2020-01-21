@@ -26,7 +26,7 @@ CREATE TABLE `travels`(
     `end_date` DATE NOT NULL,
     `number_of_travelers_max` INT,
     `description` TEXT,
-    `citypic` TEXT,
+    `cityPic` TEXT,
     FOREIGN KEY (`IDuser_creator`) REFERENCES `users`(`userID`),
     PRIMARY KEY (`travelID`)    
 );

@@ -147,7 +147,7 @@ app.get('/api/travels', passport.authenticate('jwt', { session:  false }), (req,
 app.post('/api/travels', (req, res) => {
   const formData = req.body
   console.log(formData)
-  connection.query('INSERT INTO travels (destination, IDuser_creator, start_date, end_date, number_of_travelers_max, description, citypic) VALUES (?,?,?,?,?,?,?)', [formData.destination, formData.userID, formData.start_date, formData.end_date, formData.number_of_travelers_max, formData.description, formData.cityPic], (err, results) => {
+  connection.query('INSERT INTO travels (destination, IDuser_creator, start_date, end_date, number_of_travelers_max, description, cityPic) VALUES (?,?,?,?,?,?,?)', [formData.destination, formData.userID, formData.start_date, formData.end_date, formData.number_of_travelers_max, formData.description, formData.cityPic], (err, results) => {
 
     if (err) {
       console.log(err);
