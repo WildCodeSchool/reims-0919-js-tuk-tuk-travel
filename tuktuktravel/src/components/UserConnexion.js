@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import axios from 'axios'
-import '../App.css'
+import { Link } from 'react-router-dom';
 import { connect } from  'react-redux';
 import back from '../img/arrow-back.png'
-import { Link } from 'react-router-dom';
+import '../App.css'
+
 
 class UserConnexion extends Component {
   constructor(props) {
@@ -46,15 +47,16 @@ class UserConnexion extends Component {
         return res.json()
       })
       .then(res  =>  {
-        console.log(res.token)
+        console.log(res.user.userID)
         this.props.dispatch(
           {
             type : "CREATE_SESSION",
-            user: res.user,
+            userID: res.user.userID,
             token : res.token,
             message : res.message
           }
         )
+        
         this.props.history.push("/travelcards")
         //this.props.history.replace("/travelcards")
         this.setState({ "flash":  res.flash })
@@ -94,6 +96,7 @@ class UserConnexion extends Component {
 function  mapStateToProps(state) {
   return {
       token:  state.auth.token,
+      userID: state.auth.userID
   }
 };
 

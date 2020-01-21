@@ -14,7 +14,7 @@ CREATE TABLE `users`(
   `email` VARCHAR(255) NOT NULL UNIQUE,
   `phone_number` VARCHAR(15) NOT NULL,
   `description` TEXT NULL,
-  `picture` TEXT,
+  `avatar` TEXT,
   PRIMARY KEY (`userID`) 
 );
 
@@ -26,6 +26,7 @@ CREATE TABLE `travels`(
     `end_date` DATE NOT NULL,
     `number_of_travelers_max` INT,
     `description` TEXT,
+    `citypic` TEXT,
     FOREIGN KEY (`IDuser_creator`) REFERENCES `users`(`userID`),
     PRIMARY KEY (`travelID`)    
 );

@@ -72,7 +72,7 @@ class UserProfile extends Component {
 
             
               <label htmlFor="sex">Sexe</label>
-              <div className='profile-input-img'>
+              <div className='profile-sex'>
                 <select className="sex" id="sex" onChange={this.change} >
                   <option value=""></option>
                   <option value="homme">Homme</option>

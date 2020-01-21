@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Moment from 'react-moment';
 import '../App.css'
 import NavFooter from "./NavFooter";
+import SearchField from './SearchField'
 import { connect } from  'react-redux';
 
 class TravelCards extends Component {
@@ -39,12 +40,13 @@ class TravelCards extends Component {
     return (
       <div className='travel-cards'>
         <div className='title-travel-cards'>Voyages</div>
-        <figure className='fig-img-travel-cards'>
-          <img className='img-travel-cards' alt ='New York' src ='http://img.over-blog-kiwi.com/0/26/98/15/20161012/ob_dc8aae_ny-2014.jpg'></img> 
-        </figure>  
+        <SearchField />
         {this.state.travels.map(res =>{
           return <div key={res.travelID} className='liste-travel' >
             <ul>
+              <figure className='fig-img-travel-cards'>
+              <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
+              </figure>
               <li>Destination: {res.destination}</li>
               <li>Depart: <Moment format="DD/MM/YYYY">{res.start_date}</Moment></li>
               <li>Retour: <Moment format="DD/MM/YYYY">{res.end_date}</Moment></li>
