@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Moment from 'react-moment';
+import { connect } from  'react-redux'
 import UploadAvatar from './UploadAvatar'
 import CountryList from './CountryList';
 import NavFooter from './NavFooter';
@@ -22,8 +24,34 @@ class UserProfile extends Component {
       city: '',
       email: '',
       phone_number: '',
-      description: ''
+      description: '',
+      user: []
     };
+  }
+  // GET ONE USER
+  componentDidMount() {
+    fetch(`http://localhost:8000/api/users/${this.props.userID}`,
+    //fetch(`http://localhost:8000/api/users`,
+    {
+      method:'GET',
+      headers:{
+        'Authorization':  'Bearer '  +  this.props.token,
+        'Content-Type':  'application/json'
+      }
+    })
+    .then(res => {
+      if(!res.ok) {
+        this.props.history.push('/userconnexion')
+      }
+      return res.json()
+    })
+    .then(data => {
+      this.setState({
+        user: data
+    })
+    
+  })
+  .catch()
   }
 
   change = e => {
@@ -31,128 +59,48 @@ class UserProfile extends Component {
       [e.target.id]: e.target.value
     })
   }
-
-  submit = e => {
-    e.preventDefault();
-    const {...user} = this.state
-    axios.get('http://localhost:8000/api/users',user)
-    .then(res =>{
-      alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} modifié`)
-    }).catch(event => {
-      console.error(event);
-      alert('User not added')
-    })
-  }
-
-
-
-  render(){
-    return(
-      <div className='profile-form-users'>
-        <div className="title-form-user">PROFIL</div>
-        
-          <form className='modify-user' onSubmit={this.submit} >
-            
-              <label htmlFor="lastname">Nom</label>
-              <div className='profile-input-img'>
-                <input type="text" id="lastname" onChange={this.change} />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
-
-            
-              <label htmlFor="firstname">Prénom</label>
-              <div className='profile-input-img'>
-                <input type="text" id="firstname" onChange={this.change} />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
-
-            
-              <label htmlFor="sex">Sexe</label>
-              <div className='profile-sex'>
-                <select className="sex" id="sex" onChange={this.change} >
-                  <option value=""></option>
-                  <option value="homme">Homme</option>
-                  <option value="femme">Femme</option>
-                  <option value="autre">Autre</option>
-                </select>
-              </div>
-
-            
-              <label htmlFor="password">Mot de passe</label>
-              <div className='profile-input-img'>
-                <input type="text" id="password" onChange={this.change} />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
-            
-              <label htmlFor="birthday">Date de naissance</label>
-              <div className='profile-input-img birthday'>
-                <input type="date" id="birthday" onChange={this.change} />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
-            
-              <label htmlFor="countrys">Pays</label>
-              <div className='profile-input-img country'>
-                <CountryList country={this.state.country} change={this.change} id='countrys' />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
-
-            
-              <label htmlFor="city">Ville</label>
-              <div className='profile-input-img'>
-                <input type="text" id="city" onChange={this.change} />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
-
-            
-              <label htmlFor="email">E-mail</label>
-              <div className='profile-input-img'>
-                <input type="text" id="email" onChange={this.change} />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
-
-            
-              <label htmlFor="phone_number">Numéro de téléphone</label>
-              <div className='profile-input-img'>
-                <input type="text" id="phone_number" onChange={this.change} />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
-
-            
-              <label htmlFor="description">Description</label>
-              <div className='profile-input-img'>
-                <input type="text" id="description" onChange={this.change} />
-                <figure className='logo-modify'>
-                  <img className='img-logo-modify' src={logoModify} alt='Modify'/>
-                </figure>
-              </div>
+  //UPDATE USER
+  // submit = e => {
+  //   e.preventDefault();
+  //   const {...user} = this.state
+  //   axios.get('http://localhost:8000/api/users',user)
+  //   .then(res =>{
+  //     alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} modifié`)
+  //   }).catch(event => {
+  //     console.error(event);
+  //     alert('User not added')
+  //   })
+  // }
 
 
-            <button className='send-form-users'>Envoyer</button>
-          
-          </form>
-        
-        <UploadAvatar />
-        <NavFooter/>
 
+  render() {
+    console.log(this.state.user)
+    return (
+      <div>
+        {this.state.user && this.state.user.map(res => (
+          <div className='user-profile'>
+            <img src = {res.avatar} alt={res.avatr}></img>
+            <div>{res.firstname}</div>
+            <div>{res.lastname}</div>
+            <div><Moment format="DD/MM/YYYY">{res.birthday}</Moment></div>
+            <div>{res.city}</div>
+            <div>{res.contry}</div>
+            <div> {res.email}</div>
+            <div> {res.phone_number}</div>
+            <div> {res.description}</div>
+          </div>
+        ))}
       </div>
-    );
+    )
   }
+  
 }
 
-export default UserProfile;
+
+function  mapStateToProps(state) {
+  return {
+    userID: state.auth.userID,
+  }
+}
+export default connect(mapStateToProps)(UserProfile)
