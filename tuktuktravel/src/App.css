@@ -433,8 +433,9 @@
 
 
 
-/* --------------------------------------------------------------------------- TRAVEL CARDS --------------------------------------------------------------------------------- */
 
+
+/* --------------------------------------------------------------------------- TRAVEL CARDS --------------------------------------------------------------------------------- */
 
 .title-travel-cards {
   font-family: 'Bebas Neue', cursive;
@@ -445,30 +446,42 @@
   margin-bottom: 0;
   margin-left: 0.3em;
 }
-.fig-img-travel-cards {
+/* .fig-img-travel-cards {
+  max-width: 1em;
   margin: 0;
   margin-bottom: 3.5em;
 }
-.fig-img-travel-cards > img {
+.fig-img-travel-cards{
   width: 100%;
   height: auto;
-  box-shadow: 2px 5px 10px rgb(156, 152, 152);
-}
-.liste-travel li {
-  margin-top: inherit;
+} */
+/* .liste-travel  {
+  margin-top: 0;
+  margin-left: 3em;
   font-size: 1.2em;
   color: rgb(66, 66, 66);
   text-align: left;
   list-style: none;
-}
-.liste-travel {
-  border-top: 4mm ridge rgba(219, 38, 38, 0.815);
-}
-/* .place-holder {
-  width:18em;
-  height: auto;
-} */
+}  */
 
+.liste-description-travel-cards{
+  width: 30%;
+  margin-left: 2em;
+  margin-top: -6.7em;
+  display: flex;
+  flex-direction: column;
+  color: lightgoldenrodyellow;
+  font-size: 1.5em;
+  text-shadow: 0.1em 0.1em #333 ;
+}
+.img-travel-cards{
+  /* max-width: 25em; */
+  width: 120%;
+  border-radius: 1em;
+  height: 20vh;
+  box-shadow: 2px 5px 10px rgb(156, 152, 152);
+  margin-left: -2em;
+}
 
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
