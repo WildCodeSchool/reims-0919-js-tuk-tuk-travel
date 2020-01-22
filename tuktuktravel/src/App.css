@@ -256,7 +256,7 @@
   text-decoration: none;
   margin-top: 2em;
   font-size: 0.8em;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 }
 
 .div-add-user > a {
@@ -265,6 +265,30 @@
   font-size: 0.7em;
   margin-top: 0.5em;
   margin-bottom: 0;
+}
+
+.addUser{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  background-color: rgb(188, 240, 227);
+  width: 70%;
+  border-radius: 12px;
+}
+.logo-ok{
+  Width: 30%;
+  margin-left: 3em;
+  margin-top: 0.2em;
+}
+.logo-ok img{
+    width: 30%;
+    margin: 0;
+}
+.user-added{
+  font-size: 0.7em;
+  width:70%;
+  margin-right: 3em;
 }
 
 
