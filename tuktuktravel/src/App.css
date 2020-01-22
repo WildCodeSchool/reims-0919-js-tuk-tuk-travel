@@ -456,23 +456,22 @@
   height: auto;
 } */
 /* .liste-travel  {
-  margin-top: 0;
-  margin-left: 3em;
-  font-size: 1.2em;
-  color: rgb(66, 66, 66);
-  text-align: left;
-  list-style: none;
+  margin-bottom: 1em;
 }  */
 
 .liste-description-travel-cards{
+  font-family: 'Roboto', sans-serif;
   width: 30%;
   margin-left: 2em;
-  margin-top: -6.7em;
+  margin-top: -6em;
   display: flex;
   flex-direction: column;
-  color: lightgoldenrodyellow;
-  font-size: 1.5em;
+  color: white;
+  font-size: 1.4em;
   text-shadow: 0.1em 0.1em #333 ;
+}
+span {
+  font-size: 1.3em;
 }
 .img-travel-cards{
   /* max-width: 25em; */

@@ -50,9 +50,9 @@ class TravelCards extends Component {
                 state: {cityPic: res.cityPic, travelID: res.travelID, destination:res.destination, userID_creator:res.userID_creator }}}><img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img></Link>
               </figure>
               <div className='liste-description-travel-cards'>
-                {res.destination}<br/>
-                Du : <Moment format="DD/MM/YYYY">{res.start_date}</Moment>
-                au : <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
+                <span>{res.destination}</span><br/>
+                <Moment format="DD/MM/YYYY">{res.start_date}</Moment>
+                <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
               </div>
             
               </div>})}
