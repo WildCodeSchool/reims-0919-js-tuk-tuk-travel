@@ -34,9 +34,11 @@ class TravelDetails extends Component {
 
 
   render() {
+    console.log(this.state.travels)
     return (
       <div>
-        <img src='' alt=''></img>
+        <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}></img>
+        <h1>{this.props.location.state.destination} </h1>
       </div>
 
     )
