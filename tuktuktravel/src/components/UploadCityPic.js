@@ -13,7 +13,6 @@ class UploadCityPic extends React.Component {
     this.onChange = this.onChange.bind(this)
   }
   onFormSubmit(e){
-    alert('fichier')
     e.preventDefault()
     const url = 'http://localhost:8000/uploaddufichier'
     const formData = new FormData();
@@ -23,7 +22,6 @@ class UploadCityPic extends React.Component {
             'content-type': 'multipart/form-data'
         }
     }
-    alert('fichier')
 
     post(url, formData, config).then((response)=>{
       console.log(response.data);
