@@ -91,7 +91,7 @@ class UserProfile extends Component {
               </div>
             
               <label htmlFor="birthday">Date de naissance</label>
-              <div className='profile-input-img'>
+              <div className='profile-input-img birthday'>
                 <input type="date" id="birthday" onChange={this.change} />
                 <figure className='logo-modify'>
                   <img className='img-logo-modify' src={logoModify} alt='Modify'/>
@@ -99,7 +99,7 @@ class UserProfile extends Component {
               </div>
             
               <label htmlFor="countrys">Pays</label>
-              <div className='profile-input-img'>
+              <div className='profile-input-img country'>
                 <CountryList country={this.state.country} change={this.change} id='countrys' />
                 <figure className='logo-modify'>
                   <img className='img-logo-modify' src={logoModify} alt='Modify'/>

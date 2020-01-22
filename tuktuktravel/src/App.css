@@ -51,7 +51,7 @@
 
 .img-sec-page{
   width: 40%; 
-  margin-top: 5em;
+  margin-top: 3em;
 }
 
 /*----------------*/
@@ -256,7 +256,7 @@
   text-decoration: none;
   margin-top: 2em;
   font-size: 0.8em;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 }
 
 .div-add-user > a {
@@ -265,6 +265,30 @@
   font-size: 0.7em;
   margin-top: 0.5em;
   margin-bottom: 0;
+}
+
+.addUser{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  background-color: rgb(188, 240, 227);
+  width: 70%;
+  border-radius: 12px;
+}
+.logo-ok{
+  Width: 30%;
+  margin-left: 3em;
+  margin-top: 0.2em;
+}
+.logo-ok img{
+    width: 30%;
+    margin: 0;
+}
+.user-added{
+  font-size: 0.7em;
+  width:70%;
+  margin-right: 3em;
 }
 
 
@@ -331,6 +355,14 @@
   margin-top: 0.5em;
 }
 
+.birthday > input {
+  height: 2.5em;
+}
+
+.country > .list-of-country > select {
+  height: 2.5em;
+}
+
 .profile-input-img > select {
   border-radius:7px;
   background-color: rgb(235, 229, 229);
@@ -341,6 +373,13 @@
   margin-top: 0.5em;
 }
 
+.logo-modify {
+  margin: 0em;
+  margin-top: 0.8em;
+  margin-right: 0.5em;
+  padding: 0em;
+}
+
 .logo-modify > img {
   width: 1.5em;
   margin: 0;
@@ -349,7 +388,8 @@
 
 .profile-input-img{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  padding-left: 4em;
 }
 
 .profile-sex > select{
@@ -357,13 +397,13 @@
   background-color: rgb(235, 229, 229);
   border: none;
   width: 18em;
-  height: 2.2em;
+  height: 2.5em;
   margin-bottom: 0.6em;
   margin-top: 0.5em;
 }
 
 .profile-sex {
-  justify-content: left;
+  padding-right: 0.5em;
 }
 
 
@@ -382,7 +422,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-top: 1.5em;
+  margin-top: 0.9em;
   margin-left: 0.5em;
   font-size: 2em;
   font-family: 'Bebas Neue', cursive;

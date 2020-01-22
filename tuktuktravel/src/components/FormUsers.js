@@ -84,40 +84,34 @@ class FormUsers extends Component {
               <img className='back-arrow' src={back} alt='Arrow to back'/>
             </figure>
           </Link>
-          
-          <form className='add-user' onSubmit={this.submit} />
-            <div className='firstSection'>
-              <div className="div-add-user">
-                <label htmlFor="lastname">Nom</label>
-                <input type="text" id="lastname" onChange={this.change} />
-
-                <label htmlFor="firstname">Prénom</label>
-                <input type="text" id="firstname" onChange={this.change} />
-
-                <label htmlFor="sex">Sexe</label>
-                <div className='sex-form-user'>
-                  <select className="sex sex-form-user" id="sex" onChange={this.change} >
-                  <option value=""></option>
-                  <option value="homme">Homme</option>
-                  <option value="femme">Femme</option>
-                  <option value="autre">Autre</option>
-                  </select>
-                </div>
-
-                <label htmlFor="password">Mot de passe</label>
-                <input type="password" id="password" onChange={this.change} />
-                <label htmlFor="comfirm-password"> Confirmation mot de passe</label>
-                <input type="password" id="password" onChange={this.change} />
-
-                <label htmlFor="birthday">Date de naissance</label>
-                <div className='input-birthday' >
-                  <input type="date" id="birthday" onChange={this.change} />
-                </div>
-                <div >
-                  <button className='nextButton' onClick = {this.nextPage}>Suivant</button>
-                </div>
+          <div className='firstSection'>
+            <div className="div-add-user">
+              <label htmlFor="lastname">Nom</label>
+              <input type="text" id="lastname" onChange={this.change} />
+              <label htmlFor="firstname">Prénom</label>
+              <input type="text" id="firstname" onChange={this.change} />
+              <label htmlFor="sex">Sexe</label>
+              <div className='sex-form-user'>
+                <select className="sex sex-form-user" id="sex" onChange={this.change} >
+                <option value=""></option>
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+                <option value="autre">Autre</option>
+                </select>
+              </div>
+              <label htmlFor="password">Mot de passe</label>
+              <input type="password" id="password" onChange={this.change} />
+              <label htmlFor="comfirm-password"> Confirmation mot de passe</label>
+              <input type="password" id="password" onChange={this.change} />
+              <label htmlFor="birthday">Date de naissance</label>
+              <div className='input-birthday' >
+                <input type="date" id="birthday" onChange={this.change} />
+              </div>
+              <div >
+                <button className='nextButton' onClick = {this.nextPage}>Suivant</button>
               </div>
             </div>
+          </div>
         </div>
         :
         <div>
@@ -150,9 +144,9 @@ class FormUsers extends Component {
             <button className='send-form-users' onClick={this.submit}>Envoyer</button>
             {this.state.isAdded ?
               <div className='addUser'>
-                <figure className='logo-ok'>
+                <div className='logo-ok'>
                   <img src={logoOk} alt='logo Ok'/>
-                </figure>
+                </div>
                 <p className="user-added">Utilisateur ajouté</p>
               </div> : null}
           </div>
