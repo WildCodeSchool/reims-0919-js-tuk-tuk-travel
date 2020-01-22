@@ -27,7 +27,7 @@ class FormUsers extends Component {
       avatar: '',
       isAdded: false,
       firstSection: true,
-      secondSection: false
+      secondSection: false,
     };
   }
 
