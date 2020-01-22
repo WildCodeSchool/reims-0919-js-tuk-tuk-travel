@@ -273,15 +273,16 @@
   justify-content: space-between;
   width: 70%;
   border-radius: 12px;
+  background-color: rgb(235, 229, 229);
 }
 .logo-ok{
   Width: 30%;
-  margin-left: 3em;
+  margin-left: 2em;
   margin-top: 0.3em;
 }
 .logo-ok img{
-    width: 50%;
-    margin: 0;
+  width: 50%;
+  margin: 0;
 }
 .user-added{
   font-size: 0.6em;
@@ -338,6 +339,29 @@
   text-decoration: none;
 }
 
+.noConnexion{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  border-radius: 12px;
+  background-color: rgb(235, 229, 229);
+  margin-left: 3em;
+}
+.logo-faux{
+  Width: 30%;
+  margin-left: 2em;
+  margin-top: 0.3em;
+}
+.logo-faux img{
+    width: 50%;
+    margin: 0;
+}
+.erreurConnexion{
+  font-size: 0.7em;
+  width:70%;
+  margin-right: 3em;
+}
 
 
 /* ----------------------------------------------------------------------------  USER PROFILE    ----------------------------------------------------------------------------- */
