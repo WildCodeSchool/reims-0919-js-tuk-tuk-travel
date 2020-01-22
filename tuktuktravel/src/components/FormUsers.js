@@ -149,7 +149,7 @@ class FormUsers extends Component {
             
             <button className='send-form-users' onClick={this.submit}>Envoyer</button>
             {this.state.isAdded ?
-              <div className='addUser'>
+              <div className='okUser'>
                 <div className='logo-ok'>
                   <img src={logoOk} alt='logo Ok'/>
                 </div>

@@ -157,7 +157,7 @@
   margin-top: 2em;
   font-size: 1.3em;
   color: #282c34;
-  margin-bottom: -3em;
+  margin-bottom: 0;
 }
 
 .send-form-users{
@@ -267,26 +267,24 @@
   margin-bottom: 0;
 }
 
-.addUser{
+.okUser{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 2em;
-  background-color: rgb(188, 240, 227);
   width: 70%;
   border-radius: 12px;
 }
 .logo-ok{
   Width: 30%;
   margin-left: 3em;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
 }
 .logo-ok img{
-    width: 30%;
+    width: 50%;
     margin: 0;
 }
 .user-added{
-  font-size: 0.7em;
+  font-size: 0.6em;
   width:70%;
   margin-right: 3em;
 }
