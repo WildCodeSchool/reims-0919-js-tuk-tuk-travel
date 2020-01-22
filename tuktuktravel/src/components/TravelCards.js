@@ -43,11 +43,12 @@ class TravelCards extends Component {
         <div className='title-travel-cards'>Voyages</div>
         <SearchField />
         {this.state.travels.map(res =>{
+          console.log(res)
           return <div key={res.travelID} className='liste-travel' >
             <ul>
               <figure className='fig-img-travel-cards'>
               <Link  to={{pathname:"/traveldetails",
-                state: {cityPic: res.cityPic, travelID: res.travelID, destination:res.destination}}}><img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img></Link>
+                state: {cityPic: res.cityPic, travelID: res.travelID, destination:res.destination, userID_creator:res.userID_creator }}}><img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img></Link>
               </figure>
               <li>Destination: {res.destination}</li>
               <li>Depart: <Moment format="DD/MM/YYYY">{res.start_date}</Moment></li>

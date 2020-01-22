@@ -48,7 +48,7 @@ class TravelForm extends Component {
     return(
       <div className='travel-form'>
         <div className='title-travel-form'>PROPOSER UN TUK-TUK</div>
-        <form className = 'add-travel' onSubmit={this.handleSubmit}>
+        <div className = 'add-travel'>
           <label htmlFor='destination'>Destination: </label>
             <input className = 'input-add-travel' id='destination' type='text' name='destination' placeholder='Votre destination..'
             value={this.state.destination} onChange={this.handleInputChange}
@@ -72,9 +72,10 @@ class TravelForm extends Component {
             <textarea  className = 'input-add-travel' name ='description' placeholder = 'Projets, activités durant le voyage..'
             rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>
           
-          <input type='submit' value='Ajouter' className="add-tuktuk" />
+          <button onClick={this.handleSubmit} className="add-tuktuk">Ajouter</button>
           
-        </form>
+        
+        </div>
         <UploadCityPic />
         <NavFooter/>
       </div>
