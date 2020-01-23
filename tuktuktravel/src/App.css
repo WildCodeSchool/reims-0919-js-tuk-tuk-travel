@@ -495,12 +495,10 @@
   margin-bottom: 0;
   margin-left: 0.3em;
 }
-
 .liste-travel  {
   width: 100%;
   margin-bottom: 1em;
 } 
-
 .liste-description-travel-cards{
   font-family: 'Roboto', sans-serif;
   width: 30%;
@@ -512,11 +510,9 @@
   font-size: 1.4em;
   text-shadow: 0.1em 0.1em #333 ;
 }
-
 span {
   font-size: 1.3em;
 }
-
 .img-travel-cards{
   width: 100%;
   border-radius: 1em;
@@ -569,6 +565,17 @@ span {
 
 .city-picture {
   width: 100%;
+}
+
+.firstname-traveldetails {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8em;
+  text-align: left;
+  margin: 0.5em;
+}
+
+.date-traveldetails {
+  display: inline;
 }
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
