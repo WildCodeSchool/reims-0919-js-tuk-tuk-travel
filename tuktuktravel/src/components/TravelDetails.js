@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { connect } from  'react-redux'
 import { Link } from 'react-router-dom';
-import back from '../img/arrow-back.png'
+import back from '../img/arrowb.png'
 import Moment from 'react-moment';
 
 class TravelDetails extends Component {
@@ -37,14 +37,24 @@ class TravelDetails extends Component {
   render() {
     console.log(this.state.user)
     return (
-      <div>
-        <Link className='link-back-arrow' to="/travelcards">
-          <figure className='fig-back-arrow'>
-            <img className='back-arrow' src={back} alt='Arrow to back'/>
+
+      <div className='travel-details'>
+
+        <div className='img-travel-details'>
+
+          <div className='link-back-arrow-details'>
+            <Link to="/travelcards">
+              <img className='back-arrow' src={back} alt='Arrow to back'/>
+            </Link>
+          </div>
+
+          <figure className='container-city-picture'>
+            <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           </figure>
-        </Link>
-        <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}></img>
-        <h1>{this.props.location.state.destination} </h1>
+
+        </div>
+
+        <p className='title-travel-details'>{this.props.location.state.destination} </p>
         <img src={this.state.user.avatar} alt='avatar'></img>
         <p>{this.state.user.firstname}</p>
         <p>{this.state.user.email}</p>
@@ -52,7 +62,6 @@ class TravelDetails extends Component {
         <p><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
         <p>{this.props.location.state.description} </p>
       </div>
-
     )
   }
 }

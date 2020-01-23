@@ -2,6 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
 
 /* ---------------------------------------------------------------------------- ALL APP --------------------------------------------------------------------------------- */
 
@@ -492,18 +495,11 @@
   margin-bottom: 0;
   margin-left: 0.3em;
 }
-/* .fig-img-travel-cards {
-  max-width: 1em;
-  margin: 0;
-  margin-bottom: 3.5em;
-}
-.fig-img-travel-cards{
+
+.liste-travel  {
   width: 100%;
-  height: auto;
-} */
-/* .liste-travel  {
   margin-bottom: 1em;
-}  */
+} 
 
 .liste-description-travel-cards{
   font-family: 'Roboto', sans-serif;
@@ -516,18 +512,64 @@
   font-size: 1.4em;
   text-shadow: 0.1em 0.1em #333 ;
 }
+
 span {
   font-size: 1.3em;
 }
+
 .img-travel-cards{
-  /* max-width: 25em; */
-  width: 120%;
+  width: 100%;
   border-radius: 1em;
   height: 20vh;
   box-shadow: 2px 5px 10px rgb(156, 152, 152);
-  margin-left: -2em;
+  margin-left: 0em;
 }
 
+
+/* --------------------------------------------------------------------------- TRAVEL DETAILS --------------------------------------------------------------------------------- */
+
+
+.img-travel-details {
+  width: 100%;
+  
+}
+
+.img-travel-details > img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px rgb(156, 152, 152);
+}
+
+.title-travel-details {
+  display: flex;
+  color: white;
+  margin-top: -2.5em;
+  margin-left: 0.5em;
+  margin-bottom: 2em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  text-shadow: 3px 1px 2px rgb(66, 66, 66);
+}
+
+.link-back-arrow-details {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  display: flex;
+  margin-left: 1em;
+  justify-content: left;
+}
+
+.container-city-picture {
+  margin: 0;
+  width: 100%;
+  height: 15em;
+  overflow: hidden;
+}
+
+
+.city-picture {
+  width: 100%;
+}
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
 
@@ -655,7 +697,6 @@ span {
    width: auto;
    height: 4em;
    margin-top: 0.1em;
-
  }
 
  .title_footer_purpose {
