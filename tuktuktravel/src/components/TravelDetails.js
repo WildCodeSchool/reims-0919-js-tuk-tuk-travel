@@ -3,6 +3,7 @@ import { connect } from  'react-redux'
 import { Link } from 'react-router-dom';
 import back from '../img/arrowb.png'
 import Moment from 'react-moment';
+import Reservation from './Reservation'
 
 
 class TravelDetails extends Component {
@@ -48,7 +49,6 @@ class TravelDetails extends Component {
               <img className='back-arrow' src={back} alt='Arrow to back'/>
             </Link>
           </div>
-
           <figure className='container-city-picture'>
             <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           </figure>
@@ -58,7 +58,7 @@ class TravelDetails extends Component {
         <p className='title-travel-details'>{this.props.location.state.destination} </p>
         <img src={this.state.user.avatar} alt='Avatar'></img>
         <p className='firstname-traveldetails'>{this.state.user.firstname}</p>
-       
+        <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} />
         <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
         <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
         <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
@@ -72,6 +72,7 @@ class TravelDetails extends Component {
 function  mapStateToProps(state) {
   return {
       token:  state.auth.token,
+      userID: state.auth.userID
   }
 }
 export default connect(mapStateToProps)(TravelDetails)
