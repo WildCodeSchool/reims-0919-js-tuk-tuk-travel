@@ -40,12 +40,11 @@ class TravelCards extends Component {
   render() {
     return (
       <div className='travel-cards'>
-        <div className='title-travel-cards'>Voyages</div>
         <SearchField />
+        <div className='title-travel-cards'>Tuk-tuk proposés</div>
         {this.state.travels.map(res =>{
           console.log(res)
           return <div key={res.travelID} className='liste-travel' >
-            <ul>
               <figure className='fig-img-travel-cards'>
               <Link  to={{pathname:"/traveldetails",
                 state: {cityPic: res.cityPic,
@@ -58,12 +57,12 @@ class TravelCards extends Component {
               }}>
                 <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img></Link>
               </figure>
-              <li>Destination: {res.destination}</li>
-              <li>Depart: <Moment format="DD/MM/YYYY">{res.start_date}</Moment></li>
-              <li>Retour: <Moment format="DD/MM/YYYY">{res.end_date}</Moment></li>
-              <li>Nombre de voyageurs: {res.number_of_travelers_max}</li>
-              <li>Description: {res.description}</li>
-            </ul>
+              <div className='liste-description-travel-cards'>
+                <span>{res.destination}</span><br/>
+                <Moment format="DD/MM/YYYY">{res.start_date}</Moment>
+                <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
+              </div>
+            
               </div>})}
               <NavFooter/>
       </div>

@@ -157,7 +157,7 @@
   margin-top: 2em;
   font-size: 1.3em;
   color: #282c34;
-  margin-bottom: -3em;
+  margin-bottom: 0;
 }
 
 .send-form-users{
@@ -267,26 +267,25 @@
   margin-bottom: 0;
 }
 
-.addUser{
+.okUser{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 2em;
-  background-color: rgb(188, 240, 227);
   width: 70%;
   border-radius: 12px;
+  background-color: rgb(235, 229, 229);
 }
 .logo-ok{
   Width: 30%;
-  margin-left: 3em;
-  margin-top: 0.2em;
+  margin-left: 2em;
+  margin-top: 0.3em;
 }
 .logo-ok img{
-    width: 30%;
-    margin: 0;
+  width: 50%;
+  margin: 0;
 }
 .user-added{
-  font-size: 0.7em;
+  font-size: 0.6em;
   width:70%;
   margin-right: 3em;
 }
@@ -340,6 +339,29 @@
   text-decoration: none;
 }
 
+.noConnexion{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  border-radius: 12px;
+  background-color: rgb(235, 229, 229);
+  margin-left: 3em;
+}
+.logo-faux{
+  Width: 30%;
+  margin-left: 2em;
+  margin-top: 0.3em;
+}
+.logo-faux img{
+    width: 50%;
+    margin: 0;
+}
+.erreurConnexion{
+  font-size: 0.7em;
+  width:70%;
+  margin-right: 3em;
+}
 
 
 /* ----------------------------------------------------------------------------  USER PROFILE    ----------------------------------------------------------------------------- */
@@ -457,8 +479,9 @@
 
 
 
-/* --------------------------------------------------------------------------- TRAVEL CARDS --------------------------------------------------------------------------------- */
 
+
+/* --------------------------------------------------------------------------- TRAVEL CARDS --------------------------------------------------------------------------------- */
 
 .title-travel-cards {
   font-family: 'Bebas Neue', cursive;
@@ -469,30 +492,41 @@
   margin-bottom: 0;
   margin-left: 0.3em;
 }
-.fig-img-travel-cards {
+/* .fig-img-travel-cards {
+  max-width: 1em;
   margin: 0;
   margin-bottom: 3.5em;
 }
-.fig-img-travel-cards > img {
+.fig-img-travel-cards{
   width: 100%;
   height: auto;
-  box-shadow: 2px 5px 10px rgb(156, 152, 152);
-}
-.liste-travel li {
-  margin-top: inherit;
-  font-size: 1.2em;
-  color: rgb(66, 66, 66);
-  text-align: left;
-  list-style: none;
-}
-.liste-travel {
-  border-top: 4mm ridge rgba(219, 38, 38, 0.815);
-}
-.place-holder {
-  width:18em;
-  height: auto;
-}
+} */
+/* .liste-travel  {
+  margin-bottom: 1em;
+}  */
 
+.liste-description-travel-cards{
+  font-family: 'Roboto', sans-serif;
+  width: 30%;
+  margin-left: 2em;
+  margin-top: -6em;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 1.4em;
+  text-shadow: 0.1em 0.1em #333 ;
+}
+span {
+  font-size: 1.3em;
+}
+.img-travel-cards{
+  /* max-width: 25em; */
+  width: 120%;
+  border-radius: 1em;
+  height: 20vh;
+  box-shadow: 2px 5px 10px rgb(156, 152, 152);
+  margin-left: -2em;
+}
 
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
