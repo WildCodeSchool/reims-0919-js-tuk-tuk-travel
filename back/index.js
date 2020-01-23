@@ -74,7 +74,19 @@ app.get('/api/users', (req, res) => {
   });
 });
 
-//GET ONE USERS
+//GET ONE USERS, (req, res) => {
+  const formData = req.body
+  console.log(formData)
+  connection.query('INSERT INTO travels (destination, IDuser_creator, start_date, end_date, number_of_travelers_max, description, cityPic) VALUES (?,?,?,?,?,?,?)', [formData.destination, formData.userID, formData.start_date, formData.end_date, formData.number_of_travelers_max, formData.description, formData.cityPic], (err, results) => {
+
+    if (err) {
+      console.log(err);
+      res.status(500).send("Erreur lors de la sauvegarde d'un voyage");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
 app.get('/api/users/:userID', (req, res) => {
   const idUser = req.params.userID;
   connection.query('SELECT * from users WHERE userID = ?', [idUser], (err, results) => {
