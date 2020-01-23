@@ -1,15 +1,18 @@
 import React, { Component } from "react"
 import { connect } from  'react-redux'
+import { Link } from 'react-router-dom';
+import back from '../img/arrowb.png'
+import Moment from 'react-moment';
 
 class TravelDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      travels:[]
+      user:[]
     }
   }
   componentDidMount() {
-    fetch('http://localhost:8000/api/travels',
+    fetch(`http://localhost:8000/api/users/${this.props.location.state.IDuser_creator}`,
     {
       method:'GET',
       headers:{
@@ -25,20 +28,32 @@ class TravelDetails extends Component {
     })
     .then(data => {
       this.setState({
-        travels: data
+        user: data[0]
     })
   })
   .catch()
   }
-
-
-
+  
   render() {
-    console.log(this.state.travels)
+    console.log(this.state.user)
     return (
       <div>
-        <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}></img>
-        <h1>{this.props.location.state.destination} </h1>
+        
+        <div className='img-travel-details'>
+          <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
+          <div className='link-back-arrow-details'>
+          <Link to="/travelcards">
+            <img className='back-arrow' src={back} alt='Arrow to back'/>
+          </Link>
+          </div>
+        </div>
+        <p className='title-travel-details'>{this.props.location.state.destination} </p>
+        <img src={this.state.user.avatar} alt='avatar'></img>
+        <p>{this.state.user.firstname}</p>
+        <p>{this.state.user.email}</p>
+        <p><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> </p>
+        <p><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
+        <p>{this.props.location.state.description} </p>
       </div>
 
     )

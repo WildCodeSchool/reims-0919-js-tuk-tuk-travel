@@ -47,7 +47,15 @@ class TravelCards extends Component {
           return <div key={res.travelID} className='liste-travel' >
               <figure className='fig-img-travel-cards'>
               <Link  to={{pathname:"/traveldetails",
-                state: {cityPic: res.cityPic, travelID: res.travelID, destination:res.destination, userID_creator:res.userID_creator }}}><img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img></Link>
+                state: {cityPic: res.cityPic,
+                  travelID: res.travelID,
+                  destination:res.destination,
+                  IDuser_creator:res.IDuser_creator,
+                  start_date:res.start_date,
+                  end_date:res.end_date,
+                }
+              }}>
+                <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img></Link>
               </figure>
               <div className='liste-description-travel-cards'>
                 <span>{res.destination}</span><br/>
