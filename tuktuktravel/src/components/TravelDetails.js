@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import back from '../img/arrowb.png'
 import Moment from 'react-moment';
 
+
 class TravelDetails extends Component {
   constructor(props) {
     super(props)
@@ -55,13 +56,14 @@ class TravelDetails extends Component {
         </div>
 
         <p className='title-travel-details'>{this.props.location.state.destination} </p>
-        <img src={this.state.user.avatar} alt='avatar'></img>
+        <img src={this.state.user.avatar} alt='Avatar'></img>
         <p className='firstname-traveldetails'>{this.state.user.firstname}</p>
        
         <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
         <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
-        <p>{this.props.location.state.description} </p> 
-        <p>{this.state.user.email}</p>
+        <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
+        <p>Contacter {this.state.user.firstname} : {this.state.user.email}</p>
+
       </div>
     )
   }
