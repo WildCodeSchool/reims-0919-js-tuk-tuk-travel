@@ -78,19 +78,22 @@ class UserProfile extends Component {
     console.log(this.state.user)
     return (
       <div>
+        <div className='title-user-profile'>PROFIL</div>
         {this.state.user && this.state.user.map(res => (
           <div className='user-profile'>
-            <img src = {res.avatar} alt={res.avatr}></img>
-            <div>{res.firstname}</div>
-            <div>{res.lastname}</div>
-            <div><Moment format="DD/MM/YYYY">{res.birthday}</Moment></div>
-            <div>{res.city}</div>
+            {/*<img src = {res.avatar} alt={res.avatar}></img>*/}
+            <img className = 'profile-picture'src = "https://randomuser.me/api/portraits/women/76.jpg" alt = "image"></img>
+            <div>Nom : {res.firstname}</div>
+            <div>Prénom : {res.lastname}</div>
+            <div>Date de naissance : <Moment format="DD/MM/YYYY">{res.birthday}</Moment></div>
+            <div>Ville : {res.city}</div>
             <div>{res.contry}</div>
-            <div> {res.email}</div>
-            <div> {res.phone_number}</div>
+            <div>E-mail :  {res.email}</div>
+            <div>Téléphone :  {res.phone_number}</div>
             <div> {res.description}</div>
           </div>
         ))}
+        <NavFooter/>
       </div>
     )
   }
