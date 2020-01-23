@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import { connect } from  'react-redux'
+import { Link } from 'react-router-dom';
+import back from '../img/arrow-back.png'
 import Moment from 'react-moment';
 
 class TravelDetails extends Component {
@@ -36,6 +38,11 @@ class TravelDetails extends Component {
     console.log(this.state.user)
     return (
       <div>
+        <Link className='link-back-arrow' to="/travelcards">
+          <figure className='fig-back-arrow'>
+            <img className='back-arrow' src={back} alt='Arrow to back'/>
+          </figure>
+        </Link>
         <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}></img>
         <h1>{this.props.location.state.destination} </h1>
         <img src={this.state.user.avatar} alt='avatar'></img>

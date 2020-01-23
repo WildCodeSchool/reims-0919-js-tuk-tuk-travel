@@ -27,7 +27,7 @@ class FormUsers extends Component {
       avatar: '',
       isAdded: false,
       firstSection: true,
-      secondSection: false
+      secondSection: false,
     };
   }
 
@@ -102,7 +102,7 @@ class FormUsers extends Component {
               <label htmlFor="password">Mot de passe</label>
               <input type="password" id="password" onChange={this.change} />
               <label htmlFor="comfirm-password"> Confirmation mot de passe</label>
-              <input type="password" id="password" onChange={this.change} />
+              <input type="password" id="comfirm-password" onChange={this.change} />
               <label htmlFor="birthday">Date de naissance</label>
               <div className='input-birthday' >
                 <input type="date" id="birthday" onChange={this.change} />
@@ -143,10 +143,10 @@ class FormUsers extends Component {
             
             <button className='send-form-users' onClick={this.submit}>Envoyer</button>
             {this.state.isAdded ?
-              <div className='addUser'>
-                <figure className='logo-ok'>
+              <div className='okUser'>
+                <div className='logo-ok'>
                   <img src={logoOk} alt='logo Ok'/>
-                </figure>
+                </div>
                 <p className="user-added">Utilisateur ajouté</p>
               </div> : null}
           </div>

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { connect } from  'react-redux';
 import back from '../img/arrow-back.png'
+import logoFaux from '../img/logoFaux.png';
 import '../App.css'
 
 
@@ -12,7 +13,8 @@ class UserConnexion extends Component {
     this.state = {
       email: '',
       password: '',
-      flash: ''
+      flash: '',
+      isNotAdded: false
     }
     this.onChange = this.onChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
@@ -41,6 +43,9 @@ class UserConnexion extends Component {
       .then(res  => {
         if (!res.ok) {
           this.props.history.push('/userconnexion')
+          this.setState ({
+            isNotAdded : true
+          })
          // throw  new  Error(res.statusText)
           
         }
@@ -88,6 +93,13 @@ class UserConnexion extends Component {
                 <input type="submit" value="Connexion" />
               </div>
           </form>
+          {this.state.isNotAdded ?
+              <div className='noConnexion'>
+                <div className='logo-faux'>
+                  <img src={logoFaux} alt='logo Faux'/>
+                </div>
+                <p className="erreurConnexion">Erreur de connexion</p>
+              </div> : null}
       </div>
     )
   }
