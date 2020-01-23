@@ -42,6 +42,9 @@ CREATE TABLE `travel_user`(
     PRIMARY KEY (`travel_user_id`)
 );
 
+
+
+
 INSERT INTO travels (IDuser_creator, destination, start_date, end_date, number_of_travelers_max, description, cityPic) VALUES
 (1, 'Bangkok', '2020-03-09', '2020-04-15', 5, 'cool', 'bankok.jpg'),
 (1, 'Rome', '2020-02-21', '2020-03-20', 5, 'cool', 'rome.jpg');

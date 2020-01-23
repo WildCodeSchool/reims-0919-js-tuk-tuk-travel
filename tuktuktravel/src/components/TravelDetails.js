@@ -37,6 +37,7 @@ class TravelDetails extends Component {
   render() {
     console.log(this.state.user)
     return (
+
       <div className='travel-details'>
 
         <div className='img-travel-details'>
