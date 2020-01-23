@@ -53,6 +53,7 @@ class TravelCards extends Component {
                   IDuser_creator:res.IDuser_creator,
                   start_date:res.start_date,
                   end_date:res.end_date,
+                  description:res.description
                 }
               }}>
                 <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img></Link>
