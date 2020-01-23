@@ -38,7 +38,6 @@ class TravelDetails extends Component {
     console.log(this.state.user)
     return (
       <div>
-        
         <div className='img-travel-details'>
           <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           <div className='link-back-arrow-details'>

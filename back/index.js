@@ -197,6 +197,21 @@ app.delete('/api/travels/:travelID', (req, res) => {
   });
 }); 
 
+// POST TRAVEL RESERVATION
+app.post('/api/travel_user', (req, res) => {
+  const formData = req.body
+  console.log(formData)
+  connection.query('INSERT INTO travel_user (id_user, id_travel) VALUES (?,?)', [formData.userID, formData.travelID], (err, results) => {
+
+    if (err) {
+      console.log(err);
+      res.status(500).send("Erreur lors de la reservation d'un voyage");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
 // LOGIN & TOKEN
 
 app.post('/api/login', function(req, res)  {
