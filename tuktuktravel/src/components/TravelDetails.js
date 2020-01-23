@@ -41,29 +41,29 @@ class TravelDetails extends Component {
     return (
 
       <div className='travel-details'>
-
         <div className='img-travel-details'>
-
-          <div className='link-back-arrow-details'>
-            <Link to="/travelcards">
-              <img className='back-arrow' src={back} alt='Arrow to back'/>
-            </Link>
-          </div>
           <figure className='container-city-picture'>
             <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           </figure>
-
         </div>
 
         <p className='title-travel-details'>{this.props.location.state.destination} </p>
-        <img src={this.state.user.avatar} alt='Avatar'></img>
-        <p className='firstname-traveldetails'>{this.state.user.firstname}</p>
-        <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} />
+        <div className='travel-creator'>
+          <img src={this.state.user.avatar} alt='Avatar'></img>
+          <p className='firstname-traveldetails'>{this.state.user.firstname}</p>
+        </div>
+        <div className='link-back-arrow-details'>
+          <Link to="/travelcards">
+            <img className='back-arrow' src={back} alt='Arrow to back'/>
+          </Link>
+        </div>
         <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
         <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
         <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
-        <p>Contacter {this.state.user.firstname} : {this.state.user.email}</p>
-
+        <div className='reserve'>
+          <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} />
+          <p>Contacter {this.state.user.firstname} : {this.state.user.email}</p>
+        </div>
       </div>
     )
   }
