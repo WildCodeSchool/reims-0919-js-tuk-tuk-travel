@@ -446,18 +446,11 @@
   margin-bottom: 0;
   margin-left: 0.3em;
 }
-/* .fig-img-travel-cards {
-  max-width: 1em;
-  margin: 0;
-  margin-bottom: 3.5em;
-}
-.fig-img-travel-cards{
+
+.liste-travel  {
   width: 100%;
-  height: auto;
-} */
-/* .liste-travel  {
   margin-bottom: 1em;
-}  */
+} 
 
 .liste-description-travel-cards{
   font-family: 'Roboto', sans-serif;
@@ -470,16 +463,17 @@
   font-size: 1.4em;
   text-shadow: 0.1em 0.1em #333 ;
 }
+
 span {
   font-size: 1.3em;
 }
+
 .img-travel-cards{
-  /* max-width: 25em; */
-  width: 120%;
+  width: 100%;
   border-radius: 1em;
   height: 20vh;
   box-shadow: 2px 5px 10px rgb(156, 152, 152);
-  margin-left: -2em;
+  margin-left: 0em;
 }
 
 
