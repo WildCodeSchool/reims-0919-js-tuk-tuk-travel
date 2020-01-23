@@ -3,6 +3,7 @@ import { connect } from  'react-redux'
 import { Link } from 'react-router-dom';
 import back from '../img/arrow-back.png'
 import Moment from 'react-moment';
+import Reservation from './Reservation'
 
 class TravelDetails extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class TravelDetails extends Component {
         </Link>
         <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}></img>
         <h1>{this.props.location.state.destination} </h1>
+        <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} />
         <img src={this.state.user.avatar} alt='avatar'></img>
         <p>{this.state.user.firstname}</p>
         <p>{this.state.user.email}</p>
@@ -60,6 +62,7 @@ class TravelDetails extends Component {
 function  mapStateToProps(state) {
   return {
       token:  state.auth.token,
+      userID: state.auth.userID
   }
 }
 export default connect(mapStateToProps)(TravelDetails)
