@@ -74,6 +74,7 @@ app.get('/api/users', (req, res) => {
   });
 });
 
+//GET ONE USERS
 app.get('/api/users/:userID', (req, res) => {
   const idUser = req.params.userID;
   connection.query('SELECT * from users WHERE userID = ?', [idUser], (err, results) => {
@@ -142,6 +143,17 @@ app.get('/api/travels', passport.authenticate('jwt', { session:  false }), (req,
   });
 });
 
+// GET TRAVEL BY USERID
+app.get('/api/travels/:userID', passport.authenticate('jwt', { session:  false }), (req, res) => {
+  const idUser = req.params.userID;
+  connection.query('SELECT * from travels WHERE IDuser_creator = ?', [idUser], (err, results) => {
+    if (err) {
+      res.status(500).send('Erreur lors de la récupération des voyages');
+    } else {
+      res.json(results);
+    }
+  });
+});
 
 // POST TRAVEL
 app.post('/api/travels', (req, res) => {
@@ -185,6 +197,36 @@ app.delete('/api/travels/:travelID', (req, res) => {
   });
 }); 
 
+// POST TRAVEL RESERVATION
+app.post('/api/travel_user', (req, res) => {
+  const formData = req.body
+  console.log(formData)
+  connection.query('INSERT INTO travel_user SET ?', [formData], (err, results) => {
+
+    if (err) {
+      console.log(err);
+      res.status(500).send("Erreur lors de la reservation d'un voyage");
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
+// GET TRAVEL RESERVATION
+app.get('api/travel_user/:userID', (req,res) => {
+  const userID = req.params.userID
+  console.log(userID)
+  connexion.query('SELECT * FROM travels AS t INNER JOIN travel_user AS tu ON travelID = tu.id_travel WHERE tu.id_user = ?',[userID], (err, results) => {
+    if (err) {
+      res.status(500).send('Erreur lors de la récupération des voyages');
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+// SELECT * FROM travels AS t INNER JOIN travel_user AS tu ON t.travelID = tu.id_travel WHERE tu.id_user = 1
+
 // LOGIN & TOKEN
 
 app.post('/api/login', function(req, res)  {
@@ -195,7 +237,7 @@ app.post('/api/login', function(req, res)  {
       return res.status(400).json({flash: 'erreur de login'});
 
     const {userID} = users[0];
-    const token = jwt.sign({userID}, key, {expiresIn: 20*60});
+    const token = jwt.sign({userID}, key, {expiresIn: 60*60});
     console.log(token)
     return res.json({
       user: {userID},
