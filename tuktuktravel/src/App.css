@@ -537,8 +537,8 @@ span {
 }
 
 .link-back-arrow-details {
-  margin-top: 0em;
-  margin-bottom: 0em;
+  margin: 0;
+  padding: 0;
   display: flex;
   margin-left: 1em;
   justify-content: left;
@@ -550,7 +550,7 @@ span {
   height: 15em;
   overflow: hidden; 
   box-shadow: 2px 5px 10px rgb(156, 152, 152);
-  border-radius: 1em;
+  border-radius: 0em 0em 1em 1em;
 }
 
 .city-picture {
@@ -559,9 +559,7 @@ span {
 
 .firstname-traveldetails {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.8em;
-  text-align: left;
-  margin: 0.5em;
+  font-size: 1.5em;
 }
 
 .date-traveldetails {
@@ -580,10 +578,22 @@ span {
   font-family: 'Montserrat', sans-serif;
 }
 
-.show-email {
-  font-size: 10em;
+.travel-creator {
+  display: flex;
+  margin-left: 2em;
+  margin-bottom: 1.5em;
 }
 
+.reserve-button > button {
+  border:none;
+  padding: 0.7em 2em 0.7em 2em;
+  border-radius:12px;
+  background: rgb(0, 145, 255);
+  color:#fff;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
 

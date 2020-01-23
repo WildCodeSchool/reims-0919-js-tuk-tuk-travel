@@ -28,7 +28,7 @@ onReservation(e) {
 
 render() {
   return (
-    <div>
+    <div className='reserve-button'>
       <button onClick={this.onReservation}>Réserver</button>
     </div>
   )
