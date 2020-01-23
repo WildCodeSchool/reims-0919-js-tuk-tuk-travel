@@ -12,8 +12,8 @@ constructor(props) {
 onReservation(e) {
   e.preventDefault()
       const reservation  = {
-        userID: this.props.userID, 
-        travelID: this.props.travelID
+        id_user: this.props.userID, 
+        id_travel: this.props.travelID
       }
       console.log({reservation})
       

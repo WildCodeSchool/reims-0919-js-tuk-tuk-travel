@@ -49,7 +49,9 @@ class TravelDetails extends Component {
               <img className='back-arrow' src={back} alt='Arrow to back'/>
             </Link>
           </div>
-
+          <figure className='container-city-picture'>
+            <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
+          </figure>
 
         </div>
 
