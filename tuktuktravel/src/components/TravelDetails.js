@@ -3,6 +3,8 @@ import { connect } from  'react-redux'
 import { Link } from 'react-router-dom';
 import back from '../img/arrowb.png'
 import Moment from 'react-moment';
+import Reservation from './Reservation'
+
 
 class TravelDetails extends Component {
   constructor(props) {
@@ -37,25 +39,32 @@ class TravelDetails extends Component {
   render() {
     console.log(this.state.user)
     return (
-      <div>
-        
-        <div className='img-travel-details'>
-          <img src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
-          <div className='link-back-arrow-details'>
-          <Link to="/travelcards">
-            <img className='back-arrow' src={back} alt='Arrow to back'/>
-          </Link>
-          </div>
-        </div>
-        <p className='title-travel-details'>{this.props.location.state.destination} </p>
-        <img src={this.state.user.avatar} alt='avatar'></img>
-        <p>{this.state.user.firstname}</p>
-        <p>{this.state.user.email}</p>
-        <p><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> </p>
-        <p><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
-        <p>{this.props.location.state.description} </p>
-      </div>
 
+      <div className='travel-details'>
+
+        <div className='img-travel-details'>
+
+          <div className='link-back-arrow-details'>
+            <Link to="/travelcards">
+              <img className='back-arrow' src={back} alt='Arrow to back'/>
+            </Link>
+          </div>
+          <figure className='container-city-picture'>
+            <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
+          </figure>
+
+        </div>
+
+        <p className='title-travel-details'>{this.props.location.state.destination} </p>
+        <img src={this.state.user.avatar} alt='Avatar'></img>
+        <p className='firstname-traveldetails'>{this.state.user.firstname}</p>
+        <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} />
+        <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
+        <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
+        <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
+        <p>Contacter {this.state.user.firstname} : {this.state.user.email}</p>
+
+      </div>
     )
   }
 }
@@ -63,6 +72,7 @@ class TravelDetails extends Component {
 function  mapStateToProps(state) {
   return {
       token:  state.auth.token,
+      userID: state.auth.userID
   }
 }
 export default connect(mapStateToProps)(TravelDetails)
