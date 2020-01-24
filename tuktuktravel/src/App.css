@@ -432,7 +432,6 @@
 }
 
 
-
 /* --------------------------------------------------------------------------- TRAVEL FORM --------------------------------------------------------------------------------- */
 
 
@@ -441,6 +440,10 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2em;
+}
+
+.add-travel > label {
+  font-size: 1.3em;  
 }
 
 .title-travel-form {
@@ -462,6 +465,7 @@
   height: 2.5em;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
+  font-size: 1.2em;
 }
 
 .input-add-travel:focus {
@@ -511,8 +515,10 @@ a {
   flex-direction: column;
   color: white;
   font-size: 1.4em;
-  text-shadow: 0.1em 0.1em #333 ;
+  text-shadow: 0.1em 0.1em #333;
+  text-align: left;
 }
+
 span {
   font-size: 1.3em;
 }
@@ -524,6 +530,9 @@ span {
   margin-left: 0em;
 }
 
+.travel-cards {
+  margin-bottom: 6em;
+}
 
 /* --------------------------------------------------------------------------- TRAVEL DETAILS --------------------------------------------------------------------------------- */
 
@@ -550,7 +559,7 @@ span {
 .container-city-picture {
   margin: 0;
   width: 100%;
-  height: 15em;
+  height: 12em;
   overflow: hidden; 
   box-shadow: 2px 5px 10px rgb(156, 152, 152);
   border-radius: 0em 0em 1em 1em;
@@ -716,8 +725,12 @@ span {
   position: fixed;
   bottom: 0; 
   width: 100%;
-  height: 10%;
+  height: 11%;
   background-color: rgb(243, 241, 241)
+ }
+
+ .footer a {
+  color: #282c34;
  }
 
  .title_footer {
@@ -730,11 +743,12 @@ span {
    color: black;
    text-decoration: none;
    margin: 0;
+   margin-top: 0.5em;
  }
 
  .img-footer {
    width: auto;
-   height: 3em;
+   height: 2.5em;
    margin: 0;
  }
 
@@ -743,6 +757,9 @@ span {
    padding: 0;
  }
 
+ .tuktuk {
+   margin-top: 0.5em;
+ }
  /* ----- PURPOSE -----*/
  
  .logos-purpose{

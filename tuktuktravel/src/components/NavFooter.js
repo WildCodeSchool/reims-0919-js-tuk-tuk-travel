@@ -18,14 +18,14 @@ const NavFooter = () => {
         </figure>
         <p className="title_footer">Explorer</p>
       </Link>
-      <Link className='link-footer title-purpose' to="/TravelForm">
+      <Link className=' title-purpose' to="/TravelForm">
         <figure className='logos-purpose'>
           <img className='img-footer-purpose' src={logoProposer} alt='logo proposer'/>
         </figure>
         <p className="title_footer_purpose ">Proposer</p>
       </Link>
       <Link className='lien' to="/MyTravels">
-        <figure className='logos-footer'>
+        <figure className='logos-footer tuktuk'>
           <img className='img-footer' src={folder} alt='logo voyages'/>
         </figure>
         <p className="title_footer">Mes Tuk-Tuk</p>

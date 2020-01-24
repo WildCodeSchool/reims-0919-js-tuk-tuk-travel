@@ -40,7 +40,6 @@ class TravelCards extends Component {
   render() {
     return (
       <div className='travel-cards'>
-        <SearchField />
         <div className='title-travel-cards'>Tuk-tuk proposés</div>
         {this.state.travels.map(res =>{
           console.log(res)
