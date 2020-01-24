@@ -27,7 +27,7 @@ const NavFooter = () => {
         <figure className='logos-footer'>
           <img className='img-footer' src={logoVoyages} alt='logo voyages'/>
         </figure>
-        <p className="title_footer">Mes voyages</p>
+        <p className="title_footer">Mes Tuk-Tuk</p>
       </Link>
       <Link className='link-footer' to="/profile">
         <figure className='logos-footer'>
