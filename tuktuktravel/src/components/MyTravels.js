@@ -3,6 +3,7 @@ import { connect } from  'react-redux'
 import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 import NavFooter from "./NavFooter"
+import del from '../img/delete.png'
 
 
 
@@ -39,8 +40,18 @@ class MyTravels extends Component {
   })
   .catch()
   }
-
-
+ 
+  handleDelete = () => {
+    fetch(`http://localhost:8000/api/travel_user/${this.state.travel_user.travel_user_id}`,
+    {
+      method:'POST',
+      headers:{
+        'Authorization':  'Bearer '  +  this.props.token,
+        'Content-Type':  'application/json'
+      }
+    }
+  )}
+  
   render() {
     console.log(this.state.travel_user)
     return (
@@ -62,12 +73,15 @@ class MyTravels extends Component {
               <figure className='fig-img-travel-cards'>
                 <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
               </figure>
+
               <div className='liste-description-travel-cards'>
                 <span>{res.destination}</span><br/>
                 <Moment format="DD/MM/YYYY">{res.start_date}</Moment>
                 <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
               </div>
               </Link>
+              <img src={del} alt={del} style={{width:'25px',cursor:'pointer', position:"relative",top:'0px' ,right:'0'  }} onClick={this.handleDelete} ></img>
+
               </div>})}
               <NavFooter/>
       </div>

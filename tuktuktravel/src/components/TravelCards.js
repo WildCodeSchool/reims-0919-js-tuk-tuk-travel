@@ -10,7 +10,8 @@ class TravelCards extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      travels:[]
+      travels:[],
+      input: ''
     }
   }
 
@@ -37,14 +38,27 @@ class TravelCards extends Component {
   .catch()
   }
 
+  searchField = (event)=>{
+    this.setState({input: event.target.value})
+    console.log(event.target.value)
+  }
+
+  getCountrys = () => {
+    {const result = this.state.travels.filter (res => { if (res.destination==this.state.input) {
+      console.log('hello')
+    }} )}
+   
+  }
+
   render() {
+    console.log(this.state.travels)
     return (
       <div className='travel-cards'>
-        <SearchField />
+        <SearchField searchField={this.searchField} input={this.state.input} getCountrys={this.getCountrys}/>
+        
         <div className='title-travel-cards'>Tuk-tuk proposés</div>
         {this.state.travels.map(res =>{
-          console.log(res)
-          return <div key={res.travelID} className='liste-travel' >
+          return <div key={res.travelID} className='liste-travel'>
               <Link  to={{pathname:"/traveldetails",
                 state: {cityPic: res.cityPic,
                   travelID: res.travelID,
