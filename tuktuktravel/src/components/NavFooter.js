@@ -1,9 +1,10 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import logoExplorer from '../img/logoExplorer.png';
 import logoProposer from '../img/logoProposer.png';
-import logoVoyages from '../img/logoVoyages.png';
-import logoParametre from '../img/logoParametre.png'
+import compass from '../img/compass.png'
+import folder from '../img/folder.png'
+import profile from '../img/profile.png'
+
 import '../App.css'
 
 
@@ -13,7 +14,7 @@ const NavFooter = () => {
 
       <Link className='link-footer' to="/TravelCards">
         <figure className='logos-footer'>
-          <img className='img-footer' src={logoExplorer} alt='logo explorer'/>
+          <img className='img-footer' src={compass} alt='logo explorer'/>
         </figure>
         <p className="title_footer">Explorer</p>
       </Link>
@@ -25,15 +26,15 @@ const NavFooter = () => {
       </Link>
       <Link className='lien' to="/MyTravels">
         <figure className='logos-footer'>
-          <img className='img-footer' src={logoVoyages} alt='logo voyages'/>
+          <img className='img-footer' src={folder} alt='logo voyages'/>
         </figure>
         <p className="title_footer">Mes voyages</p>
       </Link>
       <Link className='link-footer' to="/profile">
         <figure className='logos-footer'>
-          <img className='img-footer' src={logoParametre} alt='logo parametres'/>
+          <img className='img-footer' src={profile} alt='logo parametres'/>
         </figure>
-        <p className="title_footer">Paramètres</p>
+        <p className="title_footer">Profil</p>
       </Link>
       
     </div>
