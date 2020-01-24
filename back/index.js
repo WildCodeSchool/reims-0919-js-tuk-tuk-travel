@@ -213,17 +213,17 @@ app.post('/api/travel_user', (req, res) => {
 });
 
 // GET TRAVEL RESERVATION
-app.get('api/travel_user/:userID', (req,res) => {
+app.get('/api/travel_user/:userID', (req,res) => {
   const userID = req.params.userID
   console.log(userID)
-  connexion.query('SELECT * FROM travels AS t INNER JOIN travel_user AS tu ON travelID = tu.id_travel WHERE tu.id_user = ?',[userID], (err, results) => {
+  connection.query('SELECT * FROM travels AS t INNER JOIN travel_user AS tu ON t.travelID = tu.id_travel WHERE tu.id_user = ?', [userID], (err, results) => {
     if (err) {
       res.status(500).send('Erreur lors de la récupération des voyages');
     } else {
       res.json(results);
     }
   });
-});
+})
 
 // SELECT * FROM travels AS t INNER JOIN travel_user AS tu ON t.travelID = tu.id_travel WHERE tu.id_user = 1
 
