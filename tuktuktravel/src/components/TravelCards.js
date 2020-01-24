@@ -10,7 +10,8 @@ class TravelCards extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      travels:[],
+      travelsTemp:[],
+      travelsStore:[],
       input: ''
     }
   }
@@ -32,7 +33,8 @@ class TravelCards extends Component {
     })
     .then(data => {
       this.setState({
-        travels: data
+        travelsTemp: data,
+        travelsStore: data
     })
   })
   .catch()
@@ -40,25 +42,24 @@ class TravelCards extends Component {
 
   searchField = (event)=>{
     this.setState({input: event.target.value})
-    console.log(event.target.value)
+    // console.log(event.target.value)
   }
 
-  getCountrys = () => {
-    {const result = this.state.travels.filter (res => { if (res.destination==this.state.input) {
-      console.log('hello')
-    }} )}
-   
+  getCountrys = () => { 
+    if (this.state.input.length > 0 ){
+    const result = this.state.travelsStore.filter(travel => travel.destination === this.state.input)
+    this.setState({travelsTemp:result})}
+    else{this.setState({travelsTemp:this.state.travelsStore})}
   }
 
   render() {
-    console.log(this.state.travels)
+    // console.log(this.state.travels)
     return (
       <div className='travel-cards'>
         <SearchField searchField={this.searchField} input={this.state.input} getCountrys={this.getCountrys}/>
-        
         <div className='title-travel-cards'>Tuk-tuk proposés</div>
-        {this.state.travels.map(res =>{
-          return <div key={res.travelID} className='liste-travel'>
+        {React.Children.toArray(this.state.travelsTemp.map(res =>{
+          return <div className='liste-travel'>
               <Link  to={{pathname:"/traveldetails",
                 state: {cityPic: res.cityPic,
                   travelID: res.travelID,
@@ -79,7 +80,7 @@ class TravelCards extends Component {
               </div>
               </Link>
             
-              </div>})}
+              </div>}))}
               <NavFooter/>
       </div>
     )
