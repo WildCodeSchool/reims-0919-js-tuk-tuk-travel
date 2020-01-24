@@ -1,21 +1,22 @@
 import React, { Component } from "react"
-import Moment from 'react-moment';
-import '../App.css'
-import NavFooter from "./NavFooter";
-import SearchField from './SearchField'
-import { connect } from  'react-redux';
-import { Link } from 'react-router-dom';
+import { connect } from  'react-redux'
+import { Link } from 'react-router-dom'
+import Moment from 'react-moment'
+import NavFooter from "./NavFooter"
 
-class TravelCards extends Component {
+
+
+class MyTravels extends Component {
   constructor(props) {
     super(props)
+  
     this.state = {
-      travels:[]
+       travel_user: []
     }
   }
-
+  
   componentDidMount() {
-    fetch('http://localhost:8000/api/travels',
+    fetch(`http://localhost:8000/api/travel_user/${this.props.userID}`,
     {
       method:'GET',
       headers:{
@@ -28,21 +29,24 @@ class TravelCards extends Component {
         this.props.history.push('/userconnexion')
       }
       return res.json()
+      
     })
     .then(data => {
       this.setState({
-        travels: data
+        travel_user: data
+        
     })
   })
   .catch()
   }
 
+
   render() {
+    console.log(this.state.travel_user)
     return (
       <div className='travel-cards'>
-        <SearchField />
-        <div className='title-travel-cards'>Tuk-tuk proposés</div>
-        {this.state.travels.map(res =>{
+      <div className='title-travel-cards'>Tuk-tuk proposés</div>
+        {this.state.travel_user.map(res =>{
           console.log(res)
           return <div key={res.travelID} className='liste-travel' >
               <Link  to={{pathname:"/traveldetails",
@@ -64,17 +68,16 @@ class TravelCards extends Component {
                 <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
               </div>
               </Link>
-            
               </div>})}
               <NavFooter/>
       </div>
     )
   }
 }
-
 function  mapStateToProps(state) {
   return {
       token:  state.auth.token,
+      userID: state.auth.userID
   }
 }
-export default connect(mapStateToProps)(TravelCards)
+export default connect(mapStateToProps)(MyTravels)
