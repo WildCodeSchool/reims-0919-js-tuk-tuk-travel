@@ -11,8 +11,10 @@ import UserConnexion from './components/UserConnexion';
 import TravelForm from './components/TravelForm'
 import TravelCards from './components/TravelCards'
 import TravelDetails from './components/TravelDetails'
+import MyTravels from './components/MyTravels'
 import Cgu from './components/Cgu'
 import './App.css'
+
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
         <Route exact path="/travelcards" component={TravelCards} component={requireAuth(TravelCards)}/>
         <Route exact path="/travelform" component={TravelForm}/>
         <Route exact path="/traveldetails" render={(props) => <TravelDetails {...props}/>} />
+        <Route exact path="/mytravels" component={MyTravels}/>
       </Switch> 
     </div>
   );
