@@ -88,11 +88,11 @@ app.get('/api/users/:userID', (req, res) => {
 
 //POST USERS
 app.post('/api/users', (req, res) => {
-  const {lastname, firstname, sex, password, birthday, country, city, email, phone_number, description}  = req.body
+  const {lastname, firstname, sex, password, birthday, country, city, email, phone_number, description, avatar}  = req.body
   const hash = bcrypt.hashSync(password, 10, (err, hash) => {
     return hash
   });
-  formData = {lastname, firstname, sex, password: hash, birthday, country, city, email, phone_number, description};
+  formData = {lastname, firstname, sex, password: hash, birthday, country, city, email, phone_number, description, avatar};
   console.log(formData)
     connection.query('INSERT INTO users (lastname, firstname, sex, password, birthday, country, city, email, phone_number, description, avatar) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [formData.lastname, formData.firstname, formData.sex, formData.password, formData.birthday, formData.country, formData.city, formData.email, formData.phone_number, formData.description, formData.avatar], (err, results) => {
     if (err) {
@@ -219,6 +219,19 @@ app.get('/api/travel_user/:userID', (req,res) => {
   connection.query('SELECT * FROM travels AS t INNER JOIN travel_user AS tu ON t.travelID = tu.id_travel WHERE tu.id_user = ?', [userID], (err, results) => {
     if (err) {
       res.status(500).send('Erreur lors de la récupération des voyages');
+    } else {
+      res.json(results);
+    }
+  });
+})
+
+// DELETE TRAVEL RESERVATION
+app.delete('/api/travel_user/:travel_user_id', (req,res) => {
+  const idTravel = req.params.travel_user_id
+  console.log(userID)
+  connection.query('DELETE FROM travel_user WHERE travel_user_id = ?', [idTravel], (err, results) => {
+    if (err) {
+      res.status(500).send('Erreur lors de la supression de la réservation');
     } else {
       res.json(results);
     }
