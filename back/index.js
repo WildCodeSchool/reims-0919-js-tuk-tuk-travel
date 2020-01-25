@@ -228,7 +228,7 @@ app.get('/api/travel_user/:userID', (req,res) => {
 // DELETE TRAVEL RESERVATION
 app.delete('/api/travel_user/:travel_user_id', (req,res) => {
   const idTravel = req.params.travel_user_id
-  console.log(userID)
+  //console.log(userID)
   connection.query('DELETE FROM travel_user WHERE travel_user_id = ?', [idTravel], (err, results) => {
     if (err) {
       res.status(500).send('Erreur lors de la supression de la réservation');
