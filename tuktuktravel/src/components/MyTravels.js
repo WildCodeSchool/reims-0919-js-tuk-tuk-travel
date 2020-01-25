@@ -56,7 +56,7 @@ class MyTravels extends Component {
     console.log(this.state.travel_user)
     return (
       <div className='travel-cards'>
-      <div className='title-travel-cards'>Tuk-tuk proposés</div>
+      <div className='title-travel-cards'>Mes Tuk-tuk</div>
         {this.state.travel_user.map(res =>{
           console.log(res)
           return <div key={res.travelID} className='liste-travel' >

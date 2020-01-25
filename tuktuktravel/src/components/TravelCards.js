@@ -47,7 +47,7 @@ class TravelCards extends Component {
 
   getCountrys = () => { 
     if (this.state.input.length > 0 ){
-    const result = this.state.travelsStore.filter(travel => travel.destination === this.state.input)
+    const result = this.state.travelsStore.filter(travel => travel.destination.toLowerCase() === this.state.input.toLowerCase())
     this.setState({travelsTemp:result})}
     else{this.setState({travelsTemp:this.state.travelsStore})}
   }
