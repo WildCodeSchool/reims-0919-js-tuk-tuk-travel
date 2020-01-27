@@ -18,6 +18,7 @@ onReservation(e) {
       const reservation  = {
         id_user: this.props.userID, 
         id_travel: this.props.travelID
+        
       }
       console.log({reservation})
       

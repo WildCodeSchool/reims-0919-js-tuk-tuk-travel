@@ -12,6 +12,7 @@ import TravelForm from './components/TravelForm'
 import TravelCards from './components/TravelCards'
 import TravelDetails from './components/TravelDetails'
 import MyTravels from './components/MyTravels'
+import MyTravelDetails from './components/MyTravelDetails'
 import Cgu from './components/Cgu'
 import './App.css'
 
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/travelform" component={TravelForm}/>
         <Route exact path="/traveldetails" render={(props) => <TravelDetails {...props}/>} />
         <Route exact path="/mytravels" component={MyTravels}/>
+        <Route exact path="/mytraveldetails" component={MyTravelDetails} />
       </Switch> 
     </div>
   );

@@ -67,7 +67,7 @@ class MyTravels extends Component {
                 <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
               </figure>
               
-              <Link style={{height:'10px'}} to={{pathname:"/traveldetails",
+              <Link style={{height:'10px'}} to={{pathname:"/mytraveldetails",
                 state: {cityPic: res.cityPic,
                   travelID: res.travelID,
                   destination:res.destination,

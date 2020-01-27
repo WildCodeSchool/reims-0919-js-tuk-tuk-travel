@@ -2,12 +2,11 @@ import React, { Component } from "react"
 import { connect } from  'react-redux'
 import { Link } from 'react-router-dom';
 import back from '../img/arrowb.png'
-import Moment from 'react-moment';
-import Reservation from './Reservation'
+import Moment from 'react-moment'
 import NavFooter from './NavFooter'
 
 
-class TravelDetails extends Component {
+class MyTravelDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -76,7 +75,7 @@ class TravelDetails extends Component {
           <p className='firstname-traveldetails'>{this.state.userCreator.firstname}</p>
         </div>
         <div className='link-back-arrow-details'>
-          <Link to="/travelcards">
+          <Link to="/mytravels">
             <img className='back-arrow' src={back} alt='Arrow to back'/>
           </Link>
         </div>
@@ -84,7 +83,6 @@ class TravelDetails extends Component {
         <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
         <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
         <div className='reserve'>
-          <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} avatar={this.state.user.avatar} />
           <p>Contacter {this.state.userCreator.firstname} : {this.state.userCreator.email}</p>
         </div>
         <NavFooter />
@@ -99,5 +97,4 @@ function  mapStateToProps(state) {
       userID: state.auth.userID
   }
 }
-export default connect(mapStateToProps)(TravelDetails)
-
+export default connect(mapStateToProps)(MyTravelDetails)
