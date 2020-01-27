@@ -47,7 +47,6 @@ class TravelDetails extends Component {
             <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           </figure>
         </div>
-
         <p className='title-travel-details'>{this.props.location.state.destination} </p>
         <div className='travel-creator'>
           <img src={this.state.user.avatar} alt='Avatar'></img>

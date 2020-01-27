@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import axios from 'axios'
+import logoOk from '../img/logoOk.png';
 
 
 
@@ -36,7 +37,8 @@ render() {
   return (
     <div className='reserve-button'>
       <button onClick={this.onReservation}>Réserver</button>
-      {this.state.isBooked?<div >tuk-tuk booké</div>:null}
+      {this.state.isBooked?<div style={{display:'flex', justifyContent:'center', alignItems:'center', margin:'5x'}} >
+        <img style={{width:'12%'}} src={logoOk} alt='logo Ok'/>tuk-tuk booké</div>:null}
     </div>
    
   )

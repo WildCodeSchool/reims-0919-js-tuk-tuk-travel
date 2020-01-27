@@ -60,7 +60,6 @@ class TravelCards extends Component {
         
         <div className='title-travel-cards'>Tuk-tuk proposés</div>
         <SearchField searchField={this.searchField} input={this.state.input} getCountrys={this.getCountrys}/>
-        <button onClick={this.sortByCountryName}>test</button>
         {React.Children.toArray(this.state.travelsTemp.map(res =>{
           return <div className='liste-travel'>
               

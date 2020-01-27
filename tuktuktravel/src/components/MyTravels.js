@@ -61,7 +61,8 @@ class MyTravels extends Component {
       <div className='title-travel-cards'>Mes Tuk-tuk</div>
       {React.Children.toArray(this.state.travel_user.map(res =>{
           return <div className='liste-travel'>
-              <figure style={{position:'fixed',right:'0'}} ><img style={{width:'20px'}} src={del} alt='del'></img></figure>
+              <figure style={{position:'relative',right:'-185px',top:'70px'}} >
+                <img style={{width:'30px',cursor:'pointer'}} onClick={this.handleDelete.bind(this,res.travel_user_id)} src={del} alt='del'></img></figure>
               <figure className='fig-img-travel-cards'>
                 <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
               </figure>
@@ -83,7 +84,7 @@ class MyTravels extends Component {
                 <Moment format="DD/MM/YYYY">{res.start_date}</Moment><span>-</span>
                 <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
               </div>
-              <button onClick={this.handleDelete.bind(this,res.travel_user_id)}>Supprimer</button>
+              
               
             
               </div>}))}
