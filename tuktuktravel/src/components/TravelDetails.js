@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import back from '../img/arrowb.png'
 import Moment from 'react-moment';
 import Reservation from './Reservation'
+import NavFooter from './NavFooter'
 
 
 class TravelDetails extends Component {
@@ -64,6 +65,7 @@ class TravelDetails extends Component {
           <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} />
           <p>Contacter {this.state.user.firstname} : {this.state.user.email}</p>
         </div>
+        <NavFooter />
       </div>
     )
   }

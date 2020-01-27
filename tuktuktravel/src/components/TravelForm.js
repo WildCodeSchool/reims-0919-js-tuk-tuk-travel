@@ -16,7 +16,8 @@ class TravelForm extends Component {
       number_of_travelers_max : '',
       description : '',
       cityPic: '',
-      userID: ''
+      userID: '',
+      isAdded: false
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -36,7 +37,10 @@ class TravelForm extends Component {
       
       axios.post('http://localhost:8000/api/travels/',destination)
       .then(res => {
-        alert('Tuk Tuk ajouté!');
+        this.setState ({
+          isAdded: true
+        })
+        //alert('Tuk Tuk ajouté!');
       }).catch(event => {
       console.error(event);
       alert(`Erreur lors de l'ajout d'un Tuk Tuk`);
@@ -73,6 +77,7 @@ class TravelForm extends Component {
             rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>
           
           <button onClick={this.handleSubmit} className="add-tuktuk">Ajouter</button>
+          {this.state.isAdded?<div>Tuk-Tuk ajouté!</div>:null}
           
         
         </div>

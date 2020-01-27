@@ -7,6 +7,9 @@ class Reservation extends Component {
 constructor(props) {
   super(props) 
   this.onReservation=this.onReservation.bind(this)
+  this.state = {
+    isBooked: false
+  }
 }
 
 onReservation(e) {
@@ -19,10 +22,13 @@ onReservation(e) {
       
       axios.post('http://localhost:8000/api/travel_user',reservation)
       .then(res => {
-        alert('TukTuk reservé');
+        //alert('TukTuk reservé');
+        this.setState ({
+          isBooked: true
+        })
       }).catch(event => {
       console.error(event);
-      alert(`Erreur lors de la réservation du TukTuk`);
+      //alert(`Erreur lors de la réservation du TukTuk`);
   });
 }
 
@@ -30,7 +36,9 @@ render() {
   return (
     <div className='reserve-button'>
       <button onClick={this.onReservation}>Réserver</button>
+      {this.state.isBooked?<div >tuk-tuk booké</div>:null}
     </div>
+   
   )
 }
 
