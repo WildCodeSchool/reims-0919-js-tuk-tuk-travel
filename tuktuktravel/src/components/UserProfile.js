@@ -81,8 +81,7 @@ class UserProfile extends Component {
         <div className='title-user-profile'>PROFIL</div>
         {this.state.user && this.state.user.map(res => (
           <div className='user-profile'>
-            {/*<img src = {res.avatar} alt={res.avatar}></img>*/}
-            <img className = 'profile-picture'src = "https://randomuser.me/api/portraits/women/76.jpg" alt = "image"></img>
+            <img src = {res.avatar} alt='profil' className='profile-picture'></img>
             <div>Nom : {res.firstname}</div>
             <div>Prénom : {res.lastname}</div>
             <div>Date de naissance : <Moment format="DD/MM/YYYY">{res.birthday}</Moment></div>
