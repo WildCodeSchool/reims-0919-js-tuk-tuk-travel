@@ -3,7 +3,6 @@ import { connect } from  'react-redux'
 import { Link } from 'react-router-dom';
 import back from '../img/arrowb.png'
 import Moment from 'react-moment';
-import Reservation from './Reservation'
 import NavFooter from './NavFooter'
 
 
@@ -60,8 +59,6 @@ class TravelDetails extends Component {
   }
   
   render() {
-    console.log(this.state.userCreator)
-    console.log(this.state.users)
     return (
 
       <div className='travel-details'>

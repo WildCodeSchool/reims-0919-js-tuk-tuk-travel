@@ -535,7 +535,7 @@ a {
   color: white;
   text-align: start;
   font-weight: normal;
-  background-color:#0091ff ; 
+  background-color:#fa8c17 ; 
   opacity: 90%;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -769,9 +769,8 @@ a {
 
 .profile-picture{
   margin-left: 4em;
-  width: 50%;
+  width: 40%;
   border-radius: 50%;
-  height: 8em;
 }
 
 /* ------------------------------------------------------------------------------ NAV FOOTER ---------------------------------------------------------------------------------- */
