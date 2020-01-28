@@ -26,7 +26,7 @@ class UserProfile extends Component {
   // GET ONE USER
   componentDidMount() {
     fetch(`http://localhost:8000/api/users/${this.props.userID}`,
-    //fetch(`http://localhost:8000/api/users`,
+   
     {
       method:'GET',
       headers:{
@@ -60,9 +60,11 @@ class UserProfile extends Component {
     return (
       <div>
         <div className='title-user-profile'>PROFIL</div>
-        {this.state.user && this.state.user.map(res => (
+        {React.Children.toArray(this.state.user && this.state.user.map(res => (
           <div className='user-profile'>
-            <img src = {res.avatar} alt='profil' className='profile-picture'></img>
+            <div className='profile-picture-container'>
+              <img src = {res.avatar} alt='profil' className='profile-picture'></img>
+            </div>
             <div>Nom : {res.firstname}</div>
             <div>Prénom : {res.lastname}</div>
             <div>Date de naissance : <Moment format="DD/MM/YYYY">{res.birthday}</Moment></div>
@@ -72,7 +74,7 @@ class UserProfile extends Component {
             <div>Téléphone :  {res.phone_number}</div>
             <div> {res.description}</div>
           </div>
-        ))}
+        )))}
         <NavFooter/>
       </div>
     )
