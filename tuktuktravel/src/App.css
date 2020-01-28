@@ -501,13 +501,16 @@ a {
   margin: auto;
 }
 .liste-description-travel-cards{
+  display: flex;
+  justify-content:space-between ;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 0.8em;
+  font-size: 1em;
   width: 90%;
   margin: auto;
+  margin-left: 10px;
 }
 .travel-cards-title{
   font-family: 'Montserrat', sans-serif;
@@ -519,7 +522,7 @@ a {
   color: white;
   text-align: start;
   font-weight: normal;
-  background-color: teal ; 
+  background-color:#0091ff ; 
   opacity: 90%;
 
 }
@@ -602,6 +605,7 @@ a {
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
+  cursor: pointer;
 }
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */

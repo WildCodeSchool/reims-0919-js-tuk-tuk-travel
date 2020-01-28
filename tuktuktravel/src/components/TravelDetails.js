@@ -12,7 +12,7 @@ class TravelDetails extends Component {
     super(props)
     this.state = {
       userCreator:[],
-      user: []
+      users: []
     }
   }
   componentDidMount() {
@@ -37,7 +37,7 @@ class TravelDetails extends Component {
   })
   .catch()
 
-  fetch(`http://localhost:8000/api/users/${this.props.userID}`,
+  fetch(`http://localhost:8000/api/travels/${this.props.location.state.travelID}/users`,
   {
     method:'GET',
     headers:{
@@ -53,7 +53,7 @@ class TravelDetails extends Component {
   })
   .then(data => {
     this.setState({
-      user: data[0]
+      users: data
   })
 })
 .catch()
@@ -61,7 +61,7 @@ class TravelDetails extends Component {
   
   render() {
     console.log(this.state.userCreator)
-    console.log(this.state.user)
+    console.log(this.state.users)
     return (
 
       <div className='travel-details'>
@@ -75,6 +75,10 @@ class TravelDetails extends Component {
           <img src={this.state.userCreator.avatar} alt='Avatar'></img>
           <p className='firstname-traveldetails'>{this.state.userCreator.firstname}</p>
         </div>
+        <div>
+        {this.state.users.map(user=> 
+          <figure><img src={user.avatar}  alt='avatar'/> </figure>)}
+          </div>
         <div className='link-back-arrow-details'>
           <Link to="/travelcards">
             <img className='back-arrow' src={back} alt='Arrow to back'/>
@@ -84,7 +88,7 @@ class TravelDetails extends Component {
         <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
         <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
         <div className='reserve'>
-          <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} avatar={this.state.user.avatar} />
+          <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} />
           <p>Contacter {this.state.userCreator.firstname} : {this.state.userCreator.email}</p>
         </div>
         <NavFooter />

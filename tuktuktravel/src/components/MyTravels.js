@@ -11,7 +11,6 @@ import axios from 'axios';
 class MyTravels extends Component {
   constructor(props) {
     super(props)
-  
     this.state = {
        travel_user: []
     }
@@ -55,7 +54,6 @@ class MyTravels extends Component {
   }
   
   render() {
-    console.log(this.state.travel_user.travel_user_id)
     return (
       <div className='travel-cards'>
       <div className='title-travel-cards'>Mes Tuk-tuk</div>
@@ -75,7 +73,7 @@ class MyTravels extends Component {
                   start_date:res.start_date,
                   end_date:res.end_date,
                   description:res.description
-                }
+                } 
               }}>
               
               <h1 className='travel-cards-title'>{res.destination}</h1>

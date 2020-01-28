@@ -11,7 +11,7 @@ class MyTravelDetails extends Component {
     super(props)
     this.state = {
       userCreator:[],
-      user: []
+      users: []
     }
   }
   componentDidMount() {
@@ -36,7 +36,7 @@ class MyTravelDetails extends Component {
   })
   .catch()
 
-  fetch(`http://localhost:8000/api/users/${this.props.userID}`,
+  fetch(`http://localhost:8000/api/travels/${this.props.location.state.travelID}/users`,
   {
     method:'GET',
     headers:{
@@ -52,15 +52,15 @@ class MyTravelDetails extends Component {
   })
   .then(data => {
     this.setState({
-      user: data[0]
+      users: data
   })
 })
-.catch()
+.catch() 
   }
   
   render() {
     console.log(this.state.userCreator)
-    console.log(this.state.user)
+    console.log(this.state.users)
     return (
 
       <div className='travel-details'>
@@ -69,11 +69,16 @@ class MyTravelDetails extends Component {
             <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           </figure>
         </div>
+       
         <p className='title-travel-details'>{this.props.location.state.destination} </p>
         <div className='travel-creator'>
           <img src={this.state.userCreator.avatar} alt='Avatar'></img>
           <p className='firstname-traveldetails'>{this.state.userCreator.firstname}</p>
         </div>
+        <div>
+        {this.state.users.map(user=> 
+          <figure><img src={user.avatar}  alt='avatar'/> </figure>)}
+          </div>
         <div className='link-back-arrow-details'>
           <Link to="/mytravels">
             <img className='back-arrow' src={back} alt='Arrow to back'/>
