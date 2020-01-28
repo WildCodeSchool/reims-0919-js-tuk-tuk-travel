@@ -14,7 +14,7 @@ CREATE TABLE `users`(
   `email` VARCHAR(255) NOT NULL UNIQUE,
   `phone_number` VARCHAR(15) NOT NULL,
   `description` TEXT NULL,
-  `avatar` VARCHAR(100) TEXT NULL,
+  `avatar` TEXT,
   PRIMARY KEY (`userID`) 
 );
 
