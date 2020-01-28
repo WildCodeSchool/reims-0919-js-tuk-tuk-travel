@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 import Moment from 'react-moment';
 import { connect } from  'react-redux'
-import UploadAvatar from './UploadAvatar'
-import CountryList from './CountryList';
 import NavFooter from './NavFooter';
-import logoModify from '../img/modify-icon.png';
 import '../App.css'
 
 
@@ -59,21 +54,7 @@ class UserProfile extends Component {
       [e.target.id]: e.target.value
     })
   }
-  //UPDATE USER
-  // submit = e => {
-  //   e.preventDefault();
-  //   const {...user} = this.state
-  //   axios.get('http://localhost:8000/api/users',user)
-  //   .then(res =>{
-  //     alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} modifié`)
-  //   }).catch(event => {
-  //     console.error(event);
-  //     alert('User not added')
-  //   })
-  // }
-
-
-
+  
   render() {
     console.log(this.state.user)
     return (
@@ -81,8 +62,7 @@ class UserProfile extends Component {
         <div className='title-user-profile'>PROFIL</div>
         {this.state.user && this.state.user.map(res => (
           <div className='user-profile'>
-            {/*<img src = {res.avatar} alt={res.avatar}></img>*/}
-            <img className = 'profile-picture'src = "https://randomuser.me/api/portraits/women/76.jpg" alt = "image"></img>
+            <img src = {res.avatar} alt='profil' className='profile-picture'></img>
             <div>Nom : {res.firstname}</div>
             <div>Prénom : {res.lastname}</div>
             <div>Date de naissance : <Moment format="DD/MM/YYYY">{res.birthday}</Moment></div>
