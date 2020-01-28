@@ -465,7 +465,7 @@
   border:none;
   padding: 0.7em 2em 0.7em 2em;
   border-radius:12px;
-  margin: 2em 1em 0em 1em;
+  margin: 1em 1em 0em 1em;
   background: rgb(0, 145, 255);
   color:#fff;
   text-decoration: none;
@@ -475,7 +475,9 @@
 
 
 /* --------------------------------------------------------------------------- TRAVEL CARDS --------------------------------------------------------------------------------- */
-
+.travel-cards {
+  margin-bottom: 0.5em;
+}
 .title-travel-cards {
   font-family: 'Bebas Neue', cursive;
   font-size: 2.2em;
@@ -484,6 +486,17 @@
   margin-top: 0.2em;
   margin-bottom: 0;
   margin-left: 0.3em;
+}
+.search-field {
+  margin-bottom : 1em;
+}
+#searchField {
+  background-color: rgb(235,229,229);
+  border-radius: 7px;
+  height: 1.5em;
+}
+.travel-date {
+  margin: 0 0.5em 0 0.5em;
 }
 .liste-travel  {
   width: 100%;
@@ -524,6 +537,8 @@ a {
   font-weight: normal;
   background-color:#0091ff ; 
   opacity: 90%;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 
 }
 .img-travel-cards{
