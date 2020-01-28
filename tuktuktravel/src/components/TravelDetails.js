@@ -71,26 +71,37 @@ class TravelDetails extends Component {
           </figure>
         </div>
         <p className='title-travel-details'>{this.props.location.state.destination} </p>
+        
+
         <div className='travel-creator'>
-          <img src={this.state.userCreator.avatar} alt='Avatar'></img>
-          <p className='firstname-traveldetails'>{this.state.userCreator.firstname}</p>
-        </div>
-        <div>
-        {this.state.users.map(user=> 
-          <figure><img src={user.avatar}  alt='avatar'/> </figure>)}
-          </div>
-        <div className='link-back-arrow-details'>
+          <img src={this.state.userCreator.avatar} alt='Avatar' className='user-creator-avatar' ></img>
+          <div>
+          <div className='link-back-arrow-details'>
           <Link to="/travelcards">
             <img className='back-arrow' src={back} alt='Arrow to back'/>
           </Link>
         </div>
-        <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
-        <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
-        <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
+            <p className='firstname-traveldetails'>{this.state.userCreator.firstname}</p>
+            <p>Contact: {this.state.userCreator.email}</p>
+            <div className='dates'>
+              <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
+              <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
+            </div>
+          <div className='travel-user-avatar-container'>
+            {this.state.users.map(user=> 
+          <img src={user.avatar}  alt='avatar' className='travel-user-avatar' />)}
+          </div>
+          <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
+          </div>
+          
         <div className='reserve'>
           <Reservation userID={this.props.userID} travelID={this.props.location.state.travelID} />
-          <p>Contacter {this.state.userCreator.firstname} : {this.state.userCreator.email}</p>
         </div>
+        </div>
+        
+        
+        
+        
         <NavFooter />
       </div>
     )

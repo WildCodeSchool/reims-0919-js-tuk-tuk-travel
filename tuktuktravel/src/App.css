@@ -572,6 +572,7 @@ a {
 .firstname-traveldetails {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
+  margin: auto;
 }
 
 .date-traveldetails {
@@ -592,8 +593,12 @@ a {
 
 .travel-creator {
   display: flex;
-  margin-left: 2em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1.5em;
+  position: relative;
+  top: -70px;
 }
 
 .reserve-button > button {
@@ -607,6 +612,45 @@ a {
   font-size: 1em;
   cursor: pointer;
 }
+
+
+
+.travel-user-avatar-container {
+  display: flex;
+  justify-content:center ;
+  width: 70%;
+  margin: auto;
+  border-bottom: dotted #bcb8b8;
+
+}
+
+.user-creator-avatar {
+  border-radius: 50%;
+  padding: 3px;
+  background-color: white;
+}
+
+.travel-user-avatar {
+  border-radius: 50%;
+  max-width: 25%;
+  padding: 3px;
+  background-color: white;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.dates {
+  border-top: dotted #bcb9b9;
+  border-bottom: dotted #bcb9b9;
+  display: flex;
+  justify-content: center;
+  margin:auto ;
+  width: 70%;
+}
+
+
+
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */
 
@@ -725,7 +769,7 @@ a {
   margin-top: 1em;
   position: fixed;
   bottom: 0; 
-  width: 100%;
+  width: 100%; 
   height: 10%;
   background-color: rgb(243, 241, 241)
  }
