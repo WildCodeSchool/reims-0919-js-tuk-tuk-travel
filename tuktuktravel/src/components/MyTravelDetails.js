@@ -2,11 +2,12 @@ import React, { Component } from "react"
 import { connect } from  'react-redux'
 import { Link } from 'react-router-dom';
 import back from '../img/arrowb.png'
-import Moment from 'react-moment'
+import Moment from 'react-moment';
+import Reservation from './Reservation'
 import NavFooter from './NavFooter'
 
 
-class MyTravelDetails extends Component {
+class TravelDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -55,7 +56,7 @@ class MyTravelDetails extends Component {
       users: data
   })
 })
-.catch() 
+.catch()
   }
   
   render() {
@@ -69,26 +70,29 @@ class MyTravelDetails extends Component {
             <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           </figure>
         </div>
-       
         <p className='title-travel-details'>{this.props.location.state.destination} </p>
+        
+
         <div className='travel-creator'>
-          <img src={this.state.userCreator.avatar} alt='Avatar'></img>
-          <p className='firstname-traveldetails'>{this.state.userCreator.firstname}</p>
-        </div>
-        <div>
-        {this.state.users.map(user=> 
-          <figure><img src={user.avatar}  alt='avatar'/> </figure>)}
-          </div>
-        <div className='link-back-arrow-details'>
+          <img src={this.state.userCreator.avatar} alt='Avatar' className='user-creator-avatar' ></img>
+          <div>
+          <div className='link-back-arrow-details'>
           <Link to="/mytravels">
             <img className='back-arrow' src={back} alt='Arrow to back'/>
           </Link>
         </div>
-        <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
-        <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
-        <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
-        <div className='reserve'>
-          <p>Contacter {this.state.userCreator.firstname} : {this.state.userCreator.email}</p>
+            <p className='firstname-traveldetails'>{this.state.userCreator.firstname}</p>
+            <p>Contact: {this.state.userCreator.email}</p>
+            <div className='dates'>
+              <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
+              <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
+            </div>
+          <div className='travel-user-avatar-container'>
+            {this.state.users.map(user=> 
+          <img src={user.avatar}  alt='avatar' className='travel-user-avatar' />)}
+          </div>
+          <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
+          </div>
         </div>
         <NavFooter />
       </div>
@@ -102,4 +106,5 @@ function  mapStateToProps(state) {
       userID: state.auth.userID
   }
 }
-export default connect(mapStateToProps)(MyTravelDetails)
+export default connect(mapStateToProps)(TravelDetails)
+
