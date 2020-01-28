@@ -52,15 +52,21 @@ class TravelCards extends Component {
     else{this.setState({travelsTemp:this.state.travelsStore})}
   }
 
+
   render() {
-    // console.log(this.state.travels)
+    console.log(this.state.travelsStore)
     return (
       <div className='travel-cards'>
-        <SearchField searchField={this.searchField} input={this.state.input} getCountrys={this.getCountrys}/>
+        
         <div className='title-travel-cards'>Tuk-tuk proposés</div>
+        <SearchField searchField={this.searchField} input={this.state.input} getCountrys={this.getCountrys}/>
         {React.Children.toArray(this.state.travelsTemp.map(res =>{
           return <div className='liste-travel'>
-              <Link  to={{pathname:"/traveldetails",
+              
+              <figure className='fig-img-travel-cards'>
+                <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
+              </figure>
+              <Link style={{height:'2px'}} to={{pathname:"/traveldetails",
                 state: {cityPic: res.cityPic,
                   travelID: res.travelID,
                   destination:res.destination,
@@ -70,15 +76,18 @@ class TravelCards extends Component {
                   description:res.description
                 }
               }}>
-              <figure className='fig-img-travel-cards'>
-                <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
-              </figure>
-              <div className='liste-description-travel-cards'>
-                <span>{res.destination}</span><br/>
-                <Moment format="DD/MM/YYYY">{res.start_date}</Moment>
-                <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
+              <div>
+              <h1 className='travel-cards-title'>{res.destination}</h1>
               </div>
               </Link>
+              <div className='liste-description-travel-cards'>
+                <div style ={{display:'flex', justifyContent:'flex-start'}}>
+                  <Moment format="DD/MM/YYYY">{res.start_date}</Moment><span> - </span>
+                  <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
+                </div>
+              <p>Places: {res.number_of_travelers_max}</p>
+              </div>
+              
             
               </div>}))}
               <NavFooter/>

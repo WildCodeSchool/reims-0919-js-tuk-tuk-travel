@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import requireAuth from './hoc/requireAuth'
 import requireNotAuth from './hoc/requireNotAuth'
 import HomeIntroFirst from './components/HomeIntroFirst';
@@ -12,6 +12,7 @@ import TravelForm from './components/TravelForm'
 import TravelCards from './components/TravelCards'
 import TravelDetails from './components/TravelDetails'
 import MyTravels from './components/MyTravels'
+import MyTravelDetails from './components/MyTravelDetails'
 import Cgu from './components/Cgu'
 import './App.css'
 
@@ -21,7 +22,6 @@ function App() {
   return (
     <div className="App">
       <Switch>
-       {/* <Redirect  exact  from='/userconnexion'  to='/travelcards'  />*/}
         <Route exact path="/" component={HomeIntroFirst}/>
         <Route exact path="/introsecond" component={HomeIntroSec}/>
         <Route exact path="/home" component={Home}/>
@@ -33,6 +33,7 @@ function App() {
         <Route exact path="/travelform" component={TravelForm}/>
         <Route exact path="/traveldetails" render={(props) => <TravelDetails {...props}/>} />
         <Route exact path="/mytravels" component={MyTravels}/>
+        <Route exact path="/mytraveldetails" component={MyTravelDetails} />
       </Switch> 
     </div>
   );

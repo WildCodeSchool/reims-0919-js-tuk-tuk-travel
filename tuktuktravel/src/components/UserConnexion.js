@@ -60,6 +60,9 @@ class UserConnexion extends Component {
             message : res.message
           }
         )
+
+        //setTimeout(()=>{this.props.history.push("/travelcards")},2000)
+      
         
         this.props.history.push("/travelcards")
         //this.props.history.replace("/travelcards")
@@ -94,9 +97,9 @@ class UserConnexion extends Component {
           </form>
           {this.state.isNotAdded ?
               <div className='noConnexion'>
-                <div className='logo-faux'>
-                  <img src={logoFaux} alt='logo Faux'/>
-                </div>
+                
+                  <img src={logoFaux} alt='logo Faux' className='error'/>
+                
                 <p className="erreurConnexion">Erreur de connexion</p>
               </div> : null}
       </div>

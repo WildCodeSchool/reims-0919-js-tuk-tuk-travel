@@ -44,8 +44,7 @@ class FormUsers extends Component {
       secondSection: false
     })
   } 
-
-
+  
   change = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -62,6 +61,7 @@ class FormUsers extends Component {
       this.setState({
         isAdded: true
       })
+      setTimeout(()=>{this.props.history.push("/userconnexion")},2000)
       //alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
     }).catch(event => {
       console.error(event);

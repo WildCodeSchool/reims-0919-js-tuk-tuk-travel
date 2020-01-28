@@ -4,7 +4,6 @@ import '../App.css'
 class CountryList extends Component {
  
   render(){
-    const{country}=this.props
     return(
       <div className="list-of-country">
         <select className="countrys" onChange={this.props.change} id='country'>
