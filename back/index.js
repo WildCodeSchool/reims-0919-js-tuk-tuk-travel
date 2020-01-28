@@ -212,6 +212,23 @@ app.post('/api/travel_user', (req, res) => {
   });
 });
 
+// GET USERS FROM RESERVED TRAVEL
+app.get('/api/travels/:travelID/users',(req, res) => {
+  const travelID = req.params.travelID
+  connection.query('SELECT * FROM users AS u INNER JOIN travel_user AS tu ON u.userID = tu.id_user WHERE tu.id_travel = ?', [travelID], (err, results) => {
+    if (err) {
+      res.status(500).send('Erreur lors de la récupération des utilistateurs');
+    } else {
+      res.json(results).status(200)
+    }
+  });
+})
+
+
+
+
+// app.get('/api/travels/:travelID/users', (req,res) => {
+// app.get('/api/users/:userID/travels', (req,res) => {
 // GET TRAVEL RESERVATION
 app.get('/api/travel_user/:userID', (req,res) => {
   const userID = req.params.userID
@@ -225,6 +242,7 @@ app.get('/api/travel_user/:userID', (req,res) => {
   });
 })
 
+// app.delete('/api/travels/:travelID/users/:userID', (req,res) => {
 // DELETE TRAVEL RESERVATION
 app.delete('/api/travel_user/:travel_user_id', (req,res) => {
   const idTravel = req.params.travel_user_id
