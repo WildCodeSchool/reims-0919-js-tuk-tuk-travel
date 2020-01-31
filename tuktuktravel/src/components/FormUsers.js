@@ -150,7 +150,7 @@ class FormUsers extends Component {
                 <p className="user-added">Utilisateur ajouté</p>
               </div> : null}
           </div>
-          <UploadAvatar />
+          <UploadAvatar /> 
           
         </div>}
       </div>
