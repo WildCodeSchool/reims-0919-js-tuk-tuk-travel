@@ -29,6 +29,7 @@ class TravelForm extends Component {
   }
 
   handleSubmit(e) {
+
       e.preventDefault()
       const {...destination} = this.state
       destination.cityPic = this.props.cityPic
@@ -41,6 +42,7 @@ class TravelForm extends Component {
         })     
       }).catch(event => {
       console.error(event)
+
   });
 }
 
@@ -79,10 +81,10 @@ class TravelForm extends Component {
                 <div className='logo-ok'>
                   <img src={logoOk} alt='logo Ok'/>
                 </div>
-                <p className="user-added">Utilisateur ajouté</p>
+                <p className="user-added">Tuk-Tuk ajouté</p>
               </div> : null}
-          
-        </div>
+          </div>
+         
         <UploadCityPic />
         <NavFooter/>
       </div>
