@@ -105,8 +105,10 @@ app.post('/api/users', (req, res) => {
 });
 
 //UPDATE USERS
-app.put('/api/users/:userID', (req, res) => {
-  const idUser = req.params.userID;
+app.put('/api/users', (req, res) => {
+  console.log(req.body)
+  const idUser = req.body.userID;
+  console.log(req.body)
   const formData = req.body;
   connection.query('UPDATE users SET ? WHERE userID = ?', [formData, idUser], err => {
     if (err) {
