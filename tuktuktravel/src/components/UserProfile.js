@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Moment from 'react-moment';
 import { connect } from  'react-redux'
 import NavFooter from './NavFooter';
+import UploadAvatar from './UploadAvatar'
+import axios from 'axios'
 import '../App.css'
 
 
@@ -49,9 +51,21 @@ class UserProfile extends Component {
   .catch()
   }
 
-  change = e => {
-    this.setState({
-      [e.target.id]: e.target.value
+  // UPDATE AVATAR
+  submit = e => {
+    e.preventDefault();
+   const update = { 
+     userID: this.props.userID, 
+     avatar: this.props.avatar
+   }
+    axios.put(`http://localhost:8000/api/users`,update)
+    .then(res =>{
+      this.setState({
+        isAdded: true
+      })
+      
+    }).catch(event => {
+      console.error(event);
     })
   }
   
@@ -75,7 +89,11 @@ class UserProfile extends Component {
             <div> {res.description}</div>
           </div>
         )))}
+        <UploadAvatar />
+        <button className='send-form-users' onClick={this.submit}>Envoyer</button>
+        {this.state.isAdded?<div>Avatar ajouté</div>:null}
         <NavFooter/>
+        
       </div>
     )
   }
@@ -86,6 +104,7 @@ class UserProfile extends Component {
 function  mapStateToProps(state) {
   return {
     userID: state.auth.userID,
+    avatar: state.avatar.avatar
   }
 }
 export default connect(mapStateToProps)(UserProfile)

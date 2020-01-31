@@ -3,6 +3,7 @@ import { connect } from  'react-redux';
 import axios from 'axios'
 import UploadCityPic from "./UploadCityPic"
 import NavFooter from "./NavFooter"
+import logoOk from '../img/logoOk.png';
 import '../App.css'
 
 
@@ -28,22 +29,18 @@ class TravelForm extends Component {
   }
 
   handleSubmit(e) {
-      alert('Votre destination : ' + this.state.destination);
       e.preventDefault()
       const {...destination} = this.state
       destination.cityPic = this.props.cityPic
       destination.userID = this.props.userID
-      console.log({destination})
       
       axios.post('http://localhost:8000/api/travels/',destination)
       .then(res => {
         this.setState ({
           isAdded: true
-        })
-        //alert('Tuk Tuk ajouté!');
+        })     
       }).catch(event => {
-      console.error(event);
-      alert(`Erreur lors de l'ajout d'un Tuk Tuk`);
+      console.error(event)
   });
 }
 
@@ -77,9 +74,14 @@ class TravelForm extends Component {
             rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>
           
           <button onClick={this.handleSubmit} className="add-tuktuk">Ajouter</button>
-          {this.state.isAdded?<div>Tuk-Tuk ajouté!</div>:null}
+          {this.state.isAdded ?
+              <div className='okUser'>
+                <div className='logo-ok'>
+                  <img src={logoOk} alt='logo Ok'/>
+                </div>
+                <p className="user-added">Utilisateur ajouté</p>
+              </div> : null}
           
-        
         </div>
         <UploadCityPic />
         <NavFooter/>
