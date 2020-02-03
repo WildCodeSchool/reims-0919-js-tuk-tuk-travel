@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { connect } from  'react-redux';
 import axios from 'axios'
 import UploadCityPic from "./UploadCityPic"
+import logoOk from '../img/logoOk.png';
 import NavFooter from "./NavFooter"
 import logoOk from '../img/logoOk.png';
 import '../App.css'
@@ -77,14 +78,14 @@ class TravelForm extends Component {
           
           <button onClick={this.handleSubmit} className="add-tuktuk">Ajouter</button>
           {this.state.isAdded ?
-              <div className='okUser'>
-                <div className='logo-ok'>
-                  <img src={logoOk} alt='logo Ok'/>
-                </div>
-                <p className="user-added">Tuk-Tuk ajouté</p>
-              </div> : null}
-          </div>
-         
+
+            <div className='okTuktuk'>
+              <div className='logo-ok-tuktuk'>
+                <img src={logoOk} alt='logo Ok'/>
+              </div>
+              <p className="tuktuk-added">Tuktuk ajouté</p>
+            </div> : null}
+                
         <UploadCityPic />
         <NavFooter/>
       </div>

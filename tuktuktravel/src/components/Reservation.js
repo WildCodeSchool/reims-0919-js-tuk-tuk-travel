@@ -38,13 +38,12 @@ render() {
   return (
     <div className='reserve-button'>
       <button onClick={this.onReservation}>Réserver</button>
-      {this.state.isBooked?<div style={{display:'flex', justifyContent:'center', alignItems:'center', margin:'5x'}} >
+      <div className= "tuktuk-booked">{this.state.isBooked?<div style={{display:'flex', justifyContent:'center', alignItems:'center', margin:'5x'}} >
         <img style={{width:'12%'}} src={logoOk} alt='logo Ok'/>tuk-tuk booké</div>:null}
+      </div>  
     </div>
    
-  )
-}
-
+  )}
 }
 
 export default Reservation  
