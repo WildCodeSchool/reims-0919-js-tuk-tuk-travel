@@ -5,7 +5,6 @@ import NavFooter from './NavFooter';
 import UploadAvatar from './UploadAvatar'
 import axios from 'axios'
 import '../App.css'
-import UploadAvatar from './UploadAvatar';
 
 
 

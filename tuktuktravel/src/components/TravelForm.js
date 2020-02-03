@@ -4,7 +4,6 @@ import axios from 'axios'
 import UploadCityPic from "./UploadCityPic"
 import logoOk from '../img/logoOk.png';
 import NavFooter from "./NavFooter"
-import logoOk from '../img/logoOk.png';
 import '../App.css'
 
 
@@ -89,7 +88,7 @@ class TravelForm extends Component {
         <UploadCityPic />
         <NavFooter/>
       </div>
-
+    </div>     
     )
   }
 }
