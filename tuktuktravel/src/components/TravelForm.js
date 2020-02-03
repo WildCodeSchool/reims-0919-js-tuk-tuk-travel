@@ -4,6 +4,7 @@ import axios from 'axios'
 import UploadCityPic from "./UploadCityPic"
 import logoOk from '../img/logoOk.png';
 import NavFooter from "./NavFooter"
+import logoOk from '../img/logoOk.png';
 import '../App.css'
 
 
@@ -29,7 +30,7 @@ class TravelForm extends Component {
   }
 
   handleSubmit(e) {
-      alert('Votre destination : ' + this.state.destination);
+      //alert('Votre destination : ' + this.state.destination);
       e.preventDefault()
       const {...destination} = this.state
       destination.cityPic = this.props.cityPic
@@ -44,7 +45,7 @@ class TravelForm extends Component {
         //alert('Tuk Tuk ajouté!');
       }).catch(event => {
       console.error(event);
-      alert(`Erreur lors de l'ajout d'un Tuk Tuk`);
+      //alert(`Erreur lors de l'ajout d'un Tuk Tuk`);
   });
 }
 
@@ -79,15 +80,15 @@ class TravelForm extends Component {
           
           <button onClick={this.handleSubmit} className="add-tuktuk">Ajouter</button>
           {this.state.isAdded ?
+
             <div className='okTuktuk'>
               <div className='logo-ok-tuktuk'>
                 <img src={logoOk} alt='logo Ok'/>
               </div>
               <p className="tuktuk-added">Tuktuk ajouté</p>
             </div> : null}
-          
+                
         
-        </div>
         <UploadCityPic />
         <NavFooter/>
       </div>

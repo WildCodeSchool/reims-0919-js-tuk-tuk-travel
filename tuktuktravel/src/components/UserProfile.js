@@ -3,6 +3,7 @@ import Moment from 'react-moment';
 import { connect } from  'react-redux'
 import NavFooter from './NavFooter';
 import '../App.css'
+import UploadAvatar from './UploadAvatar';
 
 
 
@@ -75,6 +76,7 @@ class UserProfile extends Component {
             <div> {res.description}</div>
           </div>
         )))}
+        <UploadAvatar />
         <NavFooter/>
       </div>
     )
