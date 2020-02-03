@@ -81,7 +81,8 @@ class TravelDetails extends Component {
             <p className='firstname-traveldetails'>{this.state.userCreator.firstname}</p>
             <p>Contact: {this.state.userCreator.email}</p>
             <div className='dates'>
-              <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> - </p>
+              <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.start_date}</Moment> </p>
+              <span className='traveldetails-date'>  - </span>
               <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
             </div>
           <div className='travel-user-avatar-container'>

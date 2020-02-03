@@ -80,7 +80,8 @@ class MyTravels extends Component {
               </Link>
               <div className='liste-description-travel-cards'>
                 <div style ={{display:'flex', justifyContent:'flex-start'}}>
-                  <Moment format="DD/MM/YYYY">{res.start_date}</Moment><span> - </span>
+                  <Moment format="DD/MM/YYYY">{res.start_date}</Moment>
+                  <span className= 'travel-date'> - </span>
                   <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
                 </div>
               <p>Places: {res.number_of_travelers_max}</p>

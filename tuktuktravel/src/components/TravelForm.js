@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { connect } from  'react-redux';
 import axios from 'axios'
 import UploadCityPic from "./UploadCityPic"
+import logoOk from '../img/logoOk.png';
 import NavFooter from "./NavFooter"
 import '../App.css'
 
@@ -77,7 +78,13 @@ class TravelForm extends Component {
             rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>
           
           <button onClick={this.handleSubmit} className="add-tuktuk">Ajouter</button>
-          {this.state.isAdded?<div>Tuk-Tuk ajouté!</div>:null}
+          {this.state.isAdded ?
+            <div className='okTuktuk'>
+              <div className='logo-ok-tuktuk'>
+                <img src={logoOk} alt='logo Ok'/>
+              </div>
+              <p className="tuktuk-added">Tuktuk ajouté</p>
+            </div> : null}
           
         
         </div>
