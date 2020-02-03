@@ -1,13 +1,15 @@
 import React from 'react'
 import { post } from 'axios';
 import { connect } from  'react-redux';
+import logoOk from '../img/logoOk.png';
 
 class UploadAvatar extends React.Component {
 
   constructor(props) {
     super(props);
     this.state ={
-      file:''
+      file:'',
+      isUpload: false
     }
     this.onFormSubmit = this.onFormSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
@@ -31,7 +33,11 @@ class UploadAvatar extends React.Component {
           type : "SEND_AVATAR",
           avatar : this.state.file.name,
         }
+        
       )
+      this.setState ({
+        isUpload: true
+      })
     })
   }
   onChange(e) {
@@ -44,6 +50,13 @@ class UploadAvatar extends React.Component {
         <p className="title-add-avatar">Ajoute ton avatar</p>
         <input type="file" name='file' className='avatar' onChange={this.onChange} id='avatar' />
         <button onClick={this.onFormSubmit}>Upload</button>
+        {this.state.isUpload?
+        <div className='okUser'>
+        <div className='logo-ok'>
+          <img src={logoOk} alt='logo Ok'/>
+        </div>
+        <p className="user-added">Fichier transféré avec succès</p>
+      </div> : null}
       </div>
    )
   }

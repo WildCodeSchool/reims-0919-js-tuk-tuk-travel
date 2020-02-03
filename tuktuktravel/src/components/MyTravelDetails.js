@@ -72,7 +72,7 @@ class TravelDetails extends Component {
 
         <div className='travel-creator'>
           <img src={this.state.userCreator.avatar} alt='Avatar' className='user-creator-avatar' ></img>
-          <div>
+          <div className='travel-detail-container'>
           <div className='link-back-arrow-details'>
           <Link to="/mytravels">
             <img className='back-arrow' src={back} alt='Arrow to back'/>

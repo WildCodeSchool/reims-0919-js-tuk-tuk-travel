@@ -62,10 +62,10 @@ class FormUsers extends Component {
         isAdded: true
       })
       setTimeout(()=>{this.props.history.push("/userconnexion")},2000)
-      //alert(`Utilisateur ${this.state.firstname} ${this.state.lastname} ajouté`)
+      
     }).catch(event => {
       console.error(event);
-      alert('User not added')
+      
     })
   }
 
@@ -149,9 +149,7 @@ class FormUsers extends Component {
                 </div>
                 <p className="user-added">Utilisateur ajouté</p>
               </div> : null}
-          </div>
-          <UploadAvatar /> 
-          
+          </div>  
         </div>}
       </div>
     );
