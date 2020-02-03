@@ -27,49 +27,41 @@ class UserConnexion extends Component {
 
   submitForm(e) {
     e.preventDefault()
-    const {...userLogin} = this.state
-      console.log({userLogin})
-      
-      fetch('http://localhost:8000/api/login',
-        {
-         method: 'POST',
-         headers:  new  Headers({
-          'Content-Type':  'application/json'
-        }),
-        body:  JSON.stringify(this.state),
-        })
-      
-      .then(res  => {
-        if (!res.ok) {
-          this.props.history.push('/userconnexion')
-          this.setState ({
-            isNotAdded : true
-          })
-         // throw  new  Error(res.statusText)
-          
-        }
+    fetch('http://localhost:8000/api/login',
+      {
+        method: 'POST',
+        headers:  new  Headers({
+        'Content-Type':  'application/json'
+      }),
+      body:  JSON.stringify(this.state),
+      })
+    
+    .then(res  => {
+      if (res.ok) {
         return res.json()
-      })
-      .then(res  =>  {
-        console.log(res.user.userID)
-        this.props.dispatch(
-          {
-            type : "CREATE_SESSION",
-            userID: res.user.userID,
-            token : res.token,
-            message : res.message
-          }
-        )
-
-        //setTimeout(()=>{this.props.history.push("/travelcards")},2000)
+      }
+      else {
+        this.props.history.push('/userconnexion')
+        this.setState ({
+          isNotAdded : true
+        })
+      }
+    })
+    .then(res  =>  {
+      this.props.dispatch(
+        {
+          type : "CREATE_SESSION",
+          userID: res.user.userID,
+          token : res.token,
+          message : res.message
+        }
+      )
       
-        
-        this.props.history.push("/travelcards")
-        //this.props.history.replace("/travelcards")
-        this.setState({ "flash":  res.flash })
-      })
-      .catch(err  =>  this.setState({ "flash":  err.flash }))
-    }
+      this.props.history.push("/travelcards")
+      this.setState({ "flash":  res.flash })
+    })
+    .catch(err  =>  this.setState({ "flash":  err.flash }))
+  }
 
   render() {
     return (

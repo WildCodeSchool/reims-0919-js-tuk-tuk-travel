@@ -40,7 +40,9 @@ class UserProfile extends Component {
       if(!res.ok) {
         this.props.history.push('/userconnexion')
       }
-      return res.json()
+      else {
+        return res.json()
+      }
     })
     .then(data => {
       this.setState({
@@ -89,9 +91,10 @@ class UserProfile extends Component {
             <div> {res.description}</div>
           </div>
         )))}
-        <UploadAvatar />
 
         <button className='send-form-users' onClick={this.submit}>Envoyer</button>
+
+        <UploadAvatar />
         {this.state.isAdded?<div>Avatar ajouté</div>:null}
 
         <NavFooter/>

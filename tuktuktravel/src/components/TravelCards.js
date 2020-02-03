@@ -30,7 +30,9 @@ class TravelCards extends Component {
       if(!res.ok) {
         this.props.history.push('/userconnexion')
       }
-      return res.json()
+      else {
+        return res.json()
+      }
     })
     .then(data => {
       this.setState({
@@ -55,13 +57,12 @@ class TravelCards extends Component {
 
 
   render() {
-    console.log(this.state.travelsStore)
     return (
       <div className='travel-cards'>
         <div className='title-and-home'>
         <div className='title-travel-cards'>Tuk-tuk proposés</div>
         <div>
-        <Link className='link-back-arrow' to="/Home">
+        <Link className='link-back-arrow' to="/logout">
           <figure className='fig-back-arrow-travelcards'>
             <img className='back-arrow' src={back} alt='Arrow to back'/>
           </figure>
@@ -69,33 +70,33 @@ class TravelCards extends Component {
         </div>
         </div>
         <SearchField searchField={this.searchField} input={this.state.input} getCountrys={this.getCountrys}/>
-        {React.Children.toArray(this.state.travelsTemp.map(res =>{
+        {React.Children.toArray(this.state.travelsTemp.map(travel =>{
           return <div className='liste-travel'>
               
               <figure className='fig-img-travel-cards'>
-                <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
+                <img className='img-travel-cards' alt={travel.cityPic} src={travel.cityPic}></img>
               </figure>
-              <Link style={{height:'2px'}} to={{pathname:"/traveldetails",
-                state: {cityPic: res.cityPic,
-                  travelID: res.travelID,
-                  destination:res.destination,
-                  IDuser_creator:res.IDuser_creator,
-                  start_date:res.start_date,
-                  end_date:res.end_date,
-                  description:res.description
+              <Link className="travel-cards-link" to={{pathname:"/traveldetails",
+                state: {cityPic: travel.cityPic,
+                  travelID: travel.travelID,
+                  destination:travel.destination,
+                  IDuser_creator:travel.IDuser_creator,
+                  start_date:travel.start_date,
+                  end_date:travel.end_date,
+                  description:travel.description
                 }
               }}>
               <div>
-              <h1 className='travel-cards-title'>{res.destination}</h1>
+              <h1 className='travel-cards-title'>{travel.destination}</h1>
               </div>
               </Link>
               <div className='liste-description-travel-cards'>
                 <div style ={{display:'flex', justifyContent:'flex-start'}}>
-                  <Moment format="DD/MM/YYYY">{res.start_date}</Moment>
+                  <Moment format="DD/MM/YYYY">{travel.start_date}</Moment>
                   <span className='travel-date'>  - </span>
-                  <Moment format="DD/MM/YYYY">{res.end_date}</Moment>
+                  <Moment format="DD/MM/YYYY">{travel.end_date}</Moment>
                 </div>
-              <p>Places: {res.number_of_travelers_max}</p>
+              <p>Places: {travel.number_of_travelers_max}</p>
               </div>
               
             

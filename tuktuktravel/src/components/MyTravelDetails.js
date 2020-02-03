@@ -27,7 +27,9 @@ class TravelDetails extends Component {
       if(!res.ok) {
         this.props.history.push('/userconnexion')
       }
-      return res.json()
+      else {
+        return res.json()
+      }
     })
     .then(data => {
       this.setState({
@@ -48,7 +50,9 @@ class TravelDetails extends Component {
     if(!res.ok) {
       this.props.history.push('/userconnexion')
     }
-    return res.json()
+    else {
+      return res.json()
+    }
   })
   .then(data => {
     this.setState({
@@ -66,9 +70,8 @@ class TravelDetails extends Component {
           <figure className='container-city-picture'>
             <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           </figure>
+          <p className='travel-cards-link travel-cards-title'>{this.props.location.state.destination} </p>
         </div>
-        <p className='title-travel-details'>{this.props.location.state.destination} </p>
-        
 
         <div className='travel-creator'>
           <img src={this.state.userCreator.avatar} alt='Avatar' className='user-creator-avatar' ></img>

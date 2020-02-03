@@ -530,6 +530,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: 2px 5px 10px rgb(156, 152, 152);
+  position: relative;
 } 
 a {
   text-decoration: none;
@@ -551,13 +552,21 @@ a {
   margin: auto;
   margin-left: 10px;
 }
+.travel-cards-link {
+  position: absolute;
+  bottom: 4em;
+  left: 0;
+  display: inline-block;
+  z-index: 10;
+}
+.img-travel-details .travel-cards-link {
+  top: 1rem;
+  bottom: initial;
+}
 .travel-cards-title{
   font-family: 'Montserrat', sans-serif;
   font-size: 1.8em;
-  position: relative;
-  top:-90px;
-  padding: 8px;
-  width: 60%;
+  padding: .5rem 1rem;
   color: white;
   text-align: start;
   font-weight: normal;
@@ -581,6 +590,9 @@ a {
 
 /* --------------------------------------------------------------------------- TRAVEL DETAILS --------------------------------------------------------------------------------- */
 
+.img-travel-details {
+  position: relative;
+}
 
 .title-travel-details {
   display: flex;
@@ -823,11 +835,14 @@ a {
   justify-content: space-evenly;
   margin-top: 1em;
   position: fixed;
+  z-index: 100;
   bottom: 0; 
   padding-bottom: 0.5em;
+  padding-top: 0.25em;
   width: 100%; 
   height: 10%;
-  background-color: rgb(243, 241, 241)
+  background-color: rgb(243, 241, 241);
+  box-shadow: 0 0 10px rgb(156, 152, 152);
  }
 
  .title_footer {
