@@ -1,5 +1,5 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, {useEffect, useRef} from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import requireAuth from './hoc/requireAuth'
 import requireNotAuth from './hoc/requireNotAuth'
 import HomeIntroFirst from './components/HomeIntroFirst';
@@ -15,21 +15,38 @@ import MyTravels from './components/MyTravels'
 import MyTravelDetails from './components/MyTravelDetails'
 import Cgu from './components/Cgu'
 import './App.css'
+import { connect } from  'react-redux';
 
 
+function mapDispatchToProps(dispatch) {
+  return {
+    resetToken: () => dispatch({
+      type : "DESTROY_SESSION"
+    })
+    
+  }
+}
 
-function App() {
+function App(props) {
+  const appRef = useRef(null)
+  useEffect(() => {
+    appRef.current.scrollTop = 0
+  })
   return (
-    <div className="App">
+    <div ref={appRef} className="App">
       <Switch>
         <Route exact path="/" component={HomeIntroFirst}/>
+        <Route exact path="/logout" render={() => {
+          props.resetToken()
+          return <Redirect to="/home" />
+        }}/>
         <Route exact path="/introsecond" component={HomeIntroSec}/>
         <Route exact path="/home" component={Home}/>
         <Route path="/formusers"component={FormUsers}/>
         <Route path="/profile"component={UserProfile}/>
         <Route path="/cgu"component={Cgu}/>
-        <Route path="/userconnexion" component={UserConnexion} component={requireNotAuth(UserConnexion)}/>
-        <Route exact path="/travelcards" component={TravelCards} component={requireAuth(TravelCards)}/>
+        <Route path="/userconnexion" component={requireNotAuth(UserConnexion)}/>
+        <Route exact path="/travelcards" component={requireAuth(TravelCards)}/>
         <Route exact path="/travelform" component={TravelForm}/>
         <Route exact path="/traveldetails" render={(props) => <TravelDetails {...props}/>} />
         <Route exact path="/mytravels" component={MyTravels}/>
@@ -39,4 +56,5 @@ function App() {
   );
 }
 
-export default App;
+
+export default connect(null, mapDispatchToProps)(App)

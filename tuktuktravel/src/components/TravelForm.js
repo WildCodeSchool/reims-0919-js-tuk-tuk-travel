@@ -2,9 +2,7 @@ import React, { Component } from "react"
 import { connect } from  'react-redux';
 import axios from 'axios'
 import UploadCityPic from "./UploadCityPic"
-import logoOk from '../img/logoOk.png';
 import NavFooter from "./NavFooter"
-import logoOk from '../img/logoOk.png';
 import '../App.css'
 
 
@@ -29,29 +27,25 @@ class TravelForm extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleSubmit(e) {
+  handleSubmit() {
 
-      e.preventDefault()
-      const {...destination} = this.state
-      destination.cityPic = this.props.cityPic
-      destination.userID = this.props.userID
-      
-      axios.post('http://localhost:8000/api/travels/',destination)
-      .then(res => {
-        this.setState ({
-          isAdded: true
-        })     
-      }).catch(event => {
+    const {...destination} = this.state
+    destination.cityPic = this.props.cityPic
+    destination.userID = this.props.userID
+    
+    axios.post('http://localhost:8000/api/travels/',destination)
+    .then(res => {
+      this.props.history.push('/travelcards')
+    }).catch(event => {
       console.error(event)
-
-  });
-}
+    });
+  }
 
   render() {
     console.log(this.state)
     return(
       <div className='travel-form'>
-        <div className='title-travel-form'>PROPOSER UN TUK-TUK</div>
+        <div className='title-travel-form'>PROPOSE UN TUK-TUK</div>
         <div className = 'add-travel'>
           <label htmlFor='destination'>Destination: </label>
             <input className = 'input-add-travel' id='destination' type='text' name='destination' placeholder='Votre destination..'
@@ -75,21 +69,11 @@ class TravelForm extends Component {
           <label htmlFor='description'>Description: </label>
             <textarea  className = 'input-add-travel' name ='description' placeholder = 'Projets, activités durant le voyage..'
             rows="5" cols="33" value={this.state.description} onChange={this.handleInputChange}></textarea>
-          
-          <button onClick={this.handleSubmit} className="add-tuktuk">Ajouter</button>
-          {this.state.isAdded ?
-
-            <div className='okTuktuk'>
-              <div className='logo-ok-tuktuk'>
-                <img src={logoOk} alt='logo Ok'/>
-              </div>
-              <p className="tuktuk-added">Tuktuk ajouté</p>
-            </div> : null}
                 
-        <UploadCityPic />
+        <UploadCityPic onUpload={this.handleSubmit} />
         <NavFooter/>
       </div>
-
+    </div>     
     )
   }
 }

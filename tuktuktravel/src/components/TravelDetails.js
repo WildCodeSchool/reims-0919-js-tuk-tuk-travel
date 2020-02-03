@@ -28,7 +28,9 @@ class TravelDetails extends Component {
       if(!res.ok) {
         this.props.history.push('/userconnexion')
       }
-      return res.json()
+      else {
+        return res.json()
+      }
     })
     .then(data => {
       this.setState({
@@ -49,7 +51,9 @@ class TravelDetails extends Component {
     if(!res.ok) {
       this.props.history.push('/userconnexion')
     }
-    return res.json()
+    else {
+      return res.json()
+    }
   })
   .then(data => {
     this.setState({
@@ -60,8 +64,6 @@ class TravelDetails extends Component {
   }
   
   render() {
-    console.log(this.state.userCreator)
-    console.log(this.state.users)
     return (
 
       <div className='travel-details'>
@@ -69,8 +71,8 @@ class TravelDetails extends Component {
           <figure className='container-city-picture'>
             <img className='city-picture' src={this.props.location.state.cityPic} alt={this.props.location.state.cityPic}/>
           </figure>
+          <p className='travel-cards-link travel-cards-title'>{this.props.location.state.destination} </p>
         </div>
-        <p className='title-travel-details'>{this.props.location.state.destination} </p>
         
 
         <div className='travel-creator'>
@@ -89,8 +91,11 @@ class TravelDetails extends Component {
               <p className='date-traveldetails'><Moment format="DD/MM/YYYY">{this.props.location.state.end_date}</Moment> </p>
             </div>
           <div className='travel-user-avatar-container'>
-            {this.state.users.map(user=> 
-          <img src={user.avatar}  alt='avatar' className='travel-user-avatar' />)}
+            {React.Children.toArray(this.state.users.map(
+              user=>
+                <img src={user.avatar}  alt='avatar' className='travel-user-avatar' />
+              )
+            )}
           </div>
           <div className='traveldetail-description'>
           <p className='descr-traveldetails'>{this.props.location.state.description} </p> 

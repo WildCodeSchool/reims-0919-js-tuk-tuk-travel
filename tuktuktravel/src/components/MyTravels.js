@@ -29,7 +29,9 @@ class MyTravels extends Component {
       if(!res.ok) {
         this.props.history.push('/userconnexion')
       }
-      return res.json()
+      else {
+        return res.json()
+      }
       
     })
     .then(data => {
@@ -65,7 +67,7 @@ class MyTravels extends Component {
                 <img className='img-travel-cards' alt={res.cityPic} src={res.cityPic}></img>
               </figure>
               
-              <Link style={{height:'10px'}} to={{pathname:"/mytraveldetails",
+              <Link className="travel-cards-link" to={{pathname:"/mytraveldetails",
                 state: {cityPic: res.cityPic,
                   travelID: res.travelID,
                   destination:res.destination,

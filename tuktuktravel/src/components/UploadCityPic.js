@@ -26,8 +26,6 @@ class UploadCityPic extends React.Component {
     }
 
     post(url, formData, config).then((response)=>{
-      console.log(response.data);
-      //console.log(this.state.file.name);
       this.props.dispatch( 
         {
           type : "SEND_CITY_PIC",
@@ -37,6 +35,7 @@ class UploadCityPic extends React.Component {
       this.setState ({
         isUpload:true
       })
+      this.props.onUpload()
     })
   }
   onChange(e) {
@@ -49,7 +48,7 @@ class UploadCityPic extends React.Component {
       {/*<form className="upload-file" onSubmit={this.onFormSubmit}>*/}
         <p className="title-add-avatar">Ajoute une image</p>
         <input type="file" name='file' className='avatar' onChange={this.onChange} id='cityPic' />
-        <button onClick={this.onFormSubmit} className="upload-avatar">Upload</button>
+        <button onClick={this.onFormSubmit} className="upload-avatar">Ajouter</button>
         {this.state.isUpload?
         <div className='okUser'>
         <div className='logo-ok'>

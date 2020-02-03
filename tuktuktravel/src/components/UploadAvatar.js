@@ -47,16 +47,17 @@ class UploadAvatar extends React.Component {
   render() {
     return (
       <div className="upload-file">
-        <p className="title-add-avatar">Ajoute ton avatar</p>
+        <p className="title-add-avatar">Change ton avatar</p>
         <input type="file" name='file' className='avatar' onChange={this.onChange} id='avatar' />
-        <button onClick={this.onFormSubmit}>Upload</button>
-        {this.state.isUpload?
-        <div className='okUser'>
-        <div className='logo-ok'>
-          <img src={logoOk} alt='logo Ok'/>
-        </div>
-        <p className="user-added">Fichier transféré avec succès</p>
-      </div> : null}
+        <button className='send-form-users' onClick={this.onFormSubmit}>Changer</button>
+        {this.state.isUpload && (
+          <div className='okUser'>
+            <div className='logo-ok'>
+              <img src={logoOk} alt='logo Ok'/>
+            </div>
+            <p className="user-added">Fichier transféré avec succès</p>
+          </div>
+        )}
       </div>
    )
   }

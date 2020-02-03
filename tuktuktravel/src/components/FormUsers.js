@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from  'react-redux';
 import axios from 'axios';
-import UploadAvatar from './UploadAvatar'
 import CountryList from './CountryList';
 import back from '../img/arrow-back.png'
 import logoOk from '../img/logoOk.png';
