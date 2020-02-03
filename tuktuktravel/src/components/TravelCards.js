@@ -5,6 +5,7 @@ import NavFooter from "./NavFooter";
 import SearchField from './SearchField'
 import { connect } from  'react-redux';
 import { Link } from 'react-router-dom';
+import back from '../img/arrow-back.png'
 
 class TravelCards extends Component {
   constructor(props) {
@@ -57,8 +58,16 @@ class TravelCards extends Component {
     console.log(this.state.travelsStore)
     return (
       <div className='travel-cards'>
-        
+        <div className='title-and-home'>
         <div className='title-travel-cards'>Tuk-tuk proposés</div>
+        <div>
+        <Link className='link-back-arrow' to="/Home">
+          <figure className='fig-back-arrow-travelcards'>
+            <img className='back-arrow' src={back} alt='Arrow to back'/>
+          </figure>
+        </Link>
+        </div>
+        </div>
         <SearchField searchField={this.searchField} input={this.state.input} getCountrys={this.getCountrys}/>
         {React.Children.toArray(this.state.travelsTemp.map(res =>{
           return <div className='liste-travel'>

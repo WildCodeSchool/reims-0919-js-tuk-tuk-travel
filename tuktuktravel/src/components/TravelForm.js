@@ -30,22 +30,20 @@ class TravelForm extends Component {
   }
 
   handleSubmit(e) {
-      //alert('Votre destination : ' + this.state.destination);
+
       e.preventDefault()
       const {...destination} = this.state
       destination.cityPic = this.props.cityPic
       destination.userID = this.props.userID
-      console.log({destination})
       
       axios.post('http://localhost:8000/api/travels/',destination)
       .then(res => {
         this.setState ({
           isAdded: true
-        })
-        //alert('Tuk Tuk ajouté!');
+        })     
       }).catch(event => {
-      console.error(event);
-      //alert(`Erreur lors de l'ajout d'un Tuk Tuk`);
+      console.error(event)
+
   });
 }
 
@@ -88,7 +86,6 @@ class TravelForm extends Component {
               <p className="tuktuk-added">Tuktuk ajouté</p>
             </div> : null}
                 
-        
         <UploadCityPic />
         <NavFooter/>
       </div>

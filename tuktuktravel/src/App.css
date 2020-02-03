@@ -571,7 +571,11 @@ a {
   width: 100%;
   margin: auto;
 }
+.title-and-home {
+  display: flex;
+  justify-content: space-between;
 
+}
 
 
 
@@ -693,7 +697,14 @@ a {
   margin:auto ;
   width: 70%;
 }
-
+.traveldetail-description {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.travel-detail-container {
+  width: 90%;
+}
 
 
 
