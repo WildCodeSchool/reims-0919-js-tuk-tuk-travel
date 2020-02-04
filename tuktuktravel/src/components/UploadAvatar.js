@@ -52,9 +52,9 @@ class UploadAvatar extends React.Component {
         <button className='send-form-users' onClick={this.onFormSubmit}>Changer</button>
         {this.state.isUpload && (
           <div className='okUser'>
-            <div className='logo-ok'>
-              <img src={logoOk} alt='logo Ok'/>
-            </div>
+        
+              <img src={logoOk} alt='logoOk' className='logoOk'/>
+            
             <p className="user-added">Fichier transféré avec succès</p>
           </div>
         )}

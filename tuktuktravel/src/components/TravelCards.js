@@ -5,7 +5,7 @@ import NavFooter from "./NavFooter";
 import SearchField from './SearchField'
 import { connect } from  'react-redux';
 import { Link } from 'react-router-dom';
-import back from '../img/arrow-back.png'
+import back from '../img/arrowb.png'
 
 class TravelCards extends Component {
   constructor(props) {
