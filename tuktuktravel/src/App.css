@@ -244,9 +244,9 @@
   margin-top: 0.5em;
 }
 
-.fig-back-arrow > button {
+.fig-back-arrow  {
   border: none;
-  background-color: white;
+  cursor: pointer;
 }
 
 .send-form-users {
@@ -273,10 +273,8 @@
 .okUser{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 70%;
-  border-radius: 12px;
-  background-color: rgb(235, 229, 229);
+  justify-content: center;
+  align-items: center;
 }
 .logo-ok{
   Width: 30%;
@@ -288,9 +286,10 @@
   margin: 0;
 }
 .user-added{
-  font-size: 0.6em;
-  width:70%;
-  margin-right: 3em;
+  font-size: 0.8em;
+}
+.logoOk {
+  width: 2em;
 }
 
 
@@ -689,17 +688,17 @@ a {
   border-radius: 50%;
   padding: 3px;
   background-color: white;
+  width: 30%;
 }
 
 .travel-user-avatar {
   border-radius: 50%;
-  max-width: 25%;
-  padding: 3px;
-  background-color: white;
-  margin-right: 10px;
+  width: 68px;
+  height: 68px;
   margin-top: 10px;
-  margin-bottom: 10px;
-
+}
+.travel-user-avatar-firstname{
+  margin: auto;
 }
 .dates {
   border-top: dotted #bcb9b9;
@@ -717,7 +716,12 @@ a {
 .travel-detail-container {
   width: 90%;
 }
-
+.travel-user-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
 
 /* --------------------------------------------------------------------------- UPLOAD FILE --------------------------------------------------------------------------------- */

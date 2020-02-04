@@ -92,8 +92,11 @@ class TravelDetails extends Component {
             </div>
           <div className='travel-user-avatar-container'>
             {React.Children.toArray(this.state.users.map(
-              user=>
-                <img src={user.avatar}  alt='avatar' className='travel-user-avatar' />
+              user=> <div className='travel-user-description'>
+                <div className='travel-user-avatar-box'>
+                <img src={user.avatar}  alt='avatar' className='travel-user-avatar'></img>
+                </div>
+            <p className='travel-user-avatar-firstname'>{user.firstname}</p></div>
               )
             )}
           </div>

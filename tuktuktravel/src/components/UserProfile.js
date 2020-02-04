@@ -4,6 +4,7 @@ import { connect } from  'react-redux'
 import NavFooter from './NavFooter';
 import UploadAvatar from './UploadAvatar'
 import axios from 'axios'
+import logoOk from '../img/logoOk.png';
 import '../App.css'
 
 
@@ -22,7 +23,8 @@ class UserProfile extends Component {
       email: '',
       phone_number: '',
       description: '',
-      user: []
+      user: [],
+      isAdded: false
     };
   }
   // GET ONE USER
@@ -63,8 +65,10 @@ class UserProfile extends Component {
     axios.put(`http://localhost:8000/api/users`,update)
     .then(res =>{
       this.setState({
-        isAdded: true
+        isAdded: true,
+        
       })
+    
       
     }).catch(event => {
       console.error(event);
@@ -95,8 +99,14 @@ class UserProfile extends Component {
         <button className='send-form-users' onClick={this.submit}>Envoyer</button>
 
         <UploadAvatar />
-        {this.state.isAdded?<div>Avatar ajouté</div>:null}
-
+        {this.state.isAdded && (
+          <div className='okUser'>
+        
+              <img src={logoOk} alt='logoOk' className='logoOk'/>
+            
+            <p className="user-added">Avatar changé</p>
+          </div>
+        )}
         <NavFooter/>
         
       </div>

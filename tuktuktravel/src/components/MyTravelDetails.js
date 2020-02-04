@@ -90,7 +90,11 @@ class TravelDetails extends Component {
             </div>
           <div className='travel-user-avatar-container'>
             {this.state.users.map(user=> 
-          <img src={user.avatar}  alt='avatar' className='travel-user-avatar' />)}
+            <div className='travel-user-description'>
+            <div className='travel-user-avatar-box'>
+          <img src={user.avatar}  alt='avatar' className='travel-user-avatar' />
+          </div>
+          <p className='travel-user-avatar-firstname'>{user.firstname}</p></div>)}
           </div>
           <p className='descr-traveldetails'>{this.props.location.state.description} </p> 
           </div>

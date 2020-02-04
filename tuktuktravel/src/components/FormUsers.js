@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from  'react-redux';
 import axios from 'axios';
 import CountryList from './CountryList';
-import back from '../img/arrow-back.png'
+import back from '../img/arrowb.png'
 import logoOk from '../img/logoOk.png';
 import '../App.css'
 
@@ -115,9 +115,7 @@ class FormUsers extends Component {
         :
         <div>
           <figure className='fig-back-arrow link-back-arrow'>
-            <button onClick = {this.previousPage}>
-              <img className='back-arrow' src={back} alt='Arrow to back'/>
-            </button>
+              <img className='back-arrow' src={back} alt='Arrow to back' onClick = {this.previousPage}/>
           </figure>
             
           <div className="sec-page-form-user">2/2</div>

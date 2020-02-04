@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link } from 'react-router-dom';
 import { connect } from  'react-redux';
-import back from '../img/arrow-back.png'
+import back from '../img/arrowb.png'
 import logoFaux from '../img/logoFaux.png';
 import '../App.css'
 
