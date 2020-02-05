@@ -22,6 +22,12 @@ function mapDispatchToProps(dispatch) {
   return {
     resetToken: () => dispatch({
       type : "DESTROY_SESSION"
+    }),
+    resetAvatar: () => dispatch({
+      type : "DESTROY_AVATAR"
+    }),
+    resetCitypic: () => dispatch({
+      type : "DESTROY_CITYPIC"
     })
     
   }
@@ -38,6 +44,8 @@ function App(props) {
         <Route exact path="/" component={HomeIntroFirst}/>
         <Route exact path="/logout" render={() => {
           props.resetToken()
+          props.resetAvatar()
+          props.resetCitypic()
           return <Redirect to="/home" />
         }}/>
         <Route exact path="/introsecond" component={HomeIntroSec}/>
